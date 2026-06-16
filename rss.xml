@@ -1,98 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>搞AI钱</title><description>下班后的AI搞钱实录</description><link>https://gaoaiqian.com/</link><templateTheme>Firefly</templateTheme><templateThemeVersion>6.12.1</templateThemeVersion><templateThemeUrl>https://github.com/CuteLeaf/Firefly</templateThemeUrl><lastBuildDate>2026年6月16日 13:40:57</lastBuildDate><item><title>Firefly 简单使用指南</title><link>https://gaoaiqian.com/posts/guide/</link><guid isPermaLink="true">https://gaoaiqian.com/posts/guide/</guid><description>如何使用 Firefly 博客模板。</description><pubDate>Fri, 02 Jan 1970 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;这个博客模板是基于 &lt;a href=&quot;https://astro.build/&quot; target=&quot;_blank&quot;&gt;Astro&lt;/a&gt; 构建的。对于本指南中未提及的内容，您可以在 &lt;a href=&quot;https://docs.astro.build/&quot; target=&quot;_blank&quot;&gt;Astro 文档&lt;/a&gt; 中找到答案。&lt;/p&gt;
-&lt;section&gt;&lt;h2&gt;文章的 Front-matter&lt;a href=&quot;#文章的-front-matter&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;/figcaption&gt;&lt;pre&gt;&lt;code&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;1&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;---&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;2&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;title&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span&gt;我的第一篇博客文章&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;3&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;published&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span&gt;2023-09-09&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;4&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;description&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span&gt;这是我新 Astro 博客的第一篇文章。&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;5&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;image&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span&gt;./cover.jpg&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;6&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;tags&lt;/span&gt;&lt;span&gt;: [&lt;/span&gt;&lt;span&gt;前端&lt;/span&gt;&lt;span&gt;, &lt;/span&gt;&lt;span&gt;开发&lt;/span&gt;&lt;span&gt;]&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;7&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;category&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span&gt;前端开发&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;8&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;draft&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span&gt;false&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;9&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;---&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/figure&gt;&lt;/div&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;属性&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;title&lt;/code&gt;&lt;/td&gt;&lt;td&gt;文章标题。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;published&lt;/code&gt;&lt;/td&gt;&lt;td&gt;文章发布日期。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;updated&lt;/code&gt;&lt;/td&gt;&lt;td&gt;文章更新日期。如果未设置，将默认使用发布日期。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;pinned&lt;/code&gt;&lt;/td&gt;&lt;td&gt;是否将此文章置顶在文章列表顶部。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;description&lt;/code&gt;&lt;/td&gt;&lt;td&gt;文章的简短描述。显示在首页上。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;image&lt;/code&gt;&lt;/td&gt;&lt;td&gt;文章封面图片路径。&lt;br /&gt;1. 以 &lt;code&gt;http://&lt;/code&gt; 或 &lt;code&gt;https://&lt;/code&gt; 开头：使用网络图片&lt;br /&gt;2. 以 &lt;code&gt;/&lt;/code&gt; 开头：&lt;code&gt;public&lt;/code&gt; 目录中的图片&lt;br /&gt;3. 不带任何前缀：相对于 markdown 文件的路径&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;tags&lt;/code&gt;&lt;/td&gt;&lt;td&gt;文章标签。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;category&lt;/code&gt;&lt;/td&gt;&lt;td&gt;文章分类。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;lang&lt;/code&gt;&lt;/td&gt;&lt;td&gt;文章语言代码（如 &lt;code&gt;zh-CN&lt;/code&gt;）。仅当文章语言与站点默认语言不同时设置。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;licenseName&lt;/code&gt;&lt;/td&gt;&lt;td&gt;文章内容的许可证名称。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;licenseUrl&lt;/code&gt;&lt;/td&gt;&lt;td&gt;文章内容的许可证链接。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;author&lt;/code&gt;&lt;/td&gt;&lt;td&gt;文章作者。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;sourceLink&lt;/code&gt;&lt;/td&gt;&lt;td&gt;文章内容的来源链接或参考。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;draft&lt;/code&gt;&lt;/td&gt;&lt;td&gt;如果这篇文章仍是草稿，则不会显示。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;comment&lt;/code&gt;&lt;/td&gt;&lt;td&gt;是否启用此文章的评论功能。默认为 &lt;code&gt;true&lt;/code&gt;。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;slug&lt;/code&gt;&lt;/td&gt;&lt;td&gt;自定义文章 URL 路径。如果不设置，将使用文件名作为 URL。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;&lt;td&gt;文章密码。设置后文章内容将被 AES-256-GCM 加密，访客需输入密码才能查看。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;passwordHint&lt;/code&gt;&lt;/td&gt;&lt;td&gt;密码提示。显示在密码输入框上方，帮助访客回忆密码，也可以不加。&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/section&gt;
-&lt;section&gt;&lt;h2&gt;文章文件的放置位置&lt;a href=&quot;#文章文件的放置位置&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;您的文章文件应放置在 &lt;code&gt;src/content/posts/&lt;/code&gt; 目录中。您也可以创建子目录来更好地组织您的文章和资源。&lt;/p&gt;&lt;div&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;/figcaption&gt;&lt;pre&gt;&lt;code&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;1&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;src/content/posts/&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;2&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;├── post-1.md&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;3&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;└── post-2/&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;4&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span&gt;    &lt;/span&gt;&lt;/span&gt;&lt;span&gt;├── cover.png&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;5&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span&gt;    &lt;/span&gt;&lt;/span&gt;&lt;span&gt;└── index.md&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/figure&gt;&lt;/div&gt;&lt;/section&gt;
-&lt;section&gt;&lt;h2&gt;自定义文章 URL (Slug)&lt;a href=&quot;#自定义文章-url-slug&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;section&gt;&lt;h3&gt;什么是 Slug？&lt;a href=&quot;#什么是-slug&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Slug 是文章 URL 路径的自定义部分。如果不设置 slug，系统将使用文件名作为 URL。&lt;/p&gt;&lt;/section&gt;&lt;section&gt;&lt;h3&gt;Slug 使用示例&lt;a href=&quot;#slug-使用示例&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;&lt;section&gt;&lt;h4&gt;示例 1：使用文件名作为 URL&lt;a href=&quot;#示例-1使用文件名作为-url&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;/figcaption&gt;&lt;pre&gt;&lt;code&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;1&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;---&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;2&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;title&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span&gt;我的第一篇博客文章&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;3&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;published&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span&gt;2023-09-09&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;4&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;---&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/figure&gt;&lt;/div&gt;&lt;p&gt;文件：&lt;code&gt;src/content/posts/my-first-blog-post.md&lt;/code&gt;&lt;/p&gt;&lt;p&gt;URL：&lt;code&gt;/posts/my-first-blog-post&lt;/code&gt;&lt;/p&gt;&lt;/section&gt;&lt;section&gt;&lt;h4&gt;示例 2：自定义 Slug&lt;a href=&quot;#示例-2自定义-slug&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;/figcaption&gt;&lt;pre&gt;&lt;code&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;1&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;---&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;2&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;title&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span&gt;我的第一篇博客文章&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;3&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;published&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span&gt;2023-09-09&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;4&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;slug&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span&gt;hello-world&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;5&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;---&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/figure&gt;&lt;/div&gt;&lt;p&gt;文件：&lt;code&gt;src/content/posts/my-first-blog-post.md&lt;/code&gt;&lt;/p&gt;&lt;p&gt;URL：&lt;code&gt;/posts/hello-world&lt;/code&gt;&lt;/p&gt;&lt;/section&gt;&lt;section&gt;&lt;h4&gt;示例 3：其他语言文件名使用Slug&lt;a href=&quot;#示例-3其他语言文件名使用slug&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;/figcaption&gt;&lt;pre&gt;&lt;code&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;1&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;---&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;2&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;title&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span&gt;如何使用 Firefly 博客主题&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;3&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;published&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span&gt;2023-09-09&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;4&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;slug&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span&gt;how-to-use-firefly-blog-theme&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;5&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;---&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/figure&gt;&lt;/div&gt;&lt;p&gt;文件：&lt;code&gt;src/content/posts/如何使用Firefly博客主题.md&lt;/code&gt;&lt;/p&gt;&lt;p&gt;URL：&lt;code&gt;/posts/how-to-use-firefly-blog-theme&lt;/code&gt;&lt;/p&gt;&lt;/section&gt;&lt;/section&gt;&lt;section&gt;&lt;h3&gt;Slug 使用建议&lt;a href=&quot;#slug-使用建议&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;使用英文和连字符&lt;/strong&gt;：&lt;code&gt;my-awesome-post&lt;/code&gt; 而不是 &lt;code&gt;my awesome post&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;保持简洁&lt;/strong&gt;：避免过长的 slug&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;具有描述性&lt;/strong&gt;：让 URL 能够反映文章内容&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;避免特殊字符&lt;/strong&gt;：只使用字母、数字和连字符&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;保持一致性&lt;/strong&gt;：在整个博客中使用相似的命名模式&lt;/li&gt;
-&lt;/ol&gt;&lt;/section&gt;&lt;section&gt;&lt;h3&gt;注意事项&lt;a href=&quot;#注意事项&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Slug 一旦设置并发布，建议不要随意更改，以免影响 SEO 和已存在的链接&lt;/li&gt;
-&lt;li&gt;如果多个文章使用相同的 slug，后面的文章会覆盖前面的&lt;/li&gt;
-&lt;li&gt;Slug 会自动转换为小写&lt;/li&gt;
-&lt;/ul&gt;&lt;/section&gt;&lt;/section&gt;</content:encoded></item><item><title>下班后打开手机就能搞的3种AI副业（亲测有效）</title><link>https://gaoaiqian.com/posts/2026-06-18-ai-phone-3-hustles/</link><guid isPermaLink="true">https://gaoaiqian.com/posts/2026-06-18-ai-phone-3-hustles/</guid><description>不下APP、不买设备、不用学技术。一部手机，下班后30分钟，AI帮你赚零花钱。</description><pubDate>Thu, 18 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;section&gt;&lt;h2&gt;刚下班，打开手机，还能干活吗&lt;a href=&quot;#刚下班打开手机还能干活吗&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;工厂站了一天，回到家腿都是酸的。打开电脑？不存在的。只想躺床上刷手机。&lt;/p&gt;&lt;p&gt;但如果我告诉你——就靠躺床上刷手机那半小时，一个月能多出 1000-3000 块呢？&lt;/p&gt;&lt;p&gt;我自己就是这么干的。下面三条路，都是我亲自跑通的。&lt;/p&gt;&lt;/section&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>搞AI钱</title><description>下班后的AI搞钱实录</description><link>https://gaoaiqian.com/</link><templateTheme>Firefly</templateTheme><templateThemeVersion>6.12.1</templateThemeVersion><templateThemeUrl>https://github.com/CuteLeaf/Firefly</templateThemeUrl><lastBuildDate>2026年6月16日 13:59:01</lastBuildDate><item><title>下班后打开手机就能搞的3种AI副业（亲测有效）</title><link>https://gaoaiqian.com/posts/2026-06-18-ai-phone-3-hustles/</link><guid isPermaLink="true">https://gaoaiqian.com/posts/2026-06-18-ai-phone-3-hustles/</guid><description>不下APP、不买设备、不用学技术。一部手机，下班后30分钟，AI帮你赚零花钱。</description><pubDate>Thu, 18 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;section&gt;&lt;h2&gt;刚下班，打开手机，还能干活吗&lt;a href=&quot;#刚下班打开手机还能干活吗&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;工厂站了一天，回到家腿都是酸的。打开电脑？不存在的。只想躺床上刷手机。&lt;/p&gt;&lt;p&gt;但如果我告诉你——就靠躺床上刷手机那半小时，一个月能多出 1000-3000 块呢？&lt;/p&gt;&lt;p&gt;我自己就是这么干的。下面三条路，都是我亲自跑通的。&lt;/p&gt;&lt;/section&gt;
 &lt;section&gt;&lt;h2&gt;1. AI帮你写小红书笔记&lt;a href=&quot;#1-ai帮你写小红书笔记&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;小红书是什么？就是那个”种草”平台。你写一篇推荐某个东西的笔记，有人看了去买，你就赚佣金。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;难吗&lt;/strong&gt;：以前难。你没有文笔、不会拍照、不知道写什么。但现在有AI。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;怎么搞&lt;/strong&gt;：&lt;/p&gt;&lt;ol&gt;
 &lt;li&gt;打开 DeepSeek（手机浏览器就能用，免费的）&lt;/li&gt;
 &lt;li&gt;输入：“帮我写一篇小红书笔记，推荐一款适合上班族用的保温饭盒，语气要像普通人分享，不要像广告”&lt;/li&gt;
@@ -145,7 +51,7 @@ AI给你一篇500字的回答，你复制粘贴过去，完事。&lt;/p&gt;&lt;p
 
 
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;如果你…&lt;/th&gt;&lt;th&gt;从这条开始&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;喜欢分享、用过很多产品&lt;/td&gt;&lt;td&gt;小红书笔记带货&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;不爱写长文、但刷手机时间多&lt;/td&gt;&lt;td&gt;百度知道答题&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;想一劳永逸、不怕前期投入&lt;/td&gt;&lt;td&gt;做数字产品&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;如果精力允许，&lt;strong&gt;1+3 组合&lt;/strong&gt;最好。晚上不累的时候写两条笔记（15分钟）。周末抽一个晚上做一套小产品（2小时）。&lt;/p&gt;&lt;/section&gt;
-&lt;section&gt;&lt;h2&gt;说句实话&lt;a href=&quot;#说句实话&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;这些都不是一夜暴富的路。我搞了大半年，现在每个月也就多两三千。但这两三千——是我不加班、不求人、不用看领导脸色赚来的。&lt;/p&gt;&lt;p&gt;工厂什么都可能变——订单少了就裁员、线长了就加班。但手机里的AI，永远是你说了算。&lt;/p&gt;&lt;hr /&gt;&lt;p&gt;&lt;em&gt;我是白银，用 AI 搞副业的工厂工人。每周分享真实经验。不信的可以试试第一条，两周后回来谢谢我。&lt;/em&gt;&lt;/p&gt;&lt;/section&gt;</content:encoded></item><item><title>不露脸也能赚钱！2026年用AI做视频的5个搞钱方法</title><link>https://gaoaiqian.com/posts/2026-06-16-ai-video-5-ways/</link><guid isPermaLink="true">https://gaoaiqian.com/posts/2026-06-16-ai-video-5-ways/</guid><description>不用露脸、不用拍摄、不用剪辑基础。5种AI视频赚钱方法，零基础也能上手。</description><pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;section&gt;&lt;h2&gt;说实话，我以前也不敢做视频&lt;a href=&quot;#说实话我以前也不敢做视频&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;我是白银，一个在工厂上班的普通人。以前刷抖音刷B站，看到那些博主赚钱，心里痒痒的。但一想到要露脸、要口才、要会剪辑——算了，手机一扔继续刷。&lt;/p&gt;&lt;p&gt;后来我发现，AI 已经把这事变得完全不一样了。&lt;/p&gt;&lt;p&gt;2026年的今天，一个人、一台电脑、不露脸、不拍摄，就能做出能赚钱的视频。我试了三个月，现在每个月多赚 1500 到 3000 块。今天把这5条路告诉你。&lt;/p&gt;&lt;/section&gt;
+&lt;section&gt;&lt;h2&gt;说句实话&lt;a href=&quot;#说句实话&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;这些都不是一夜暴富的路。我搞了大半年，现在每个月也就多两三千。但这两三千——是我不加班、不求人、不用看领导脸色赚来的。&lt;/p&gt;&lt;p&gt;工厂什么都可能变——订单少了就裁员、线长了就加班。但手机里的AI，永远是你说了算。&lt;/p&gt;&lt;hr /&gt;&lt;p&gt;&lt;em&gt;我是小白，用 AI 搞副业的工厂工人。每周分享真实经验。不信的可以试试第一条，两周后回来谢谢我。&lt;/em&gt;&lt;/p&gt;&lt;/section&gt;</content:encoded></item><item><title>不露脸也能赚钱！2026年用AI做视频的5个搞钱方法</title><link>https://gaoaiqian.com/posts/2026-06-16-ai-video-5-ways/</link><guid isPermaLink="true">https://gaoaiqian.com/posts/2026-06-16-ai-video-5-ways/</guid><description>不用露脸、不用拍摄、不用剪辑基础。5种AI视频赚钱方法，零基础也能上手。</description><pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;section&gt;&lt;h2&gt;说实话，我以前也不敢做视频&lt;a href=&quot;#说实话我以前也不敢做视频&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;我是小白，一个在工厂上班的普通人。以前刷抖音刷B站，看到那些博主赚钱，心里痒痒的。但一想到要露脸、要口才、要会剪辑——算了，手机一扔继续刷。&lt;/p&gt;&lt;p&gt;后来我发现，AI 已经把这事变得完全不一样了。&lt;/p&gt;&lt;p&gt;2026年的今天，一个人、一台电脑、不露脸、不拍摄，就能做出能赚钱的视频。我试了三个月，现在每个月多赚 1500 到 3000 块。今天把这5条路告诉你。&lt;/p&gt;&lt;/section&gt;
 &lt;section&gt;&lt;h2&gt;1. AI写脚本 + AI配音 = 知识类短视频&lt;a href=&quot;#1-ai写脚本--ai配音--知识类短视频&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;这是最稳的一条路。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;怎么做&lt;/strong&gt;：用 DeepSeek 写一篇300字的科普稿，扔进剪映的”文本朗读”功能，选个AI配音，配上几张网图，一个视频就出来了。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;适合做什么内容&lt;/strong&gt;：&lt;/p&gt;&lt;ul&gt;
 &lt;li&gt;冷知识科普（恐龙为什么灭绝）&lt;/li&gt;
 &lt;li&gt;职场技巧（和领导相处的三个禁忌）&lt;/li&gt;
@@ -202,7 +108,7 @@ AI给你一篇500字的回答，你复制粘贴过去，完事。&lt;/p&gt;&lt;p
 
 
 
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;方法&lt;/th&gt;&lt;th&gt;难度&lt;/th&gt;&lt;th&gt;时间投入&lt;/th&gt;&lt;th&gt;月收入预估&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;AI配音知识视频&lt;/td&gt;&lt;td&gt;⭐&lt;/td&gt;&lt;td&gt;每天30分钟&lt;/td&gt;&lt;td&gt;500-2000&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;AI生成画面短视频&lt;/td&gt;&lt;td&gt;⭐⭐&lt;/td&gt;&lt;td&gt;每天1小时&lt;/td&gt;&lt;td&gt;1000-3000&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;”搬运+改造”&lt;/td&gt;&lt;td&gt;⭐⭐&lt;/td&gt;&lt;td&gt;每天1小时&lt;/td&gt;&lt;td&gt;1000-5000&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;商品展示带货&lt;/td&gt;&lt;td&gt;⭐&lt;/td&gt;&lt;td&gt;每天30分钟&lt;/td&gt;&lt;td&gt;不确定&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;做教程教别人&lt;/td&gt;&lt;td&gt;⭐⭐⭐&lt;/td&gt;&lt;td&gt;前期集中做&lt;/td&gt;&lt;td&gt;1000-5000&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;现在开始的话，&lt;strong&gt;推荐从第1条和第3条组合入手&lt;/strong&gt;——AI配音知识类+搬运改造。两个方向都不需要脸、不需要声音、不需要拍摄设备。&lt;/p&gt;&lt;p&gt;下篇文章我会具体写「一条视频从选题到发布，每个步骤怎么做」。关注我，别走丢。&lt;/p&gt;&lt;hr /&gt;&lt;p&gt;&lt;em&gt;我是白银，用 AI 搞副业的工厂工人。每周分享真实赚钱经验。不画大饼，不卖课，只讲我试过的。&lt;/em&gt;&lt;/p&gt;&lt;/section&gt;</content:encoded></item><item><title>2026年普通人用AI搞副业的5条路（零基础也能做）</title><link>https://gaoaiqian.com/posts/2026-06-15-ai-fuye-5-ways/</link><guid isPermaLink="true">https://gaoaiqian.com/posts/2026-06-15-ai-fuye-5-ways/</guid><description>不写代码、不露脸、不投钱，AI替你干活。5条已验证的AI副业路径。</description><pubDate>Mon, 15 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;section&gt;&lt;h2&gt;前言&lt;a href=&quot;#前言&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;我是白银，一个普通的工厂工人。每天下班后只有两三个小时。但最近半年，我用 AI 搞出了每月 2000 块的额外收入。这篇文章写给你——跟我一样的普通人。&lt;/p&gt;&lt;p&gt;不需要编程，不需要投资，不需要辞职。&lt;/p&gt;&lt;/section&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;方法&lt;/th&gt;&lt;th&gt;难度&lt;/th&gt;&lt;th&gt;时间投入&lt;/th&gt;&lt;th&gt;月收入预估&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;AI配音知识视频&lt;/td&gt;&lt;td&gt;⭐&lt;/td&gt;&lt;td&gt;每天30分钟&lt;/td&gt;&lt;td&gt;500-2000&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;AI生成画面短视频&lt;/td&gt;&lt;td&gt;⭐⭐&lt;/td&gt;&lt;td&gt;每天1小时&lt;/td&gt;&lt;td&gt;1000-3000&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;”搬运+改造”&lt;/td&gt;&lt;td&gt;⭐⭐&lt;/td&gt;&lt;td&gt;每天1小时&lt;/td&gt;&lt;td&gt;1000-5000&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;商品展示带货&lt;/td&gt;&lt;td&gt;⭐&lt;/td&gt;&lt;td&gt;每天30分钟&lt;/td&gt;&lt;td&gt;不确定&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;做教程教别人&lt;/td&gt;&lt;td&gt;⭐⭐⭐&lt;/td&gt;&lt;td&gt;前期集中做&lt;/td&gt;&lt;td&gt;1000-5000&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;现在开始的话，&lt;strong&gt;推荐从第1条和第3条组合入手&lt;/strong&gt;——AI配音知识类+搬运改造。两个方向都不需要脸、不需要声音、不需要拍摄设备。&lt;/p&gt;&lt;p&gt;下篇文章我会具体写「一条视频从选题到发布，每个步骤怎么做」。关注我，别走丢。&lt;/p&gt;&lt;hr /&gt;&lt;p&gt;&lt;em&gt;我是小白，用 AI 搞副业的工厂工人。每周分享真实赚钱经验。不画大饼，不卖课，只讲我试过的。&lt;/em&gt;&lt;/p&gt;&lt;/section&gt;</content:encoded></item><item><title>2026年普通人用AI搞副业的5条路（零基础也能做）</title><link>https://gaoaiqian.com/posts/2026-06-15-ai-fuye-5-ways/</link><guid isPermaLink="true">https://gaoaiqian.com/posts/2026-06-15-ai-fuye-5-ways/</guid><description>不写代码、不露脸、不投钱，AI替你干活。5条已验证的AI副业路径。</description><pubDate>Mon, 15 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;section&gt;&lt;h2&gt;前言&lt;a href=&quot;#前言&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;我是小白，一个普通的工厂工人。每天下班后只有两三个小时。但最近半年，我用 AI 搞出了每月 2000 块的额外收入。这篇文章写给你——跟我一样的普通人。&lt;/p&gt;&lt;p&gt;不需要编程，不需要投资，不需要辞职。&lt;/p&gt;&lt;/section&gt;
 &lt;section&gt;&lt;h2&gt;一、AI 帮你写自媒体（每天 30 分钟）&lt;a href=&quot;#一ai-帮你写自媒体每天-30-分钟&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;怎么做&lt;/strong&gt;：用 DeepSeek 批量生成文章 → 发到公众号/知乎/头条 → 靠流量主广告赚钱。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;成本&lt;/strong&gt;：0 元&lt;br /&gt;
 &lt;strong&gt;时间&lt;/strong&gt;：每天 30 分钟&lt;br /&gt;
 &lt;strong&gt;收入&lt;/strong&gt;：起步 500-2000 元/月，积累后更高&lt;/p&gt;&lt;p&gt;关键在于选对话题。写”工厂生活”比写”科技前沿”流量大——因为你懂、读者也懂。&lt;/p&gt;&lt;/section&gt;
@@ -211,4 +117,4 @@ AI给你一篇500字的回答，你复制粘贴过去，完事。&lt;/p&gt;&lt;p
 &lt;section&gt;&lt;h2&gt;三、卖 AI Prompts（做一次卖永久）&lt;a href=&quot;#三卖-ai-prompts做一次卖永久&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;怎么做&lt;/strong&gt;：整理一组好用的 AI 提示词 → 放到 Gumroad/小红书 → 定价 9.9-29.9 元&lt;/p&gt;&lt;p&gt;&lt;strong&gt;为什么有效&lt;/strong&gt;：大多数人不知道怎么跟 AI 对话。你帮他们写好，他们买。&lt;/p&gt;&lt;/section&gt;
 &lt;section&gt;&lt;h2&gt;四、AI 自动化客服/助手（帮小老板省人力）&lt;a href=&quot;#四ai-自动化客服助手帮小老板省人力&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;怎么做&lt;/strong&gt;：用 ChatGPT/DeepSeek 的 API 搭一个自动回复机器人 → 卖给淘宝店主/微商&lt;/p&gt;&lt;p&gt;&lt;strong&gt;需要的技能&lt;/strong&gt;：不需要会编程。网上有现成的工具（比如 Dify、Coze），拖拽就能搭。&lt;/p&gt;&lt;/section&gt;
 &lt;section&gt;&lt;h2&gt;五、AI 陪跑/教学&lt;a href=&quot;#五ai-陪跑教学&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;怎么做&lt;/strong&gt;：把你学会的 AI 技能教给别人 → 一对一辅导或录课程&lt;/p&gt;&lt;p&gt;你不需要是专家。你只需要比学员早学了 2 周。&lt;/p&gt;&lt;/section&gt;
-&lt;section&gt;&lt;h2&gt;结尾&lt;a href=&quot;#结尾&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;五条路我都在试。第一条和第三条目前效果最好——自媒体文章 + 卖 prompts 组合的模式很稳。&lt;/p&gt;&lt;p&gt;下周我会详细写：“工厂工人怎么用 AI 写出 10w+ 阅读的文章”。关注我，不迷路。&lt;/p&gt;&lt;hr /&gt;&lt;p&gt;&lt;em&gt;我是白银，一个用 AI 搞副业的工厂工人。每周分享真实赚钱经验。&lt;/em&gt;&lt;/p&gt;&lt;/section&gt;</content:encoded></item></channel></rss>
+&lt;section&gt;&lt;h2&gt;结尾&lt;a href=&quot;#结尾&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;五条路我都在试。第一条和第三条目前效果最好——自媒体文章 + 卖 prompts 组合的模式很稳。&lt;/p&gt;&lt;p&gt;下周我会详细写：“工厂工人怎么用 AI 写出 10w+ 阅读的文章”。关注我，不迷路。&lt;/p&gt;&lt;hr /&gt;&lt;p&gt;&lt;em&gt;我是小白，一个用 AI 搞副业的工厂工人。每周分享真实赚钱经验。&lt;/em&gt;&lt;/p&gt;&lt;/section&gt;</content:encoded></item></channel></rss>
