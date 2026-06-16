@@ -33,6 +33,9 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		],
 	});
 
+	// 提示词商店
+	links.push(LinkPresets.Products);
+
 	// 赞助
 	links.push(LinkPresets.Sponsor);
 
@@ -94,6 +97,11 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		name: "留言",
 		url: "/guestbook/",
 		icon: "material-symbols:chat",
+	},
+	Products: {
+		name: "提示词商店",
+		url: "/products/",
+		icon: "material-symbols:shopping-bag",
 	},
 	About: {
 		name: "关于我",
