@@ -2,45 +2,27 @@ import type { SponsorConfig } from "../types/sponsorConfig";
 
 export const sponsorConfig: SponsorConfig = {
 	// 页面标题，如果留空则使用 i18n 中的翻译
-	title: "",
+	title: "支持页已关闭",
 
 	// 页面描述文本，如果留空则使用 i18n 中的翻译
-	description: "",
+	description: "当前博客不提供资金支持、结算或自动交付入口。",
 
-	// 赞助用途说明
+	// 支持用途说明
 	usage:
-		"你的支持让我有动力继续分享真实的AI搞钱经验。每一分钱都会用来买更好的AI工具做测试，然后把结果写给你看。",
+		"当前阶段只整理 AI 内容运营系统、资料包和模板库，不接入资金支持、结算或商业入口。",
 
-	// 是否显示赞助者列表
-	showSponsorsList: true,
+	// 是否显示支持者列表
+	showSponsorsList: false,
 
 	// 是否显示评论区，需要先在commentConfig.ts启用评论系统
 	showComment: false,
 
-	// 是否在文章详情页底部显示赞助按钮
-	showButtonInPost: true,
+	// 是否在文章详情页底部显示支持按钮
+	showButtonInPost: false,
 
-	// 赞助方式列表
-	methods: [
-		{
-			name: "支付宝",
-			icon: "fa7-brands:alipay",
-			// 收款码图片路径（需要放在 public 目录下）
-			qrCode: "/assets/images/sponsor/alipay.png",
-			link: "",
-			description: "使用 支付宝 扫码赞助",
-			enabled: true,
-		},
-		{
-			name: "微信",
-			icon: "fa7-brands:weixin",
-			qrCode: "/assets/images/sponsor/wechat.png",
-			link: "",
-			description: "使用 微信 扫码赞助",
-			enabled: true,
-		},
-	],
+	// 支持方式列表。当前保持为空，避免任何资金入口或外部入口被展示。
+	methods: [],
 
-	// 赞助者列表（可选）
+	// 支持者列表（可选）
 	sponsors: [],
 };

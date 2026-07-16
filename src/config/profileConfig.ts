@@ -6,13 +6,13 @@ export const profileConfig: ProfileConfig = {
 	// 1. public 目录（以 "/" 开头，不优化）："/assets/images/avatar.webp"
 	// 2. src 目录（不以 "/" 开头，自动优化但会增加构建时间，推荐）："assets/images/avatar.webp"
 	// 3. 远程 URL："https://example.com/avatar.jpg"
-	avatar: "assets/images/avatar.avif",
+	avatar: "assets/images/firefly.png",
 
 	// 名字
-	name: "小白",
+	name: "AI内容诊断室",
 
 	// 个人签名
-	bio: "工厂工人，下班后用AI搞副业。",
+	bio: "实测 AI 内容运营、一人公司工作流与效率工具，记录成本、踩坑和收益验证。",
 
 	// 链接配置
 	// 已经预装的图标集：fa7-brands，fa7-regular，fa7-solid，material-symbols，simple-icons
@@ -21,24 +21,6 @@ export const profileConfig: ProfileConfig = {
 	// `pnpm add @iconify-json/<icon-set-name>`
 	// showName: true 时显示图标和名称，false 时只显示图标
 	links: [
-		{
-			name: "QQ群",
-			icon: "fa7-brands:qq",
-			url: "https://qm.qq.com/q/952926387",
-			showName: true,
-		},
-		{
-			name: "GitHub",
-			icon: "fa7-brands:github",
-			url: "https://github.com/Takehayaally",
-			showName: false,
-		},
-		{
-			name: "Email",
-			icon: "fa7-solid:envelope",
-			url: "mailto:q749381667@gmail.com",
-			showName: false,
-		},
 		{
 			name: "RSS",
 			icon: "fa7-solid:rss",

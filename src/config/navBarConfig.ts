@@ -33,11 +33,8 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		],
 	});
 
-	// 提示词商店
+	// 资料库
 	links.push(LinkPresets.Products);
-
-	// 赞助
-	links.push(LinkPresets.Sponsor);
 
 	// 关于我
 	links.push(LinkPresets.About);
@@ -88,20 +85,15 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		url: "/friends/",
 		icon: "material-symbols:group",
 	},
-	Sponsor: {
-		name: "赞助",
-		url: "/sponsor/",
-		icon: "material-symbols:favorite",
-	},
 	Guestbook: {
 		name: "留言",
 		url: "/guestbook/",
 		icon: "material-symbols:chat",
 	},
 	Products: {
-		name: "提示词商店",
+		name: "资料库",
 		url: "/products/",
-		icon: "material-symbols:shopping-bag",
+		icon: "material-symbols:folder-managed",
 	},
 	About: {
 		name: "关于我",

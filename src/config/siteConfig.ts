@@ -6,37 +6,40 @@ const SITE_LANG = "zh_CN";
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "搞AI钱",
+	title: "AI内容诊断室",
 
 	// 站点副标题
-	subtitle: "下班后的AI搞钱实录",
+	subtitle: "实测 AI 内容运营、一人公司工作流与平台收益",
 
 	// 站点 URL
 	site_url: "https://gaoaiqian.com",
 
 	// 站点描述
 	description:
-		"我是小白，工厂工人。每天下班后用AI搞副业，不写代码、不露脸、不投钱。这里分享真实经验。",
+		"AI内容诊断室记录真实的内容运营实验：选题、图文、无脸视频、自动化、平台规则、成本、失败与收益验证。",
 
 	// 站点关键词
 	keywords: [
-		"AI副业",
-		"搞钱",
-		"AI赚钱",
-		"下班搞钱",
-		"副业",
-		"工厂工人",
-		"小白搞AI",
+		"AI内容运营",
+		"一人公司",
+		"内容运营系统",
+		"AI工作流",
+		"普通人AI",
+		"公众号运营",
+		"小红书运营",
+		"B站运营",
+		"抖音运营",
+		"内容复盘",
 	],
 
 	// 主题色
 	themeColor: {
 		// 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
-		hue: 165,
+		hue: 12,
 		// 是否对访问者隐藏主题色选择器
-		fixed: false,
+		fixed: true,
 		// 默认模式："light" 亮色，"dark" 暗色，"system" 跟随系统
-		defaultMode: "system",
+		defaultMode: "light",
 	},
 
 	// 页面整体宽度（单位：rem）
@@ -78,7 +81,7 @@ export const siteConfig: SiteConfig = {
 			alt: "🍀",
 		},
 		// 导航栏标题
-		title: "搞AI钱",
+		title: "AI内容诊断室",
 		// 全宽导航栏，导航栏是否占满屏幕宽度
 		widthFull: false,
 		// 导航菜单对齐方式，left：左对齐，center：居中
@@ -101,8 +104,8 @@ export const siteConfig: SiteConfig = {
 	pages: {
 		// 友链页面开关
 		friends: false,
-		// 赞助页面开关
-		sponsor: true,
+		// 支持页面开关
+		sponsor: false,
 		// 留言板页面开关，需要配置评论系统
 		guestbook: false,
 		// 番组计划页面开关，含追番、游戏、书籍和音乐
