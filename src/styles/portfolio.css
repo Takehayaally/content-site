@@ -94,6 +94,9 @@ body.portfolio-body img { display: block; max-width: 100%; }
 .page-hero { padding-block: clamp(4.5rem, 8vw, 8rem); }
 .page-hero__grid { display: grid; gap: 2rem; grid-template-columns: minmax(0, 1.4fr) minmax(16rem, .55fr); }
 .page-summary { align-self: end; border-top: 1px solid var(--ink); color: var(--muted); font-size: 1.02rem; margin: 0; padding-top: 1rem; }
+.not-found { min-height: min(48rem, calc(100vh - 5.25rem)); padding-block: clamp(5rem, 12vw, 10rem); }
+.not-found > p:not(.eyebrow) { font-size: 1.1rem; margin: 2rem 0; max-width: 38rem; }
+.not-found__links { display: flex; flex-wrap: wrap; gap: 2rem; }
 
 .project-hero { padding-block: clamp(4rem, 8vw, 7rem) 2.5rem; }
 .project-switcher { align-items: center; border-bottom: 1px solid var(--line); display: grid; gap: 1.5rem; grid-template-columns: minmax(10rem, .35fr) minmax(0, 1fr); padding-block: 1rem; }

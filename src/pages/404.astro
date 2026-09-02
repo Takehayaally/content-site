@@ -1,72 +1,12 @@
 ---
-import { Icon } from "astro-icon/components";
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
-import { url } from "@/utils/url-utils";
 ---
 
-<PortfolioLayout title="页面未找到" description="该页面不存在或已从公开作品站移除。">
-    <div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-96">
-        <div class="card-base z-10 px-9 py-12 relative w-full flex flex-col items-center justify-center text-center">
-            <!-- 404 大号数字 -->
-            <div class="text-8xl md:text-9xl font-bold text-(--primary) opacity-20 mb-4">
-                404
-            </div>
-            
-            <!-- 404 图标 -->
-            <div class="mb-6">
-                <Icon name="material-symbols:error-outline" class="text-6xl text-(--primary)" />
-            </div>
-            
-            <!-- 标题 -->
-            <div class="text-3xl md:text-4xl font-bold mb-4 text-90">
-                这个页面不在公开作品站中
-            </div>
-            
-            <!-- 描述 -->
-            <p class="text-lg text-75 mb-8 max-w-md">
-                已下架内容、未授权素材和不存在的地址不会对外展示。
-            </p>
-            
-            <!-- 返回首页按钮 -->
-            <a 
-                href={url("/")}
-                class="inline-flex items-center gap-2 px-6 py-3 bg-(--primary) text-white rounded-(--radius-large) hover:bg-(--btn-content) transition-colors duration-200 font-medium"
-            >
-                <Icon name="material-symbols:home" class="text-xl" />
-                返回首页
-            </a>
-            
-            <!-- 装饰性元素 -->
-            <div class="absolute top-4 left-4 opacity-10">
-                <Icon name="material-symbols:sentiment-sad" class="text-4xl text-(--primary)" />
-            </div>
-            <div class="absolute bottom-4 right-4 opacity-10">
-                <Icon name="material-symbols:search-off" class="text-4xl text-(--primary)" />
-            </div>
-        </div>
-    </div>
+<PortfolioLayout title="页面未找到" description="该页面不存在或已从 NOVA 公开作品站移除。">
+	<section class="not-found site-shell">
+		<p class="eyebrow">404 / Not Found</p>
+		<h1 class="page-title">这个页面不在<br />公开作品站中。</h1>
+		<p>已下架内容、未授权素材和不存在的地址不会对外展示。</p>
+		<div class="not-found__links"><a class="text-link" href="/">返回首页 <span>↗</span></a><a class="text-link" href="/work/">查看全部作品 <span>↗</span></a></div>
+	</section>
 </PortfolioLayout>
-
-<style>
-    /* 添加一些动画效果 */
-    .card-base {
-        animation: fadeInUp 0.6s ease-out;
-    }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    /* 按钮悬停效果 */
-    a:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
-    }
-</style>

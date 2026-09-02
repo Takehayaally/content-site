@@ -8,13 +8,13 @@ import ProjectSwitcher from "@/components/ProjectSwitcher.astro";
 <PortfolioLayout title="赵霜：把识别度写进设定" description="原创角色赵霜的四视图、表情、道具与角色设定系统。" ogImage={zhaoshuangSystem.src}>
 	<ProjectSwitcher current="zhaoshuang" />
 	<header class="project-hero site-shell"><p class="project-kicker">Case 03 / Character Bible</p><h1 class="project-title">赵霜：把识别度写进设定</h1><p class="project-lead">把角色从一张氛围图中拆出来，用四视图、表情、道具和固定锚点说明“什么不能变、什么可以延展”。</p><div class="project-meta"><div><span class="meta-label">Scope</span><strong>角色设定系统</strong></div><div><span class="meta-label">Focus</span><strong>一致性 / 可复用性</strong></div><div><span class="meta-label">Output</span><strong>四视图 / 表情 / 道具</strong></div><div><span class="meta-label">Status</span><strong>原创公开案例</strong></div></div></header>
-	<div class="project-cover"><Image src={zhaoshuangSystem} alt="赵霜原创角色的完整设定系统" widths={[800, 1400, 2000]} sizes="100vw" /></div>
+	<div class="project-cover"><Image src={zhaoshuangSystem} alt="赵霜原创角色的完整设定系统" widths={[800, 1400, 2000]} sizes="100vw" loading="eager" /></div>
 
 	<section class="site-shell case-section"><div><p class="eyebrow">01 / Purpose</p><h2>让角色在不同角度与情绪中仍然是同一个人。</h2></div><div class="case-body"><p>角色设定页的价值不是信息越多越好，而是把最容易漂移的部分明确下来：轮廓、发型、服装结构、主色、关键配件和表情范围。</p><ul class="case-points"><li><span>01</span><div><strong>四视图控制结构</strong><br />避免服装、发型和配件在转身后失去逻辑。</div></li><li><span>02</span><div><strong>表情定义角色弹性</strong><br />在保持五官锚点的前提下建立可用的情绪范围。</div></li><li><span>03</span><div><strong>道具强化身份</strong><br />让配件具有结构和功能，而非随机增加装饰。</div></li></ul></div></section>
 
 	<section class="site-shell case-section"><div><p class="eyebrow">02 / Character Bible</p><h2>设定信息的四个层级。</h2></div><div class="case-body"><div class="system-map"><div class="system-node system-node--acid"><span>01 / SHAPE</span><strong>轮廓与比例</strong></div><div class="system-node"><span>02 / STRUCTURE</span><strong>服装与发型</strong></div><div class="system-node system-node--ice"><span>03 / EMOTION</span><strong>表情范围</strong></div><div class="system-node"><span>04 / IDENTITY</span><strong>配件与道具</strong></div></div></div></section>
 
-	<figure class="case-full-visual"><Image src={zhaoshuangSystem} alt="赵霜四视图、表情与道具设定全览" widths={[900, 1500, 2200]} sizes="(max-width: 900px) 100vw, 66vw" /><figcaption>设定页以完整图面展示，保留四视图、表情、道具和版式之间的对应关系。</figcaption></figure>
+	<figure class="case-full-visual"><Image src={zhaoshuangSystem} alt="赵霜四视图、表情与道具设定全览" widths={[900, 1500, 2200]} sizes="(max-width: 900px) 100vw, 66vw" loading="eager" /><figcaption>设定页以完整图面展示，保留四视图、表情、道具和版式之间的对应关系。</figcaption></figure>
 
 	<section class="site-shell case-section"><div><p class="eyebrow">03 / Review</p><h2>设定不是终点，而是后续一致性的基线。</h2></div><div class="case-body"><p>这套资料可以支持后续主视觉、动作与商品载体的延展。若进入更完整生产，还需要增加色值、材质说明、比例标尺和高频动作验证；当前页面不把这些未完成项写成已有成果。</p></div></section>
 </PortfolioLayout>
