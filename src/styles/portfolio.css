@@ -172,7 +172,7 @@ body.portfolio-body img { display: block; max-width: 100%; }
 @media (max-width: 620px) {
 	.site-header__inner { min-height: 4.5rem; }
 	.site-brand__descriptor { display: none; }
-	.site-nav { gap: 1rem; }
+	.site-nav { font-size: .82rem; gap: .7rem; }
 	.site-nav__contact { padding: .5rem .7rem; }
 	.display-title { font-size: clamp(2.7rem, 14vw, 4.2rem); }
 	.page-title { font-size: clamp(2.5rem, 13vw, 4rem); }
