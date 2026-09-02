@@ -1,0 +1,23 @@
+---
+interface Props {
+	current: "nova" | "baijin" | "zhaoshuang";
+}
+
+const { current } = Astro.props;
+const projects = [
+	{ id: "nova", href: "/work/nova/", label: "NOVA", detail: "原创 IP / 商品系统" },
+	{ id: "baijin", href: "/work/baijin/", label: "白烬", detail: "角色 KV / 世界叙事" },
+	{ id: "zhaoshuang", href: "/work/zhaoshuang/", label: "赵霜", detail: "角色设定 / 规范系统" },
+] as const;
+---
+
+<nav class="project-switcher site-shell" aria-label="原创 IP 项目导航">
+	<span class="project-switcher__label">ORIGINAL IP / SELECT</span>
+	<div class="project-switcher__items">
+		{projects.map((project) => (
+			<a href={project.href} aria-current={project.id === current ? "page" : undefined}>
+				<strong>{project.label}</strong><span>{project.detail}</span>
+			</a>
+		))}
+	</div>
+</nav>

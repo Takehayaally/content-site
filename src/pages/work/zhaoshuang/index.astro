@@ -2,9 +2,11 @@
 import { Image } from "astro:assets";
 import zhaoshuangSystem from "@/assets/images/portfolio/zhaoshuang-character-system.png";
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+import ProjectSwitcher from "@/components/ProjectSwitcher.astro";
 ---
 
 <PortfolioLayout title="赵霜：把识别度写进设定" description="原创角色赵霜的四视图、表情、道具与角色设定系统。" ogImage={zhaoshuangSystem.src}>
+	<ProjectSwitcher current="zhaoshuang" />
 	<header class="project-hero site-shell"><p class="project-kicker">Case 03 / Character Bible</p><h1 class="project-title">赵霜：把识别度写进设定</h1><p class="project-lead">把角色从一张氛围图中拆出来，用四视图、表情、道具和固定锚点说明“什么不能变、什么可以延展”。</p><div class="project-meta"><div><span class="meta-label">Scope</span><strong>角色设定系统</strong></div><div><span class="meta-label">Focus</span><strong>一致性 / 可复用性</strong></div><div><span class="meta-label">Output</span><strong>四视图 / 表情 / 道具</strong></div><div><span class="meta-label">Status</span><strong>原创公开案例</strong></div></div></header>
 	<div class="project-cover"><Image src={zhaoshuangSystem} alt="赵霜原创角色的完整设定系统" widths={[800, 1400, 2000]} sizes="100vw" /></div>
 
@@ -15,5 +17,4 @@ import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 	<figure class="case-full-visual"><Image src={zhaoshuangSystem} alt="赵霜四视图、表情与道具设定全览" widths={[900, 1500, 2200]} sizes="(max-width: 900px) 100vw, 66vw" /><figcaption>设定页以完整图面展示，保留四视图、表情、道具和版式之间的对应关系。</figcaption></figure>
 
 	<section class="site-shell case-section"><div><p class="eyebrow">03 / Review</p><h2>设定不是终点，而是后续一致性的基线。</h2></div><div class="case-body"><p>这套资料可以支持后续主视觉、动作与商品载体的延展。若进入更完整生产，还需要增加色值、材质说明、比例标尺和高频动作验证；当前页面不把这些未完成项写成已有成果。</p></div></section>
-	<a class="next-project" href="/work/"><div class="site-shell next-project__inner"><div><span class="project-kicker">All Work</span><h2>返回作品索引</h2></div><span>查看全部 →</span></div></a>
 </PortfolioLayout>
