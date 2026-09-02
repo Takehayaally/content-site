@@ -1,58 +1,53 @@
 ---
 import { Image } from "astro:assets";
-import profileAvatar from "@/assets/images/portfolio/profile-avatar.png";
 import baijinKeyVisual from "@/assets/images/portfolio/baijin-key-visual.png";
 import novaKeyVisual from "@/assets/images/portfolio/nova-key-visual.png";
 import novaMerchSystem from "@/assets/images/portfolio/nova-merch-system.png";
+import profileAvatar from "@/assets/images/portfolio/profile-avatar.png";
+import zhaoshuangSystem from "@/assets/images/portfolio/zhaoshuang-character-system.png";
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 ---
 
-<PortfolioLayout
-	title="NOVA | 二次元视觉设计与原创 IP"
-	description="NOVA 的二次元视觉设计、原创 IP、谷子与周边作品，以及创作研究。"
-	ogImage={novaKeyVisual.src}
->
-	<section class="portfolio-hero portfolio-home-hero">
-		<div class="portfolio-hero-copy">
-			<div class="portfolio-identity">
-				<Image src={profileAvatar} alt="NOVA 的个人头像" width={72} height={72} />
-				<div><span>NOVA</span><small>Visual design portfolio</small></div>
-			</div>
-			<p class="portfolio-eyebrow">Original IP · Visual design</p>
-			<h1>角色要有记忆点，<em>系列要能落地。</em></h1>
-			<p class="portfolio-lead">聚焦二次元视觉设计、原创 IP 与谷子/周边表达。先呈现作品，再说明设计判断、制作范围与公开边界。</p>
-			<div class="portfolio-actions">
-				<a class="portfolio-button portfolio-button--solid" href="/work/">进入作品集</a>
-				<a class="portfolio-button portfolio-button--quiet" href="/process/">查看工作方式</a>
-			</div>
+<PortfolioLayout title="NOVA" description="NOVA 的二次元视觉设计、原创 IP、角色系统与商品化表达作品集。" ogImage={novaKeyVisual.src}>
+	<section class="hero site-shell">
+		<div class="hero__intro">
+			<div><p class="eyebrow">NOVA / Visual Design Portfolio</p><h1 class="display-title"><span>让角色成为</span><span class="display-title__accent">一套世界。</span></h1></div>
+			<div class="hero__aside"><p>聚焦二次元角色视觉、原创 IP 与商品化表达。从角色锚点到主视觉、周边与陈列，建立可延展、可识别的视觉系统。</p><a class="text-link" href="/work/">浏览完整作品 <span>↗</span></a></div>
 		</div>
-		<div class="portfolio-hero-visual">
-			<Image src={novaKeyVisual} alt="原创 IP NOVA 的二次元角色主视觉" widths={[640, 960, 1200]} sizes="(max-width: 800px) 100vw, 48vw" />
-			<div class="portfolio-hero-caption"><strong>NOVA / FRAME SHIFT</strong><span>原创 IP · 角色视觉、主视觉与商品化系统</span></div>
-		</div>
+		<div class="hero__visual"><Image src={novaKeyVisual} alt="原创 IP NOVA 的角色主视觉" widths={[720, 1200, 1600]} sizes="(max-width: 900px) 100vw, 1240px" /><span class="hero__index">FEATURED / 01 — NOVA FRAME SHIFT</span></div>
 	</section>
 
-	<section class="portfolio-section">
-		<div class="portfolio-section-heading">
-			<div><p class="portfolio-eyebrow">Selected preview</p><h2>用系统，而不是单张图说话。</h2></div>
-			<p class="portfolio-section-note">精选区域只使用原创或权属清楚的素材。第三方 IP、未授权图和未冻结中间稿不进入公开作品页。</p>
+	<section class="section"><div class="site-shell">
+		<div class="section-heading"><div><p class="eyebrow">Selected Work / 2026</p><h2 class="section-title">作品先说话，方法随后。</h2></div><p class="section-heading__note">以下案例均使用原创或权属清楚的素材，并区分现有产物、设计判断与仍在完善的部分。</p></div>
+		<div class="work-list">
+			<a class="work-card" href="/work/nova/"><div class="work-card__visual"><Image src={novaMerchSystem} alt="NOVA 角色及谷子周边系统" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" /></div><div class="work-card__copy"><span class="work-number">01 / Original IP System</span><h3>NOVA：从角色到商品系统</h3><p>以统一锚点串联角色主视觉、徽章、立牌、卡牌、包装和陈列。</p><span class="work-arrow">VIEW CASE ↗</span></div></a>
+			<a class="work-card work-card--portrait" href="/work/baijin/"><div class="work-card__visual"><Image src={baijinKeyVisual} alt="原创角色白烬的雪地科幻主视觉" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" /></div><div class="work-card__copy"><span class="work-number">02 / Character Key Visual</span><h3>白烬：用环境完成角色叙事</h3><p>通过服装、机械配件、冷色环境和视觉焦点建立清晰的角色气质。</p><span class="work-arrow">VIEW CASE ↗</span></div></a>
+			<a class="work-card" href="/work/zhaoshuang/"><div class="work-card__visual"><Image src={zhaoshuangSystem} alt="原创角色赵霜的角色设定系统" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" /></div><div class="work-card__copy"><span class="work-number">03 / Character Bible</span><h3>赵霜：把识别度写进设定</h3><p>用四视图、表情、道具与配色构建可被持续复用的角色说明书。</p><span class="work-arrow">VIEW CASE ↗</span></div></a>
 		</div>
-		<div class="portfolio-work-grid">
-			<a class="portfolio-case portfolio-case--primary portfolio-case-link" href="/work/#selected-work">
-				<div class="portfolio-case-visual"><Image src={novaMerchSystem} alt="原创 IP NOVA 的谷子周边组合视觉" widths={[640, 960, 1200]} sizes="(max-width: 800px) 100vw, 60vw" /></div>
-				<div class="portfolio-case-copy"><span class="portfolio-case-label">Original IP / System Design</span><h3>NOVA：角色到谷子商品系统</h3><p>围绕角色锚点、主视觉、周边、包装和陈列建立统一的系列表达。</p></div>
-			</a>
-			<a class="portfolio-case portfolio-case--secondary portfolio-case-link" href="/work/#selected-work">
-				<div class="portfolio-case-visual"><Image src={baijinKeyVisual} alt="原创角色白烬的雪地科幻主视觉" widths={[640, 960, 1200]} sizes="(max-width: 800px) 100vw, 42vw" /></div>
-				<div class="portfolio-case-copy"><span class="portfolio-case-label">Original character / key visual</span><h3>白烬：主视觉与叙事情绪</h3><p>以服装、机械配件、环境和视觉焦点收束角色的识别度与张力。</p></div>
-			</a>
-		</div>
-		<div class="portfolio-actions"><a class="portfolio-button portfolio-button--quiet" href="/work/">查看全部精选案例</a></div>
-	</section>
+	</div></section>
 
-	<section class="portfolio-section portfolio-home-paths">
-		<a href="/process/" class="portfolio-lab-card"><strong>工作方式</strong><p>从 Brief、视觉锚点到候选筛选和交付检查，让工具为设计判断服务。</p></a>
-		<a href="/lab/" class="portfolio-lab-card"><strong>研究方向</strong><p>数字短片、角色一致性与视觉 QA 的持续研究，不把试验冒充成交付。</p></a>
-		<a href="/about/" class="portfolio-lab-card"><strong>公开边界</strong><p>明确原创、授权、研究素材与私人资产的区分，保护作品可信度。</p></a>
-	</section>
+	<section class="section"><div class="site-shell">
+		<div class="section-heading"><div><p class="eyebrow">Capability</p><h2 class="section-title">一套完整视觉，而不是一张偶然好图。</h2></div><p class="section-heading__note">工具参与生成与迭代，但最终呈现由明确的设计约束、筛选标准与人工判断负责。</p></div>
+		<div class="capability-grid">
+			<div class="capability"><span class="capability-index">01</span><h3>角色锚点</h3><p>身份、轮廓、服装、配件、表情与配色保持统一。</p></div>
+			<div class="capability"><span class="capability-index">02</span><h3>主视觉叙事</h3><p>用构图、环境、材质和光线完成角色气质的表达。</p></div>
+			<div class="capability"><span class="capability-index">03</span><h3>商品化延展</h3><p>让角色进入徽章、立牌、卡牌、包装与陈列场景。</p></div>
+			<div class="capability"><span class="capability-index">04</span><h3>视觉质检</h3><p>记录问题、拒绝原因和修正方向，控制一致性与可用性。</p></div>
+		</div>
+	</div></section>
+
+	<section class="dark-section"><div class="site-shell dark-section__grid">
+		<div class="dark-section__copy"><p class="eyebrow">Current Research</p><h2 class="section-title">把创作判断变成可复盘的方法。</h2><p>研究不用于堆砌概念，而用于提升下一次创作的稳定性、连续性与交付清晰度。</p><a class="text-link" href="/about/#research">查看方法与研究边界 <span>↗</span></a></div>
+		<div class="research-list">
+			<div class="research-item"><span>01</span><div><strong>数字短片前期</strong><p>镜头设计、节奏预演与角色连续性。</p></div></div>
+			<div class="research-item"><span>02</span><div><strong>角色一致性与视觉 QA</strong><p>识别比例、材质、手部、文字和融合问题。</p></div></div>
+			<div class="research-item"><span>03</span><div><strong>创意资产与内容系统</strong><p>让选题、视觉资产、审核与复盘保持可追溯。</p></div></div>
+			<div class="research-item"><span>04</span><div><strong>人机协作边界</strong><p>工具负责放大探索，人工负责审美判断与最终责任。</p></div></div>
+		</div>
+	</div></section>
+
+	<section class="section"><div class="site-shell about-profile">
+		<div class="about-profile__image"><Image src={profileAvatar} alt="NOVA 个人头像" width={802} height={804} /></div>
+		<div class="about-profile__copy"><p class="eyebrow">About NOVA</p><h2 class="section-title">设计一眼可见，判断经得起追问。</h2><p>这个网站长期记录原创 IP、二次元视觉与商品化方向的公开作品。每个案例尽量说明范围、过程和边界，不以虚构数据或未确认成果替代真实能力。</p><a class="text-link" href="/about/">关于、方法与联系 <span>↗</span></a></div>
+	</div></section>
 </PortfolioLayout>
