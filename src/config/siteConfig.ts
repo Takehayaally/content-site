@@ -6,40 +6,38 @@ const SITE_LANG = "zh_CN";
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "AI内容诊断室",
+	title: "NOVA",
 
 	// 站点副标题
-	subtitle: "实测 AI 内容运营、一人公司工作流与平台收益",
+	subtitle: "二次元视觉设计、原创 IP 与创作方法",
 
 	// 站点 URL
 	site_url: "https://gaoaiqian.com",
 
 	// 站点描述
 	description:
-		"AI内容诊断室记录真实的内容运营实验：选题、图文、无脸视频、自动化、平台规则、成本、失败与收益验证。",
+		"记录二次元视觉设计、原创 IP、谷子与周边，以及可复盘的创作研究和内容方法。",
 
 	// 站点关键词
 	keywords: [
-		"AI内容运营",
-		"一人公司",
-		"内容运营系统",
-		"AI工作流",
-		"普通人AI",
-		"公众号运营",
-		"小红书运营",
-		"B站运营",
-		"抖音运营",
-		"内容复盘",
+		"二次元视觉设计",
+		"原创IP",
+		"谷子设计",
+		"IP周边",
+		"角色设计",
+		"视觉设计作品集",
+		"创作研究",
+		"内容方法",
 	],
 
 	// 主题色
 	themeColor: {
 		// 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
-		hue: 12,
+		hue: 203,
 		// 是否对访问者隐藏主题色选择器
 		fixed: true,
 		// 默认模式："light" 亮色，"dark" 暗色，"system" 跟随系统
-		defaultMode: "light",
+		defaultMode: "dark",
 	},
 
 	// 页面整体宽度（单位：rem）
@@ -76,12 +74,12 @@ export const siteConfig: SiteConfig = {
 		// 3. 本地图片（src目录，自动优化但会增加构建时间）: { type: "image", value: "assets/images/logo.webp", alt: "Logo" }
 		// 4. 网络图片: { type: "url", value: "https://example.com/logo.png", alt: "Logo" }
 		logo: {
-			type: "image",
-			value: "assets/images/firefly.png",
-			alt: "🍀",
+			type: "icon",
+			value: "material-symbols:palette-outline",
+		alt: "NOVA",
 		},
 		// 导航栏标题
-		title: "AI内容诊断室",
+		title: "NOVA",
 		// 全宽导航栏，导航栏是否占满屏幕宽度
 		widthFull: false,
 		// 导航菜单对齐方式，left：左对齐，center：居中
@@ -115,7 +113,7 @@ export const siteConfig: SiteConfig = {
 	},
 
 	// 分类导航栏开关，在首页和归档页顶部显示分类快捷导航
-	categoryBar: true,
+	categoryBar: false,
 
 	// 归档页是否折叠非最新年份文章，禁用后默认展开全部年份
 	foldArticle: true,
@@ -131,7 +129,7 @@ export const siteConfig: SiteConfig = {
 		// 文章简介显示行数，设为 0 则不截断
 		descriptionLines: 2,
 		// 是否允许用户切换布局
-		allowSwitch: true,
+		allowSwitch: false,
 		// 网格布局配置，仅在 defaultMode 为 "grid" 或允许切换布局时生效
 		grid: {
 			// 是否开启瀑布流布局，同时有封面图和无封面图的混合文章推荐开启

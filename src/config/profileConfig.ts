@@ -6,13 +6,13 @@ export const profileConfig: ProfileConfig = {
 	// 1. public 目录（以 "/" 开头，不优化）："/assets/images/avatar.webp"
 	// 2. src 目录（不以 "/" 开头，自动优化但会增加构建时间，推荐）："assets/images/avatar.webp"
 	// 3. 远程 URL："https://example.com/avatar.jpg"
-	avatar: "assets/images/avatar-ai-content-diagnosis-abstract-v4.png",
+	avatar: "assets/images/portfolio/profile-avatar.png",
 
 	// 名字
-	name: "AI内容诊断室",
+	name: "NOVA",
 
 	// 个人签名
-	bio: "实测 AI 内容运营、一人公司工作流与效率工具，记录成本、踩坑和收益验证。",
+	bio: "二次元视觉设计、原创 IP、谷子与周边，以及持续进行的创作研究。",
 
 	// 链接配置
 	// 已经预装的图标集：fa7-brands，fa7-regular，fa7-solid，material-symbols，simple-icons
@@ -20,12 +20,5 @@ export const profileConfig: ProfileConfig = {
 	// 如果想使用尚未包含相应的图标集，则需要安装它
 	// `pnpm add @iconify-json/<icon-set-name>`
 	// showName: true 时显示图标和名称，false 时只显示图标
-	links: [
-		{
-			name: "RSS",
-			icon: "fa7-solid:rss",
-			url: "/rss/",
-			showName: false,
-		},
-	],
+	links: [],
 };

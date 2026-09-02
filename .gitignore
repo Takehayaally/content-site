@@ -35,5 +35,6 @@ yarn.lock
 Firefly-docs/
 
 cache/
+private/
 package/
 .obsidian/

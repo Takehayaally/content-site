@@ -12,32 +12,13 @@ import {
 const getDynamicNavBarConfig = (): NavBarConfig => {
 	// 基础导航栏链接
 	const links: NavBarLink[] = [
-		// 主页
+		// 以作品集作为第一入口；历史笔记保留在归档中，而非作为身份定位。
 		LinkPresets.Home,
+		LinkPresets.Work,
+		LinkPresets.Process,
+		LinkPresets.Lab,
+		LinkPresets.About,
 	];
-
-	// 文章及其子菜单
-	links.push({
-		name: "文章",
-		url: "#",
-		icon: "material-symbols:article",
-		children: [
-			// 归档
-			LinkPresets.Archive,
-
-			// 分类
-			LinkPresets.Categories,
-
-			// 标签
-			LinkPresets.Tags,
-		],
-	});
-
-	// 资料库
-	links.push(LinkPresets.Products);
-
-	// 关于我
-	links.push(LinkPresets.About);
 
 	// 文档链接
 	// links.push({
@@ -61,12 +42,22 @@ export const navBarSearchConfig: NavBarSearchConfig = {
 // ============================================================================
 export const LinkPresets: Record<string, NavBarLink> = {
 	Home: {
-		name: "主页",
+		name: "首页",
 		url: "/",
 		icon: "material-symbols:home",
 	},
+	Work: {
+		name: "作品集",
+		url: "/work/",
+		icon: "material-symbols:palette-outline",
+	},
+	Process: {
+		name: "工作方式",
+		url: "/process/",
+		icon: "material-symbols:account-tree-outline",
+	},
 	Archive: {
-		name: "归档",
+		name: "笔记",
 		url: "/archive/",
 		icon: "material-symbols:archive",
 	},
@@ -94,6 +85,11 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		name: "资料库",
 		url: "/products/",
 		icon: "material-symbols:folder-managed",
+	},
+	Lab: {
+		name: "研究方向",
+		url: "/lab/",
+		icon: "material-symbols:science-outline",
 	},
 	About: {
 		name: "关于我",

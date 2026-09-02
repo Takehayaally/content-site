@@ -1,0 +1,29 @@
+---
+import Footer from "@/components/layout/Footer.astro";
+import Navbar from "@/components/layout/Navbar.astro";
+import Layout from "@/layouts/Layout.astro";
+
+import "@/styles/portfolio.css";
+
+interface Props {
+	title: string;
+	description: string;
+	ogImage?: string;
+}
+
+const { title, description, ogImage } = Astro.props;
+---
+
+<Layout title={title} description={description} ogImage={ogImage}>
+	<div class="portfolio-site">
+		<header class="portfolio-nav-shell">
+			<Navbar />
+		</header>
+		<main id="main-content" class="portfolio-main" data-pagefind-body>
+			<slot />
+		</main>
+		<footer class="portfolio-footer-shell">
+			<Footer />
+		</footer>
+	</div>
+</Layout>
