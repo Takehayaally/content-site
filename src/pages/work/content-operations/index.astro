@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import contentOpsCard from "@/assets/images/portfolio/content-ops-card.jpg";
+import contentOpsDetailProof from "@/assets/images/portfolio/content-ops-detail-proof.jpg";
+import contentOpsDetailLoop from "@/assets/images/portfolio/content-ops-detail-loop.jpg";
+import contentOpsDetailAudience from "@/assets/images/portfolio/content-ops-detail-audience.jpg";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+---
+
+<PortfolioLayout title="AI 内容运营系统" description="把选题、证据、内容生产、质检、发布授权和结果复盘组织成可追溯工作流。" ogImage={contentOpsCard.src}>
+	<header class="project-hero site-shell"><p class="project-kicker">Case 04 / Content Operations</p><h1 class="project-title">把内容运营从零散任务，变成一条可追踪流程</h1><p class="project-lead">这个项目解决的不是“让 AI 多写几篇”，而是让选题依据、内容产物、审核决定和发布后的真实结果能够对应起来。</p><div class="project-meta"><div><span class="meta-label">Problem</span><strong>流程分散、结果难复盘</strong></div><div><span class="meta-label">Role</span><strong>系统设计 / 内容 QA</strong></div><div><span class="meta-label">Output</span><strong>内容包 / 检查门 / 回填</strong></div><div><span class="meta-label">Status</span><strong>系统建设中</strong></div></div></header>
+	<figure class="case-full-visual case-full-visual--wide"><Image src={contentOpsCard} alt="AI 内容运营系统的工程验证、真实发布与结果回填边界" widths={[720, 1200]} sizes="(max-width: 900px) 100vw, 1240px" loading="eager" /><figcaption>先区分工程验证、真实发布和结果回填；下方三张局部图对应可检查的流程证据。</figcaption></figure>
+	<section class="case-section site-shell"><h2>三个关键证据</h2><div class="case-body"><div class="detail-gallery detail-gallery--contact-sheet"><figure><Image src={contentOpsDetailProof} alt="系统测试和结果回填局部" widths={[640, 960]} sizes="(max-width: 620px) 100vw, 33vw" /><figcaption><b>01 / 可验证</b><span>测试结果和真实结果保持分开，不能用系统通过代替运营成效。</span></figcaption></figure><figure><Image src={contentOpsDetailLoop} alt="六步内容闭环局部" widths={[640, 960]} sizes="(max-width: 620px) 100vw, 33vw" /><figcaption><b>02 / 可追踪</b><span>选题、证据、内容、质量检查、发布和回填形成连续步骤。</span></figcaption></figure><figure><Image src={contentOpsDetailAudience} alt="受众和交付目标局部" widths={[640, 960]} sizes="(max-width: 620px) 100vw, 33vw" /><figcaption><b>03 / 有边界</b><span>先定义受众和目标，再决定内容与工具，不把自动发布当作闭环。</span></figcaption></figure></div></div></section>
+	<section class="case-section site-shell"><h2>项目价值</h2><div class="case-body"><p>把“今天发什么、为什么发、谁审核、结果怎样”放进同一条工作链。这样换人、返工或复盘时，不需要重新猜测历史决定。</p><ul class="case-points"><li><span>01</span><strong>选题有依据，不只追热点</strong></li><li><span>02</span><strong>内容和证据可以一一对应</strong></li><li><span>03</span><strong>发布前有人审，发布后有数据回填</strong></li></ul></div></section>
+	<section class="case-section site-shell"><h2>现在做到哪</h2><div class="case-body"><p>本地生产、检查和恢复流程已经建立，并通过工程验证；真实发布、平台表现和商业结果仍需由公开运营数据验证。</p><div class="system-map"><div class="system-node system-node--acid"><span>01 / DONE</span><strong>思路定义</strong></div><div class="system-node system-node--acid"><span>02 / DONE</span><strong>初步构建</strong></div><div class="system-node system-node--ice"><span>03 / NOW</span><strong>系统建设</strong></div><div class="system-node"><span>04 / NEXT</span><strong>公开交付</strong></div></div></div></section>
+</PortfolioLayout>

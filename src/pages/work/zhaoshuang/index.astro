@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import zhaoshuangSystem from "@/assets/images/portfolio/zhaoshuang-character-system.png";
+import zhaoshuangDetailViews from "@/assets/images/portfolio/zhaoshuang-detail-views.jpg";
+import zhaoshuangDetailExpressions from "@/assets/images/portfolio/zhaoshuang-detail-expressions.jpg";
+import zhaoshuangDetailProp from "@/assets/images/portfolio/zhaoshuang-detail-prop.jpg";
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 import ProjectSwitcher from "@/components/ProjectSwitcher.astro";
 ---
@@ -14,7 +17,7 @@ import ProjectSwitcher from "@/components/ProjectSwitcher.astro";
 
 	<section class="site-shell case-section"><div><p class="eyebrow">02 / Character Bible</p><h2>设定信息的四个层级。</h2></div><div class="case-body"><div class="system-map"><div class="system-node system-node--acid"><span>01 / SHAPE</span><strong>轮廓与比例</strong></div><div class="system-node"><span>02 / STRUCTURE</span><strong>服装与发型</strong></div><div class="system-node system-node--ice"><span>03 / EMOTION</span><strong>表情范围</strong></div><div class="system-node"><span>04 / IDENTITY</span><strong>配件与道具</strong></div></div></div></section>
 
-	<figure class="case-full-visual"><Image src={zhaoshuangSystem} alt="赵霜四视图、表情与道具设定全览" widths={[900, 1500, 2200]} sizes="(max-width: 900px) 100vw, 66vw" loading="eager" /><figcaption>设定页以完整图面展示，保留四视图、表情、道具和版式之间的对应关系。</figcaption></figure>
+	<section class="site-shell case-section"><div><p class="eyebrow">03 / Evidence</p><h2>把设定页拆成可检查的部分。</h2></div><div class="case-body"><div class="detail-gallery"><figure><Image src={zhaoshuangDetailViews} alt="赵霜角色四视图局部" widths={[640, 960]} sizes="(max-width: 620px) 100vw, 33vw" /><figcaption><b>轮廓与比例</b><span>不同角度仍保持发型、服装和身体比例一致。</span></figcaption></figure><figure><Image src={zhaoshuangDetailExpressions} alt="赵霜表情设定局部" widths={[640, 960]} sizes="(max-width: 620px) 100vw, 33vw" /><figcaption><b>表情范围</b><span>变化情绪，但不改变角色的五官锚点。</span></figcaption></figure><figure><Image src={zhaoshuangDetailProp} alt="赵霜道具与配色局部" widths={[640, 960]} sizes="(max-width: 620px) 100vw, 33vw" /><figcaption><b>道具与配色</b><span>配件承担身份信息，并进入后续画面复用。</span></figcaption></figure></div></div></section>
 
-	<section class="site-shell case-section"><div><p class="eyebrow">03 / Review</p><h2>设定不是终点，而是后续一致性的基线。</h2></div><div class="case-body"><p>这套资料可以支持后续主视觉、动作与商品载体的延展。若进入更完整生产，还需要增加色值、材质说明、比例标尺和高频动作验证；当前页面不把这些未完成项写成已有成果。</p></div></section>
+	<section class="site-shell case-section"><div><p class="eyebrow">04 / Review</p><h2>设定不是终点，而是后续一致性的基线。</h2></div><div class="case-body"><p>这套资料可以支持后续主视觉、动作与商品载体的延展。若进入更完整生产，还需要增加色值、材质说明、比例标尺和高频动作验证；当前页面不把这些未完成项写成已有成果。</p></div></section>
 </PortfolioLayout>

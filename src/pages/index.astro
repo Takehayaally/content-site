@@ -1,18 +1,23 @@
 ---
 import { Image } from "astro:assets";
 import baijinKeyVisual from "@/assets/images/portfolio/baijin-key-visual.png";
+import contentOpsCard from "@/assets/images/portfolio/content-ops-card.jpg";
 import novaKeyVisual from "@/assets/images/portfolio/nova-key-visual.png";
 import novaMerchSystem from "@/assets/images/portfolio/nova-merch-system.png";
 import profileAvatar from "@/assets/images/portfolio/profile-avatar.png";
+import shortVideoCard from "@/assets/images/portfolio/short-video-card.jpg";
+import trueyouCard from "@/assets/images/portfolio/trueyou-card.jpg";
+import cosplayDirectionComparison from "@/assets/images/portfolio/cosplay-retouch-direction-comparison.png";
 import zhaoshuangSystem from "@/assets/images/portfolio/zhaoshuang-character-system.png";
+import SystemProjectCard from "@/components/SystemProjectCard.astro";
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 ---
 
-<PortfolioLayout title="NOVA" description="NOVA 的二次元视觉设计、原创 IP、角色系统与商品化表达作品集。" ogImage={novaKeyVisual.src}>
+<PortfolioLayout title="NOVA" description="NOVA 的二次元视觉设计、原创 IP、AI 图片生产与创意系统实践。" ogImage={novaKeyVisual.src}>
 	<section class="hero site-shell">
 		<div class="hero__intro">
 			<div><p class="eyebrow">NOVA / Visual Design Portfolio</p><h1 class="display-title"><span>让角色成为</span><span class="display-title__accent">一套世界。</span></h1></div>
-			<div class="hero__aside"><p>聚焦二次元角色视觉、原创 IP 与商品化表达。从角色锚点到主视觉、周边与陈列，建立可延展、可识别的视觉系统。</p><a class="text-link" href="/work/">浏览完整作品 <span>↗</span></a></div>
+			<div class="hero__aside"><p>围绕二次元角色视觉、原创 IP、AI 图片生产与创意系统建设。从角色锚点到主视觉、周边与陈列，建立可延展、可识别的视觉表达。</p><a class="text-link" href="/work/">浏览完整作品 <span>↗</span></a></div>
 		</div>
 		<div class="hero__visual"><Image src={novaKeyVisual} alt="原创 IP NOVA 的角色主视觉" widths={[720, 1200, 1600]} sizes="(max-width: 900px) 100vw, 1240px" loading="eager" /><span class="hero__index">FEATURED / 01 — NOVA FRAME SHIFT</span></div>
 	</section>
@@ -23,6 +28,17 @@ import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 			<a class="work-card" href="/work/nova/"><div class="work-card__visual"><Image src={novaMerchSystem} alt="NOVA 角色及谷子周边系统" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="eager" /></div><div class="work-card__copy"><span class="work-number">01 / Original IP System</span><h3>NOVA：从角色到商品系统</h3><p>以统一锚点串联角色主视觉、徽章、立牌、卡牌、包装和陈列。</p><span class="work-arrow">VIEW CASE ↗</span></div></a>
 			<a class="work-card work-card--portrait" href="/work/baijin/"><div class="work-card__visual"><Image src={baijinKeyVisual} alt="原创角色白烬的雪地科幻主视觉" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="eager" /></div><div class="work-card__copy"><span class="work-number">02 / Character Key Visual</span><h3>白烬：用环境完成角色叙事</h3><p>通过服装、机械配件、冷色环境和视觉焦点建立清晰的角色气质。</p><span class="work-arrow">VIEW CASE ↗</span></div></a>
 			<a class="work-card" href="/work/zhaoshuang/"><div class="work-card__visual"><Image src={zhaoshuangSystem} alt="原创角色赵霜的角色设定系统" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="eager" /></div><div class="work-card__copy"><span class="work-number">03 / Character Bible</span><h3>赵霜：把识别度写进设定</h3><p>用四视图、表情、道具与配色构建可被持续复用的角色说明书。</p><span class="work-arrow">VIEW CASE ↗</span></div></a>
+		</div>
+	</div></section>
+
+	<section class="section"><div class="site-shell">
+		<div class="section-heading"><div><p class="eyebrow">Practice / Research</p><h2 class="section-title">把复杂工作，变成看得懂的流程。</h2></div><p class="section-heading__note">这里记录图片生产、内容运营与短视频制作中的方法实践；已完成案例、可用原型与研究预演分别标注。</p></div>
+		<div class="system-project-grid">
+			<SystemProjectCard tag="04 / Content Operations" title="AI 内容运营系统" status="实践原型" stage={3} image={contentOpsCard} imageAlt="AI 内容运营系统质量演示板" href="/work/content-operations/" description="从选题到复盘，把内容生产变成一条可追踪的工作链。" steps={["发现", "组织", "检查", "复盘"]} />
+			<SystemProjectCard tag="05 / Short Video Workflow" title="AI 短视频制作流程" status="镜头预研" stage={2} image={shortVideoCard} imageAlt="短片镜头预演联系表" href="/work/video-workflow/" description="把镜头、节奏、连续性和交付拆成可检查的步骤。" steps={["故事", "镜头", "检查", "交付"]} />
+			<SystemProjectCard tag="06 / TrueYou Studio" title="TrueYou Studio：图片生产与质检" status="本地案例" stage={3} image={trueyouCard} imageAlt="TrueYou Studio 图片生产台系统总览" href="/work/trueyou-studio/" description="把素材、方案、生成、质检和交付组织成一套可复核的图片生产流程。" steps={["素材", "方案", "质检", "交付"]} />
+			<SystemProjectCard tag="07 / Portrait Retouch" title="Cosplay Portrait Retouch：定向修图" status="方法案例" stage={3} image={cosplayDirectionComparison} imageAlt="Cosplay 人像修图的通过、拒绝与修正版对比" href="/work/cosplay-retouch/" description="用对比板记录问题、拒绝原因和局部修正，让审美判断可以被复盘。" steps={["发现问题", "拒绝", "修正", "验收"]} />
+			<SystemProjectCard tag="08 / Q-Scry" title="Q-Scry：AI 情报与机会雷达" status="本地系统" stage={3} href="/work/qscry/" description="把高噪声信息压缩成带来源、可核查、可决定的信号。" steps={["采集", "压缩", "核查", "决策"]} />
 		</div>
 	</div></section>
 

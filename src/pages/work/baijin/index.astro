@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import baijinKeyVisual from "@/assets/images/portfolio/baijin-key-visual.png";
+import baijinDetailFace from "@/assets/images/portfolio/baijin-detail-face.jpg";
+import baijinDetailMaterial from "@/assets/images/portfolio/baijin-detail-material.jpg";
+import baijinDetailWorld from "@/assets/images/portfolio/baijin-detail-world.jpg";
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 import ProjectSwitcher from "@/components/ProjectSwitcher.astro";
 ---
@@ -14,7 +17,7 @@ import ProjectSwitcher from "@/components/ProjectSwitcher.astro";
 
 	<section class="site-shell case-section"><div><p class="eyebrow">02 / Visual Logic</p><h2>一张主视觉的阅读顺序。</h2></div><div class="case-body"><div class="system-map"><div class="system-node system-node--ice"><span>01 / SIGNAL</span><strong>角色面部</strong></div><div class="system-node"><span>02 / FORM</span><strong>服装轮廓</strong></div><div class="system-node system-node--acid"><span>03 / CONTEXT</span><strong>机械装备</strong></div><div class="system-node"><span>04 / WORLD</span><strong>雪地环境</strong></div></div></div></section>
 
-	<figure class="case-full-visual"><Image src={baijinKeyVisual} alt="白烬角色、装备与雪地环境的完整主视觉" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 66vw" loading="eager" /><figcaption>完整构图保留角色、装备与环境之间的关系，不以局部裁切替代原始叙事。</figcaption></figure>
+	<section class="site-shell case-section"><div><p class="eyebrow">03 / Evidence</p><h2>局部也要服从整体叙事。</h2></div><div class="case-body"><div class="detail-gallery"><figure><Image src={baijinDetailFace} alt="白烬面部与发型视觉焦点" widths={[640, 960]} sizes="(max-width: 620px) 100vw, 33vw" /><figcaption><b>视觉焦点</b><span>脸部与发型承担第一识别层，不被环境高光抢走。</span></figcaption></figure><figure><Image src={baijinDetailMaterial} alt="白烬服装与机械装备细节" widths={[640, 960]} sizes="(max-width: 620px) 100vw, 33vw" /><figcaption><b>材质关系</b><span>柔性服装和硬质机械形成角色的行动张力。</span></figcaption></figure><figure><Image src={baijinDetailWorld} alt="白烬雪地环境与空间层次" widths={[640, 960]} sizes="(max-width: 620px) 100vw, 33vw" /><figcaption><b>空间叙事</b><span>雪地与设施提供尺度、危险和世界背景。</span></figcaption></figure></div></div></section>
 
-	<section class="site-shell case-section"><div><p class="eyebrow">03 / Review</p><h2>主视觉之后，需要系统化补全。</h2></div><div class="case-body"><p>当前案例能证明角色气质与叙事主视觉的组织能力，但不把单张 KV 包装成完整 IP 系统。后续若继续发展，应补齐稳定设定、表情与动作、关键装备拆解和跨场景一致性。</p></div></section>
+	<section class="site-shell case-section"><div><p class="eyebrow">04 / Review</p><h2>主视觉之后，需要系统化补全。</h2></div><div class="case-body"><p>当前案例能证明角色气质与叙事主视觉的组织能力，但不把单张 KV 包装成完整 IP 系统。后续若继续发展，应补齐稳定设定、表情与动作、关键装备拆解和跨场景一致性。</p></div></section>
 </PortfolioLayout>

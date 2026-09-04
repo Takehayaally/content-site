@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import trueyouDashboard from "@/assets/images/portfolio/trueyou-dashboard.png";
+import trueyouContact from "@/assets/images/portfolio/trueyou-magic-academy-contact.jpg";
+import magic01 from "@/assets/images/portfolio/trueyou-magic-01.jpg";
+import magic04 from "@/assets/images/portfolio/trueyou-magic-04.jpg";
+import magic06 from "@/assets/images/portfolio/trueyou-magic-06.jpg";
+import magic09 from "@/assets/images/portfolio/trueyou-magic-09.jpg";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+---
+
+<PortfolioLayout title="TrueYou Studio：图片生产与质检" description="从生产台到系列视觉，展示图片方案管理、质量门与交付边界。" ogImage={trueyouDashboard.src}>
+	<header class="project-hero site-shell">
+		<p class="project-kicker">Case 06 / Image Production System</p>
+		<h1 class="project-title">把一组好图，变成可管理的生产过程</h1>
+		<p class="project-lead">TrueYou Studio 关注的不只是生成结果，而是素材、方案、成本、质检和交付状态能否在同一套流程里被看见和复核。</p>
+		<div class="project-meta"><div><span class="meta-label">Problem</span><strong>产物多、状态散、质量难追踪</strong></div><div><span class="meta-label">Role</span><strong>产品流程 / 视觉 QA</strong></div><div><span class="meta-label">Output</span><strong>生产台 / 方案库 / 系列图</strong></div><div><span class="meta-label">Status</span><strong>本地案例 / 系统建设中</strong></div></div>
+	</header>
+
+	<section class="evidence-pair site-shell" aria-label="TrueYou Studio 系统与产出对照">
+		<figure><div class="evidence-pair__visual evidence-pair__visual--screen"><Image src={trueyouDashboard} alt="TrueYou Studio 图片生产台总览，展示任务状态、成本和生产路径" widths={[720, 1200, 1600]} sizes="(max-width: 900px) 100vw, 62vw" loading="eager" /></div><figcaption><b>系统侧</b><span>任务状态、失败处理、成本、档案图片和交付路径集中管理。</span></figcaption></figure>
+		<figure><div class="evidence-pair__visual evidence-pair__visual--portrait"><Image src={trueyouContact} alt="英伦魔法学院主题九张系列视觉联系表" widths={[640, 960, 1320]} sizes="(max-width: 900px) 100vw, 38vw" loading="eager" /></div><figcaption><b>产出侧</b><span>九张图保持服装、色彩、世界观和构图变化的系列一致性。</span></figcaption></figure>
+	</section>
+
+	<section class="case-section site-shell"><h2>系列图库</h2><div class="case-body"><p>只选四张代表画面，分别覆盖近景、动作、桌面和全身构图。图库用于观察系列一致性，不替代完整生产记录。</p><div class="case-gallery"><figure><Image src={magic01} alt="英伦魔法学院系列近景" widths={[480, 760, 1000]} sizes="(max-width: 620px) 50vw, 25vw" /><figcaption>近景 / 角色识别</figcaption></figure><figure><Image src={magic04} alt="英伦魔法学院系列桌面场景" widths={[480, 760, 1000]} sizes="(max-width: 620px) 50vw, 25vw" /><figcaption>桌面 / 场景关系</figcaption></figure><figure><Image src={magic06} alt="英伦魔法学院系列书写场景" widths={[480, 760, 1000]} sizes="(max-width: 620px) 50vw, 25vw" /><figcaption>动作 / 道具交互</figcaption></figure><figure><Image src={magic09} alt="英伦魔法学院系列全身构图" widths={[480, 760, 1000]} sizes="(max-width: 620px) 50vw, 25vw" /><figcaption>全身 / 空间尺度</figcaption></figure></div></div></section>
+
+	<section class="case-section site-shell"><h2>项目价值</h2><div class="case-body"><p>当图片项目从一张扩展到一组，真正的难点会变成状态、版本和质量控制。生产台负责让“现在卡在哪里”可见，联系表负责让“这一组是否像同一个系列”可判断。</p><ul class="case-points"><li><span>01</span><strong>降低沟通成本：任务与状态集中呈现</strong></li><li><span>02</span><strong>提高交付稳定性：方案、质检和交付有明确门槛</strong></li><li><span>03</span><strong>减少返工：先看整组一致性，再决定单张精修</strong></li></ul></div></section>
+
+	<section class="case-section site-shell"><h2>提示词如何参与</h2><div class="case-body"><p>提示词不是越长越好，而是把可观察的要求拆成可检查的模块。下面是公开展示用的脱敏结构示例，保留方法，不暴露内部角色资料、完整模板或运行凭据。</p><div class="prompt-recipe"><div><span>01 / SUBJECT</span><strong>主体与身份锚点</strong><p>年龄段、轮廓、发型、服装结构和不可漂移特征。</p></div><div><span>02 / CAMERA</span><strong>镜头与动作</strong><p>景别、视角、身体朝向、视线目标和手部位置。</p></div><div><span>03 / LIGHT</span><strong>环境与材质</strong><p>光线方向、色温、背景层次和材质表现。</p></div><div><span>04 / QA</span><strong>负面约束与验收</strong><p>明确禁止项，并回到整组检查一致性、裁切和可交付性。</p></div></div><div class="prompt-example"><div class="prompt-example__head"><span>PUBLIC EXCERPT / SANITIZED</span><b>结构示例</b></div><p><em>[主体]</em> 保持既定人物轮廓、发型与学院制服结构；同一系列中不改变核心识别点。</p><p><em>[镜头]</em> 三分之四身，视线略偏离镜头；手持书本，手指结构自然，动作与重心一致。</p><p><em>[环境]</em> 深色木质学院空间，暖色烛光与冷色窗光形成层次；服装材质真实，不出现塑料感。</p><p><em>[验收]</em> 检查脸部一致性、手部结构、服装徽记、光线方向、边缘融合与整组色彩连续性。</p></div><p class="method-note">这里公开的是可沟通、可验证的方法。实际生产仍由参考资产、版本哈希、负面约束和人工 Release Decision 共同决定，单独一段 Prompt 不等于可交付结果。</p></div></section>
+
+	<section class="case-section site-shell"><h2>流程与边界</h2><div class="case-body"><p>当前案例证明了本地系统组织和系列视觉筛选能力。页面只展示经授权的演示资产；未把研究素材、来源图、人物资料或后台登录状态带入网站，也不将本地结果描述成客户订单或商业收益。</p><div class="system-map"><div class="system-node system-node--acid"><span>01 / INPUT</span><strong>素材登记</strong></div><div class="system-node system-node--acid"><span>02 / PLAN</span><strong>方案组织</strong></div><div class="system-node system-node--ice"><span>03 / QA</span><strong>组图质检</strong></div><div class="system-node"><span>04 / GATE</span><strong>人工确认</strong></div></div></div></section>
+</PortfolioLayout>

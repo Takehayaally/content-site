@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+	tag: string;
+	title: string;
+	description: string;
+	status: string;
+	stage: number;
+	steps: string[];
+	image?: ImageMetadata;
+	imageAlt?: string;
+	href?: string;
+}
+
+const { tag, title, description, status, stage, steps, image, imageAlt = "项目演示图", href } = Astro.props;
+const phases = ["思路定义", "初步构建 / 研究", "系统建设", "公开交付"];
+---
+
+<article class="system-project-card">
+	<div class="system-project-card__head"><span class="work-number">{tag}</span><span class="system-project-card__status">{status}</span></div>
+	{image && <Image class="system-project-card__image" src={image} alt={imageAlt} widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 50vw" loading="lazy" />}
+	{!image && <div class="system-project-card__diagram" aria-label={`${title} 流程示意图`}>{steps.map((step, index) => <span><b>{String(index + 1).padStart(2, "0")}</b>{step}</span>)}</div>}
+	<h3>{title}</h3>
+	<p>{description}</p>
+	<div class="system-project-card__phases" aria-label={`${title} 项目阶段`}>
+		{phases.map((phase, index) => <span class={index + 1 === stage ? "is-current" : index + 1 < stage ? "is-done" : ""}><b>{String(index + 1).padStart(2, "0")}</b>{phase}</span>)}
+	</div>
+	{href && <a class="text-link system-project-card__link" href={href}>查看项目说明 <span>↗</span></a>}
+</article>

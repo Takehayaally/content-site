@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import directionComparison from "@/assets/images/portfolio/cosplay-retouch-direction-comparison.png";
+import hairComparison from "@/assets/images/portfolio/cosplay-retouch-hair-comparison.png";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+---
+
+<PortfolioLayout title="Cosplay Portrait Retouch：定向修图" description="用通过、拒绝与修正版对比，展示人像修图中的定向判断和视觉质量控制。" ogImage={directionComparison.src}>
+	<header class="project-hero site-shell">
+		<p class="project-kicker">Case 07 / Portrait Retouch QA</p>
+		<h1 class="project-title">不是一键美化，而是定向发现和修正问题</h1>
+		<p class="project-lead">同一角色视觉里，发丝、脸部、光线和服装需要同时成立。这个案例保留了被拒绝的版本，让修改依据和验收判断能够被追问。</p>
+		<div class="project-meta"><div><span class="meta-label">Problem</span><strong>局部修正容易破坏整体</strong></div><div><span class="meta-label">Role</span><strong>问题诊断 / 方向控制 / QA</strong></div><div><span class="meta-label">Output</span><strong>对比板 / 修正版 / 验收记录</strong></div><div><span class="meta-label">Status</span><strong>经授权的方法案例</strong></div></div>
+	</header>
+
+	<figure class="case-full-visual case-full-visual--comparison"><Image src={directionComparison} alt="原通过版本、被拒绝版本与定向修正版三栏对比" widths={[810, 1280, 1800]} sizes="100vw" loading="eager" /><figcaption>三栏对比保留了通过、拒绝和修正结果。被拒绝版本不是失败产物的堆放，而是说明修正方向为何必要。</figcaption></figure>
+
+	<section class="case-section site-shell"><h2>一次修改只解决明确问题</h2><div class="case-body"><p>局部重绘最常见的风险，是修好了头发却改变脸，或修好了脸却破坏构图。这里把头发、脸部和组合版本分开验收，减少“越改越不像”的返工。</p><ul class="case-points"><li><span>01</span><div><strong>先标记问题域</strong><br />区分发丝、脸部、光线与构图，不用模糊的“再精致一点”替代判断。</div></li><li><span>02</span><div><strong>拒绝不合格方向</strong><br />保留被拒版本，验证改动是否偏离原角色和既定风格。</div></li><li><span>03</span><div><strong>组合后再次检查</strong><br />局部通过不等于整图通过，最终版本仍需回到整体视觉验收。</div></li></ul></div></section>
+
+	<section class="case-section site-shell"><h2>判断如何落到画面</h2><div class="case-body"><div class="decision-table"><div class="decision-table__head"><span>检查对象</span><span>风险</span><span>验收信号</span></div><div><b>发丝与头饰</b><span>边缘粘连、结构变形</span><span>轮廓清楚，装饰关系不漂移</span></div><div><b>脸部与肤色</b><span>身份偏移、局部磨皮感</span><span>五官锚点稳定，肤色融入全图</span></div><div><b>服装与武器</b><span>纹理断裂、手部穿模</span><span>材质连续，握持关系成立</span></div><div><b>整图光线</b><span>局部亮度脱离环境</span><span>人物与场景共享同一光源逻辑</span></div></div></div></section>
+
+	<figure class="case-full-visual case-full-visual--comparison"><Image src={hairComparison} alt="发丝、脸部和组合修正版的三栏局部对比" widths={[900, 1400, 1800]} sizes="100vw" loading="lazy" /><figcaption>分方向验收：发丝版本、脸部版本与组合修正版分别保留，避免多个变量混在一次修改中。</figcaption></figure>
+
+	<section class="case-section site-shell"><h2>作品图库</h2><div class="case-body"><p>图库只保留两张最能说明问题的对比图：一张看整体方向，一张看局部修正。其余原片、候选图和运行记录不公开。</p><div class="case-gallery case-gallery--wide"><figure><Image src={directionComparison} alt="Cosplay 人像整体方向对比" widths={[720, 1200, 1600]} sizes="(max-width: 620px) 100vw, 50vw" /><figcaption>整体方向 / 通过、拒绝、修正</figcaption></figure><figure><Image src={hairComparison} alt="Cosplay 人像发丝与脸部局部修正对比" widths={[720, 1200, 1600]} sizes="(max-width: 620px) 100vw, 50vw" /><figcaption>局部修正 / 分方向验收</figcaption></figure></div></div></section>
+
+	<section class="case-section site-shell"><h2>公开边界</h2><div class="case-body"><p>本页仅展示用户明确授权用于作品集的本地对比图，目的是说明修图判断与质量控制方法。它不代表公开客户项目、平台发布或商业结果；原始照片、人物资料、生成记录、日志与其他私有资产均未进入网站。</p></div></section>
+</PortfolioLayout>
