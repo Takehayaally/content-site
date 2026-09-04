@@ -14,7 +14,17 @@ interface Props {
 	href?: string;
 }
 
-const { tag, title, description, status, stage, steps, image, imageAlt = "项目演示图", href } = Astro.props;
+const {
+	tag,
+	title,
+	description,
+	status,
+	stage,
+	steps,
+	image,
+	imageAlt = "项目演示图",
+	href,
+} = Astro.props;
 const phases = ["思路定义", "初步构建 / 研究", "系统建设", "公开交付"];
 ---
 

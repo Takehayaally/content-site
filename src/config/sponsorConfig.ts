@@ -8,8 +8,7 @@ export const sponsorConfig: SponsorConfig = {
 	description: "当前网站不提供资金支持、结算或自动交付入口。",
 
 	// 支持用途说明
-	usage:
-		"当前阶段只展示作品与研究，不接入资金支持、结算或商业入口。",
+	usage: "当前阶段只展示作品与研究，不接入资金支持、结算或商业入口。",
 
 	// 是否显示支持者列表
 	showSponsorsList: false,

@@ -76,7 +76,7 @@ export const siteConfig: SiteConfig = {
 		logo: {
 			type: "icon",
 			value: "material-symbols:palette-outline",
-		alt: "NOVA",
+			alt: "NOVA",
 		},
 		// 导航栏标题
 		title: "NOVA",

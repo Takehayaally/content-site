@@ -6,7 +6,12 @@ export const spineModelConfig: SpineModelConfig = {
 	model: { path: "" },
 	position: { corner: "bottom-left" },
 	size: { width: 0, height: 0 },
-	interactive: { enabled: false, clickAnimations: [], clickMessages: [], idleAnimations: [] },
+	interactive: {
+		enabled: false,
+		clickAnimations: [],
+		clickMessages: [],
+		idleAnimations: [],
+	},
 };
 
 export const live2dWidgetConfig: Live2DWidgetConfig = {

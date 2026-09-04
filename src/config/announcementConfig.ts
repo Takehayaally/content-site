@@ -5,7 +5,8 @@ export const announcementConfig: AnnouncementConfig = {
 	title: "公告",
 
 	// 公告内容
-	content: "本站以原创作品、创作研究与公开边界说明为主；未完成或未授权内容不会公开展示。",
+	content:
+		"本站以原创作品、创作研究与公开边界说明为主；未完成或未授权内容不会公开展示。",
 
 	// 是否允许用户关闭公告
 	closable: true,
