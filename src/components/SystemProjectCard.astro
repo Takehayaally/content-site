@@ -11,6 +11,7 @@ interface Props {
 	steps: string[];
 	image?: ImageMetadata;
 	imageAlt?: string;
+	imageRatio?: string;
 	href?: string;
 }
 
@@ -23,6 +24,7 @@ const {
 	steps,
 	image,
 	imageAlt = "项目演示图",
+	imageRatio = "16 / 9",
 	href,
 } = Astro.props;
 const phases = ["思路定义", "初步构建 / 研究", "系统建设", "公开交付"];
@@ -30,7 +32,7 @@ const phases = ["思路定义", "初步构建 / 研究", "系统建设", "公开
 
 <article class="system-project-card">
 	<div class="system-project-card__head"><span class="work-number">{tag}</span><span class="system-project-card__status">{status}</span></div>
-	{image && <Image class="system-project-card__image" src={image} alt={imageAlt} widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 50vw" loading="lazy" />}
+	{image && <div class="system-project-card__visual" style={`--system-card-image-ratio: ${imageRatio};`}><Image src={image} alt={imageAlt} widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 50vw" loading="lazy" /></div>}
 	{!image && <div class="system-project-card__diagram" aria-label={`${title} 流程示意图`}>{steps.map((step, index) => <span><b>{String(index + 1).padStart(2, "0")}</b>{step}</span>)}</div>}
 	<h3>{title}</h3>
 	<p>{description}</p>

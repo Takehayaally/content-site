@@ -13,8 +13,7 @@ const currentPath = Astro.url.pathname;
 const imageUrl = ogImage ? new URL(ogImage, Astro.site).toString() : undefined;
 const navItems = [
 	{ href: "/work/", label: "作品" },
-	{ href: "/work/#original-ip", label: "原创 IP" },
-	{ href: "/work/#systems", label: "系统与工具" },
+	{ href: "/systems/", label: "系统与工具" },
 	{ href: "/journal/", label: "日志" },
 	{ href: "/about/", label: "关于" },
 ];
@@ -69,6 +68,7 @@ const navItems = [
 				</div>
 				<div class="site-footer__links">
 					<a href="/work/">全部作品</a>
+					<a href="/systems/">系统与工具</a>
 					<a href="/work/nova/">原创 IP</a>
 					<a href="/about/">关于与方法</a>
 					<a href="/resume/">经历与能力</a>

@@ -1,0 +1,26 @@
+---
+import contentOpsCard from "@/assets/images/portfolio/content-ops-card.jpg";
+import cosplayDirectionComparison from "@/assets/images/portfolio/cosplay-retouch-direction-comparison.png";
+import qscryPublicSystemEvidence from "@/assets/images/portfolio/qscry-public-system-evidence.png";
+import shortVideoCard from "@/assets/images/portfolio/short-video-card.jpg";
+import trueyouCard from "@/assets/images/portfolio/trueyou-card.jpg";
+import SystemProjectCard from "@/components/SystemProjectCard.astro";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+---
+
+<PortfolioLayout title="系统与工具" description="NOVA 的内容运营、短视频、图片生产、修图质检与信息核查工作流。">
+	<header class="page-hero site-shell">
+		<div class="page-hero__grid"><div><p class="eyebrow">Systems / Public Practice</p><h1 class="page-title">不只展示结果，<br />也展示怎么把事做成。</h1></div><p class="page-summary">这里收录可以公开说明的工作流与方法案例。每项按真实进度标注，保留正在建设的边界，不把本地原型包装成已交付产品。</p></div>
+	</header>
+
+	<section class="section"><div class="site-shell">
+		<div class="section-heading"><div><p class="eyebrow">Systems Index / 2026.09</p><h2 class="section-title">五类工作，五种证据。</h2></div><p class="section-heading__note">卡片中的证据图按原始比例完整呈现；进入项目页可查看目标、范围、阶段与公开边界。</p></div>
+		<div class="system-project-grid">
+			<SystemProjectCard tag="04 / Content Operations" title="AI 内容运营系统" status="实践原型" stage={3} image={contentOpsCard} imageRatio="2 / 1" imageAlt="AI 内容运营系统质量演示板" href="/work/content-operations/" description="把选题、证据、图文内容包、质量检查、人工发布和结果回填放进同一条可追溯流程。" steps={["发现问题", "组织内容", "质量检查", "复盘迭代"]} />
+			<SystemProjectCard tag="05 / Short Video Workflow" title="AI 短视频制作流程" status="镜头预研" stage={2} image={shortVideoCard} imageRatio="2 / 1" imageAlt="短片镜头预演联系表" href="/work/video-workflow/" description="把短视频从故事卡、镜头预演、连续性检查到本地交付拆成可检查的步骤，降低试错成本。" steps={["故事与节奏", "镜头预演", "连续性检查", "交付复核"]} />
+			<SystemProjectCard tag="06 / TrueYou Studio" title="TrueYou Studio：图片生产与质检" status="本地案例" stage={3} image={trueyouCard} imageRatio="2 / 1" imageAlt="TrueYou Studio 图片生产台系统总览" href="/work/trueyou-studio/" description="把素材、方案、生成、质检和交付组织成一套可复核的图片生产流程。" steps={["素材", "方案", "质检", "交付"]} />
+			<SystemProjectCard tag="07 / Portrait Retouch" title="Cosplay Portrait Retouch：定向修图" status="方法案例" stage={3} image={cosplayDirectionComparison} imageRatio="1620 / 774" imageAlt="Cosplay 人像修图的通过、拒绝与修正版对比" href="/work/cosplay-retouch/" description="用完整三栏对比板记录通过、拒绝原因和局部修正，让审美判断可以被复盘。" steps={["发现问题", "拒绝", "修正", "验收"]} />
+			<SystemProjectCard tag="08 / Q-Scry" title="Q-Scry：AI 情报与机会雷达" status="本地系统" stage={3} image={qscryPublicSystemEvidence} imageRatio="16 / 9" imageAlt="Q-Scry 本地系统的核查队列与来源边界界面" href="/work/qscry/" description="把公开来源和经授权的信息压缩成可核查信号、每日排序和人工核查队列，帮助判断下一步做什么。" steps={["采集", "压缩", "核查", "决策"]} />
+		</div>
+	</div></section>
+</PortfolioLayout>
