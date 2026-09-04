@@ -181,6 +181,11 @@ export default defineConfig({
 				// 根据页面开关配置过滤sitemap
 				const url = new URL(page);
 				const pathname = url.pathname;
+				const legacyRedirects = ["/lab/", "/process/", "/search/"];
+
+				if (legacyRedirects.includes(pathname)) {
+					return false;
+				}
 
 				if (pathname === "/friends/" && !siteConfig.pages.friends) {
 					return false;
@@ -206,7 +211,8 @@ export default defineConfig({
 	markdown: {
 		processor: unified({
 			remarkPlugins: [
-				...(siteConfig.post.rehypeCallouts.enablePythonMarkdownAdmonitions !== false
+				...(siteConfig.post.rehypeCallouts.enablePythonMarkdownAdmonitions !==
+				false
 					? [remarkAdmonitionToBlockquoteCallout]
 					: []),
 				remarkMath,
@@ -302,4 +308,3 @@ export default defineConfig({
 		},
 	},
 });
-
