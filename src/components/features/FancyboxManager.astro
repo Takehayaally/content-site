@@ -6,8 +6,32 @@ import "@/styles/fancybox-custom.css";
 
 <script>
   let Fancybox: any;
+  let fancyboxImport: Promise<void> | undefined;
+  let setupPromise: Promise<void> | undefined;
+  let isBound = false;
+
+  async function loadFancybox() {
+    if (Fancybox) return;
+
+    fancyboxImport ??= import("@fancyapps/ui").then((mod) => {
+      Fancybox = mod.Fancybox;
+    });
+    await fancyboxImport;
+  }
 
   async function setup() {
+    if (isBound) return;
+    if (setupPromise) return setupPromise;
+
+    setupPromise = bindFancybox();
+    try {
+      await setupPromise;
+    } finally {
+      setupPromise = undefined;
+    }
+  }
+
+  async function bindFancybox() {
     const selectors = [
       ".custom-md img, #post-cover img, .moment-images img",
       ".moment-images a[data-fancybox]",
@@ -20,10 +44,7 @@ import "@/styles/fancybox-custom.css";
     if (!hasElements) return;
 
     // 动态导入资源
-    if (!Fancybox) {
-      const mod = await import("@fancyapps/ui");
-      Fancybox = mod.Fancybox;
-    }
+    await loadFancybox();
 
     // 通用配置
     const commonOptions = {
@@ -87,6 +108,7 @@ import "@/styles/fancybox-custom.css";
 
     // 绑定其他
     Fancybox.bind("[data-fancybox]:not(.moment-images a)", commonOptions);
+    isBound = true;
   }
 
   function cleanupFancybox() {
@@ -94,10 +116,25 @@ import "@/styles/fancybox-custom.css";
       Fancybox.close();
       Fancybox.unbind(document.body);
     }
+    isBound = false;
+  }
+
+  function handleFirstFancyboxClick(event: MouseEvent) {
+    if (isBound || event.defaultPrevented || event.button !== 0) return;
+
+    const target = event.target as Element | null;
+    const link = target?.closest<HTMLAnchorElement>("a[data-fancybox]");
+    if (!link) return;
+
+    // The browser must not follow the image URL while the lightbox chunk is loading.
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    void setup().then(() => link.click());
   }
 
   // 初始化
   setup();
+  document.addEventListener("click", handleFirstFancyboxClick, true);
 
   // Swup 生命周期整合
   document.addEventListener("swup:content:replace", setup);
