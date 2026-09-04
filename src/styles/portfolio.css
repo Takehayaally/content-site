@@ -199,6 +199,8 @@ body.portfolio-body img { display: block; max-width: 100%; }
 .case-full-visual--compact img { max-height: min(62vh, 42rem); width: auto; }
 .case-full-visual--wide { padding: clamp(1rem, 3vw, 3rem); }
 .case-full-visual--wide img { max-height: none; width: min(100%, 62rem); }
+.case-full-visual--screen { background: #e9eef0; }
+.case-full-visual--screen figcaption { color: #46505f; }
 .detail-gallery { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); }
 .detail-gallery figure { background: var(--paper-strong); border: 1px solid var(--line); margin: 0; min-width: 0; }
 .detail-gallery img { aspect-ratio: 4 / 3; display: block; height: auto; object-fit: cover; width: 100%; }

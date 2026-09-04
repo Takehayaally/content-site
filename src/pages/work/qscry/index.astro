@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import qscryPublicSystemEvidence from "@/assets/images/portfolio/qscry-public-system-evidence.png";
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 ---
 
@@ -13,6 +15,8 @@ import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 	<section class="case-section site-shell"><h2>它解决什么问题</h2><div class="case-body"><p>不是把更多链接堆到列表里，而是把来源、证据、判断和下一步拆开。系统先做去重和压缩，再把需要人工确认的内容单独放进核查队列。</p><ul class="case-points"><li><span>01</span><strong>来源有边界：公开只读与经授权信息分开</strong></li><li><span>02</span><strong>信号可复核：每条判断都保留来源和证据</strong></li><li><span>03</span><strong>风险先拦截：共享凭据、规避验证等路径不进入行动建议</strong></li></ul></div></section>
 
 	<section class="case-section site-shell"><h2>从信息到决定</h2><div class="case-body"><p>当前系统的价值在于减少搜索和整理的重复劳动，把注意力留给真正需要判断的部分。</p><div class="system-map"><div class="system-node system-node--acid"><span>01 / SOURCE</span><strong>多来源输入</strong></div><div class="system-node"><span>02 / SIGNAL</span><strong>去重与压缩</strong></div><div class="system-node system-node--ice"><span>03 / VERIFY</span><strong>人工核查</strong></div><div class="system-node"><span>04 / DECIDE</span><strong>用户决定</strong></div></div></div></section>
+
+	<figure class="case-full-visual case-full-visual--wide case-full-visual--screen"><Image src={qscryPublicSystemEvidence} alt="Q-Scry 本地系统的核查队列与来源边界界面" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 1240px" loading="lazy" /><figcaption>本地界面状态：核查队列、来源边界和零数据占位被明确保留。它用于说明系统的工作面，而不代表持续运行或已有业务数据。</figcaption></figure>
 
 	<section class="case-section site-shell"><h2>当前边界</h2><div class="case-body"><p>Q-Scry 的 QQ 监控和长期巡检目前保持暂停；页面展示的是架构和方法，不把旧快照写成当前在线状态，也不展示聊天内容、账号信息或登录态。</p></div></section>
 </PortfolioLayout>

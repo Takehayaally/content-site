@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import novaConceptDisplay from "@/assets/images/portfolio/nova-concept-display.png";
 import novaKeyVisual from "@/assets/images/portfolio/nova-key-visual.png";
 import novaMerchSystem from "@/assets/images/portfolio/nova-merch-system.png";
 import ProjectSwitcher from "@/components/ProjectSwitcher.astro";
@@ -21,5 +22,8 @@ import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 
 	<figure class="case-full-visual"><Image src={novaMerchSystem} alt="NOVA 的徽章、立牌、卡牌与包装组合" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 66vw" loading="eager" /><figcaption>商品系统以完整陈列图展示，便于阅读角色锚点如何跨载体保持一致。</figcaption></figure>
 
-	<section class="site-shell case-section"><div><p class="eyebrow">03 / Review</p><h2>公开边界与下一步。</h2></div><div class="case-body"><p>本页展示的是原创角色的稳定公开版本与已形成的商品视觉组合。后续可以继续补足生产规格、单品展开与更严格的跨图一致性记录；在这些内容实际完成前，不把它们写成既有成果。</p></div></section>
+	<section class="site-shell case-section"><div><p class="eyebrow">03 / Display Proposal</p><h2>让同一套识别进入空间。</h2></div><div class="case-body"><p>陈列不额外发明一套语言，而是继续使用角色的深色轮廓、冷蓝光线和红色信号。它用于检验商品、角色和空间是否仍然指向同一个视觉中心。</p></div></section>
+	<figure class="case-full-visual case-full-visual--wide"><Image src={novaConceptDisplay} alt="NOVA 角色周边的概念陈列视觉提案" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 1240px" loading="lazy" /><figcaption>概念陈列视觉提案，用于检查商品组合与空间层级；不代表已实际落地、量产或销售。</figcaption></figure>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">04 / Review</p><h2>公开边界与下一步。</h2></div><div class="case-body"><p>本页展示的是原创角色的稳定公开版本与已形成的商品视觉组合。后续可以继续补足生产规格、单品展开与更严格的跨图一致性记录；在这些内容实际完成前，不把它们写成既有成果。</p></div></section>
 </PortfolioLayout>
