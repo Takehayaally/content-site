@@ -238,6 +238,11 @@ body.portfolio-body img { display: block; max-width: 100%; }
 .fanwork-grid__copy span { color: #3d4700; font-family: var(--mono); font-size: .72rem; font-weight: 700; letter-spacing: .07em; line-height: 1.3; }
 .fanwork-grid__copy h3 { font-family: var(--serif); font-size: 1.45rem; line-height: 1.2; margin: .65rem 0 .2rem; }
 .fanwork-grid__copy p { color: var(--muted); font-size: .84rem; margin: 0; }
+.fanwork-load { align-items: center; display: flex; font-family: var(--mono); font-size: .7rem; gap: 1rem; justify-content: center; min-height: 6rem; }
+.fanwork-load button { background: var(--ink); border: 1px solid var(--ink); color: var(--paper); cursor: pointer; font-family: inherit; font-size: .72rem; letter-spacing: .06em; min-height: 2.8rem; padding: .7rem 1.25rem; }
+.fanwork-load button:hover { background: var(--paper-strong); color: var(--ink); }
+.fanwork-load span { color: var(--muted); }
+.fanwork-load [data-load-sentinel] { height: 1px; width: 1px; }
 .fanwork-empty { color: var(--muted); padding: 2rem 0; }
 .fanwork-boundary { background: var(--dark); color: var(--paper); padding-block: clamp(4rem, 8vw, 7rem); }
 .fanwork-boundary > div { display: grid; gap: 1rem; grid-template-columns: minmax(12rem, .45fr) minmax(0, 1fr); }

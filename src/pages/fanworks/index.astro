@@ -15,14 +15,15 @@ import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 	</section>
 
 	<section class="site-shell fanwork-archive">
-		<div class="section-heading"><div><p class="eyebrow">Archive / 2026.09</p><h2 class="section-title">持续更新的作品流。</h2></div><p class="section-heading__note">缩略图保留人物与构图焦点；点击后始终按原始比例查看完整图片。</p></div>
+		<div class="section-heading"><div><p class="eyebrow">Archive / 2026.09</p><h2 class="section-title">持续更新的作品流。</h2></div><p class="section-heading__note">当前收录 {fanworks.length} 件视觉练习。缩略图保留人物与构图焦点；点击后始终按原始比例查看完整图片。</p></div>
 		<fanwork-filter>
 			<div class="fanwork-filter" aria-label="作品分类">
 				{fanworkFilters.map((filter, index) => <button type="button" data-filter={filter.id} aria-pressed={index === 0 ? "true" : "false"}>{filter.label}</button>)}
 			</div>
 			<div class="fanwork-grid">
-				{fanworks.map((artwork, index) => <article data-fanwork data-groups={artwork.groups.join(" ")}><a href={artwork.image.src} data-fancybox="fanworks" data-caption={`${artwork.franchise} / ${artwork.character} / ${artwork.title}`} aria-label={`查看 ${artwork.franchise} ${artwork.character}《${artwork.title}》完整图片`}><div class="fanwork-grid__visual"><Picture src={artwork.image} formats={["avif", "webp"]} widths={[480, 720, 1080]} sizes="(max-width: 620px) 50vw, (max-width: 900px) 33vw, 30vw" alt={`${artwork.franchise} ${artwork.character}《${artwork.title}》`} loading={index < 3 ? "eager" : "lazy"} style={`object-position: ${artwork.focus};`} /></div><div class="fanwork-grid__copy"><span>{artwork.franchise}</span><h3>{artwork.title}</h3><p>{artwork.character}</p></div></a></article>)}
+				{fanworks.map((artwork, index) => <article data-fanwork data-groups={artwork.groups.join(" ")} hidden={index >= 12}><a href={artwork.image.src} data-fancybox="fanworks" data-caption={`${artwork.franchise} / ${artwork.character} / ${artwork.title}`} aria-label={`查看 ${artwork.franchise} ${artwork.character}《${artwork.title}》完整图片`}><div class="fanwork-grid__visual"><Picture src={artwork.image} formats={["avif", "webp"]} widths={[480, 720, 1080]} sizes="(max-width: 620px) 50vw, (max-width: 900px) 33vw, 30vw" alt={`${artwork.franchise} ${artwork.character}《${artwork.title}》`} loading={index < 6 ? "eager" : "lazy"} style={`object-position: ${artwork.focus};`} /></div><div class="fanwork-grid__copy"><span>{artwork.franchise}</span><h3>{artwork.title}</h3><p>{artwork.character}</p></div></a></article>)}
 			</div>
+			<div class="fanwork-load"><button type="button" data-load-more>显示更多</button><span data-load-status aria-live="polite"></span><div data-load-sentinel aria-hidden="true"></div></div>
 			<p class="fanwork-empty" hidden>这个分类暂时没有公开作品。</p>
 		</fanwork-filter>
 	</section>
@@ -34,28 +35,74 @@ import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 <script>
 	if (!customElements.get("fanwork-filter")) {
 		class FanworkFilter extends HTMLElement {
+			private readonly pageSize = 12;
+			private selected = "all";
+			private observer?: IntersectionObserver;
+
 			connectedCallback() {
 				this.addEventListener("click", this.handleClick);
+				const sentinel = this.querySelector<HTMLElement>("[data-load-sentinel]");
+				if (sentinel && "IntersectionObserver" in window) {
+					this.observer = new IntersectionObserver((entries) => {
+						if (entries.some((entry) => entry.isIntersecting)) this.revealMore();
+					}, { rootMargin: "320px 0px" });
+					this.observer.observe(sentinel);
+				}
+				this.applyFilter();
 			}
 
 			disconnectedCallback() {
 				this.removeEventListener("click", this.handleClick);
+				this.observer?.disconnect();
 			}
 
 			handleClick = (event: Event) => {
 				const button = (event.target as Element).closest<HTMLButtonElement>("button[data-filter]");
-				if (!button) return;
+				if (button) {
+					this.selected = button.dataset.filter || "all";
+					this.querySelectorAll<HTMLButtonElement>("button[data-filter]").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+					this.applyFilter();
+					return;
+				}
+				if ((event.target as Element).closest("button[data-load-more]")) this.revealMore();
+			};
 
-				const selected = button.dataset.filter || "all";
-				this.querySelectorAll<HTMLButtonElement>("button[data-filter]").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
-				let visible = 0;
-				this.querySelectorAll<HTMLElement>("[data-fanwork]").forEach((item) => {
-					const matches = selected === "all" || item.dataset.groups?.split(" ").includes(selected);
-					item.hidden = !matches;
-					if (matches) visible += 1;
+			applyFilter() {
+				let shown = 0;
+				let matching = 0;
+				this.items().forEach((item) => {
+					const matches = this.selected === "all" || item.dataset.groups?.split(" ").includes(this.selected);
+					if (matches) matching += 1;
+					item.hidden = !matches || shown++ >= this.pageSize;
 				});
 				const empty = this.querySelector<HTMLElement>(".fanwork-empty");
-				if (empty) empty.hidden = visible > 0;
+				if (empty) empty.hidden = matching > 0;
+				this.updateLoadControl();
+			}
+
+			revealMore() {
+				let revealed = 0;
+				for (const item of this.items()) {
+					const matches = this.selected === "all" || item.dataset.groups?.split(" ").includes(this.selected);
+					if (matches && item.hidden && revealed < this.pageSize) {
+						item.hidden = false;
+						revealed += 1;
+					}
+				}
+				this.updateLoadControl();
+			}
+
+			items() { return [...this.querySelectorAll<HTMLElement>("[data-fanwork]")]; }
+
+			updateLoadControl() {
+				const remaining = this.items().filter((item) => {
+					const matches = this.selected === "all" || item.dataset.groups?.split(" ").includes(this.selected);
+					return matches && item.hidden;
+				}).length;
+				const button = this.querySelector<HTMLButtonElement>("button[data-load-more]");
+				const status = this.querySelector<HTMLElement>("[data-load-status]");
+				if (button) button.hidden = remaining === 0;
+				if (status) status.textContent = remaining ? `还有 ${remaining} 件作品` : "已展示全部作品";
 			};
 		}
 		customElements.define("fanwork-filter", FanworkFilter);
