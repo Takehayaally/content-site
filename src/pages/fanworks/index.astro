@@ -1,0 +1,63 @@
+---
+import { Picture } from "astro:assets";
+import FancyboxManager from "@/components/features/FancyboxManager.astro";
+import { fanworkFilters, fanworks, featuredFanworks } from "@/data/fanworks";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+---
+
+<PortfolioLayout title="同人创作档案" description="NOVA 的非商业同人视觉研究，展示角色识别、氛围构图与画风适配能力。" ogImage={featuredFanworks[0].image.src}>
+	<header class="page-hero fanwork-hero site-shell">
+		<div class="page-hero__grid"><div><p class="eyebrow">Fan Works / Non-commercial Study</p><h1 class="page-title">从熟悉的角色，<br />读出新的画面。</h1></div><p class="page-summary">这里收录的是面向热门动画与游戏角色的非商业视觉练习。它们不替代原创项目，而是用来观察角色识别、氛围构图和不同世界观的画面适配。</p></div>
+	</header>
+
+	<section class="fanwork-featured" aria-label="精选同人作品">
+		{featuredFanworks.map((artwork, index) => <a class:list={["fanwork-featured__item", { "fanwork-featured__item--primary": index === 0 }]} href={artwork.image.src} data-fancybox="fanworks" data-caption={`${artwork.franchise} / ${artwork.character} / ${artwork.title}`} aria-label={`查看 ${artwork.franchise} ${artwork.character}《${artwork.title}》完整图片`}><Picture src={artwork.image} formats={["avif", "webp"]} widths={[640, 960, 1440]} sizes={index === 0 ? "(max-width: 900px) 100vw, 50vw" : "(max-width: 900px) 50vw, 25vw"} alt={`${artwork.franchise} ${artwork.character}《${artwork.title}》`} loading={index === 0 ? "eager" : "lazy"} /><span><b>{String(index + 1).padStart(2, "0")} / FEATURED</b><strong>{artwork.title}</strong><small>{artwork.franchise} · {artwork.character}</small></span></a>)}
+	</section>
+
+	<section class="site-shell fanwork-archive">
+		<div class="section-heading"><div><p class="eyebrow">Archive / 2026.09</p><h2 class="section-title">持续更新的作品流。</h2></div><p class="section-heading__note">缩略图保留人物与构图焦点；点击后始终按原始比例查看完整图片。</p></div>
+		<fanwork-filter>
+			<div class="fanwork-filter" aria-label="作品分类">
+				{fanworkFilters.map((filter, index) => <button type="button" data-filter={filter.id} aria-pressed={index === 0 ? "true" : "false"}>{filter.label}</button>)}
+			</div>
+			<div class="fanwork-grid">
+				{fanworks.map((artwork, index) => <article data-fanwork data-groups={artwork.groups.join(" ")}><a href={artwork.image.src} data-fancybox="fanworks" data-caption={`${artwork.franchise} / ${artwork.character} / ${artwork.title}`} aria-label={`查看 ${artwork.franchise} ${artwork.character}《${artwork.title}》完整图片`}><div class="fanwork-grid__visual"><Picture src={artwork.image} formats={["avif", "webp"]} widths={[480, 720, 1080]} sizes="(max-width: 620px) 50vw, (max-width: 900px) 33vw, 30vw" alt={`${artwork.franchise} ${artwork.character}《${artwork.title}》`} loading={index < 3 ? "eager" : "lazy"} style={`object-position: ${artwork.focus};`} /></div><div class="fanwork-grid__copy"><span>{artwork.franchise}</span><h3>{artwork.title}</h3><p>{artwork.character}</p></div></a></article>)}
+			</div>
+			<p class="fanwork-empty" hidden>这个分类暂时没有公开作品。</p>
+		</fanwork-filter>
+	</section>
+
+	<section class="fanwork-boundary"><div class="site-shell"><p class="eyebrow">Public Boundary</p><h2>非商业创作研究，不冒充原创或授权项目。</h2><p>页面中的角色、作品名称、世界观与相关标识归原权利方所有。本站仅公开展示个人的角色理解、视觉重构与画面组织练习；不用于商品销售、商业宣传或暗示官方合作。</p></div></section>
+	<FancyboxManager />
+</PortfolioLayout>
+
+<script>
+	if (!customElements.get("fanwork-filter")) {
+		class FanworkFilter extends HTMLElement {
+			connectedCallback() {
+				this.addEventListener("click", this.handleClick);
+			}
+
+			disconnectedCallback() {
+				this.removeEventListener("click", this.handleClick);
+			}
+
+			handleClick = (event: Event) => {
+				const button = (event.target as Element).closest<HTMLButtonElement>("button[data-filter]");
+				if (!button) return;
+
+				const selected = button.dataset.filter || "all";
+				this.querySelectorAll<HTMLButtonElement>("button[data-filter]").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+				let visible = 0;
+				this.querySelectorAll<HTMLElement>("[data-fanwork]").forEach((item) => {
+					const matches = selected === "all" || item.dataset.groups?.split(" ").includes(selected);
+					item.hidden = !matches;
+					if (matches) visible += 1;
+				});
+				const empty = this.querySelector<HTMLElement>(".fanwork-empty");
+				if (empty) empty.hidden = visible > 0;
+			};
+		}
+		customElements.define("fanwork-filter", FanworkFilter);
+	}
+</script>
