@@ -61,7 +61,7 @@ body.portfolio-body img { display: block; max-width: 100%; }
 .work-card:nth-child(even) .work-card__visual { order: 2; }
 .work-card__visual { aspect-ratio: 16 / 10; background: var(--dark-soft); overflow: hidden; }
 .work-card__visual img { height: 100%; object-fit: cover; transition: transform 600ms cubic-bezier(.22, 1, .36, 1); width: 100%; }
-.work-card--portrait .work-card__visual { aspect-ratio: 4 / 5; }
+.work-card--portrait .work-card__visual { aspect-ratio: 16 / 10; }
 .work-card--portrait .work-card__visual img { object-fit: contain; }
 .work-card:hover .work-card__visual img { transform: scale(1.025); }
 .work-card__copy { align-self: end; border-top: 1px solid var(--ink); padding-top: 1rem; }
@@ -72,9 +72,9 @@ body.portfolio-body img { display: block; max-width: 100%; }
 
 .journal-list { border-top: 1px solid var(--line); }
 .journal-entry { display: grid; gap: clamp(2rem, 6vw, 7rem); grid-template-columns: minmax(11rem, .34fr) minmax(0, 1fr); padding-block: clamp(2.5rem, 5vw, 4.5rem); position: relative; border-bottom: 1px solid var(--line); }
-.journal-entry__date { align-items: start; color: var(--ink); display: flex; flex-direction: column; font-family: var(--mono); gap: .25rem; line-height: 1; }
-.journal-entry__date span { color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .12em; }
-.journal-entry__date strong { font-family: var(--serif); font-size: clamp(3.5rem, 7vw, 6.5rem); font-weight: 500; letter-spacing: 0; }
+.journal-entry__date { align-items: start; color: var(--ink); display: flex; flex-direction: column; font-family: var(--mono); gap: .35rem; line-height: 1; }
+.journal-entry__date strong { color: var(--ink); font-family: var(--serif); font-size: clamp(3.5rem, 7vw, 6.5rem); font-weight: 500; letter-spacing: 0; }
+.journal-entry__date span { color: var(--muted); font-family: var(--mono); font-size: .78rem; font-weight: 700; letter-spacing: .12em; }
 .journal-entry__type { color: var(--muted); font-family: var(--mono); font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .journal-entry__type { margin: 0 0 .8rem; }
 .journal-entry h3 { font-family: var(--serif); font-size: clamp(1.9rem, 3.4vw, 3.1rem); line-height: 1.14; margin: 0 0 1rem; max-width: 28ch; }
@@ -108,7 +108,11 @@ body.portfolio-body img { display: block; max-width: 100%; }
 .reserved-card p { color: #bfc0c4; }
 
 .capability-grid, .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-.capability, .process-step { border-left: 1px solid var(--line); min-height: 15rem; padding: 1.25rem; }
+.capability, .process-step { border-left: 1px solid var(--line); min-height: 15rem; padding: 1.25rem; position: relative; }
+.capability::after { background: var(--acid); content: ""; height: 1px; position: absolute; right: 1.25rem; top: 2.1rem; width: 3.5rem; }
+.capability:nth-child(2)::after { background: var(--ice); width: 2.25rem; }
+.capability:nth-child(3)::after { background: var(--coral); width: 4.75rem; }
+.capability:nth-child(4)::after { background: var(--ink); width: 1.5rem; }
 .capability:last-child, .process-step:last-child { border-right: 1px solid var(--line); }
 .capability h3, .process-step h3 { font-family: var(--serif); font-size: 1.5rem; line-height: 1.2; margin: 3.5rem 0 .8rem; }
 .capability p, .process-step p { color: var(--muted); font-size: .9rem; margin: 0; }
@@ -357,7 +361,7 @@ body.portfolio-body img { display: block; max-width: 100%; }
 	.site-header__inner { align-items: stretch; display: grid; grid-template-columns: 1fr; min-height: 0; padding-top: .9rem; }
 	.site-brand { align-items: center; min-height: 2rem; }
 	.site-brand__descriptor { display: none; }
-	.site-nav { border-top: 1px solid var(--line); display: grid; font-size: .72rem; gap: 0; grid-template-columns: repeat(5, 1fr); margin-top: .65rem; width: 100%; }
+.site-nav { border-top: 1px solid var(--line); display: grid; font-size: .72rem; gap: 0; grid-template-columns: repeat(6, 1fr); margin-top: .65rem; width: 100%; }
 	.site-nav a { align-items: center; border-bottom: 0; display: flex; justify-content: center; min-height: 2.8rem; white-space: nowrap; }
 	.site-nav a + a { border-left: 1px solid var(--line); }
 	.site-nav a[aria-current="page"], .site-nav a:hover { box-shadow: inset 0 -2px var(--ink); }

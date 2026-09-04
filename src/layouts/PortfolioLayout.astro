@@ -12,10 +12,12 @@ const pageTitle = title === "NOVA" ? title : `${title} — NOVA`;
 const currentPath = Astro.url.pathname;
 const imageUrl = ogImage ? new URL(ogImage, Astro.site).toString() : undefined;
 const navItems = [
-	{ href: "/work/", label: "作品" },
+	{ href: "/", label: "作品" },
+	{ href: "/fanworks/", label: "同人创作" },
 	{ href: "/systems/", label: "系统与工具" },
 	{ href: "/journal/", label: "日志" },
 	{ href: "/about/", label: "关于" },
+	{ href: "/resume/", label: "经历" },
 ];
 ---
 
@@ -51,9 +53,8 @@ const navItems = [
 				</a>
 				<nav class="site-nav" aria-label="主要导航">
 					{navItems.map((item) => (
-					<a href={item.href} aria-current={currentPath === item.href ? "page" : undefined}>{item.label}</a>
+					<a href={item.href} aria-current={(item.href === "/" ? currentPath === "/" || currentPath.startsWith("/work/") : currentPath === item.href || currentPath.startsWith(item.href)) ? "page" : undefined}>{item.label}</a>
 					))}
-					<a href="/resume/" aria-current={currentPath === "/resume/" ? "page" : undefined}>经历</a>
 				</nav>
 			</div>
 		</header>
@@ -67,7 +68,8 @@ const navItems = [
 					<p>二次元视觉设计 · 原创 IP · 创意生产系统</p>
 				</div>
 				<div class="site-footer__links">
-					<a href="/work/">全部作品</a>
+					<a href="/">全部作品</a>
+					<a href="/fanworks/">同人创作</a>
 					<a href="/systems/">系统与工具</a>
 					<a href="/work/nova/">原创 IP</a>
 					<a href="/about/">关于与方法</a>
