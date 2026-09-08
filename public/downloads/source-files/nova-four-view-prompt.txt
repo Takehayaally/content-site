@@ -1,0 +1,9 @@
+Use case: stylized-concept
+Asset type: original anime IP character design sheet for a professional portfolio
+Input images: Image 1 is the sole visual reference for NOVA's identity, hair, crescent halo, outfit, palette, and materials.
+Primary request: create a clean production-ready character design sheet of the same adult character NOVA from Image 1, preserving her exact short graphite bob with one long side lock, cyan mechanical crescent halo, black asymmetric uniform, translucent cyan raincoat panels, coral rectangular waist tag, silver utility details and black heeled boots.
+Scene/backdrop: warm off-white studio paper with a very faint technical grid; no scenery.
+Style/medium: crisp 2D anime model-sheet art, controlled flat cel shading, clean confident linework, print-ready.
+Composition/framing: wide 16:9 design sheet; show four non-overlapping full-body views (front, 3/4, side, back) plus a compact row of four facial expressions (neutral, focused, faint smile, surprised) and two small material/detail callouts for halo and coral tag. Keep generous spacing and clear hierarchy.
+Lighting/mood: neutral studio lighting with consistent colors.
+Constraints: same adult character and exact outfit across every view; correct anatomy and hands; no text, no letters, no logos, no measurements, no watermark; do not add weapons or new accessories; do not change hairstyle, hair color, halo design, palette, or garment structure; no resemblance to existing copyrighted anime characters.

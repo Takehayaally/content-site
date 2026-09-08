@@ -66,7 +66,6 @@ import fanwork073 from "@/assets/images/fanworks/archive-073.webp";
 import fanwork074 from "@/assets/images/fanworks/archive-074.webp";
 import fanwork075 from "@/assets/images/fanworks/archive-075.webp";
 import fanwork076 from "@/assets/images/fanworks/archive-076.webp";
-import fanwork077 from "@/assets/images/fanworks/archive-077.webp";
 import fanwork062 from "@/assets/images/fanworks/frieren-meteor.webp";
 import fanwork065 from "@/assets/images/fanworks/gojo-limitless.webp";
 import fanwork069 from "@/assets/images/fanworks/lelouch-chess.webp";
@@ -76,6 +75,10 @@ import fanwork022 from "@/assets/images/fanworks/rengoku-dawn.webp";
 import fanwork025 from "@/assets/images/fanworks/sasuke-rain-shrine.webp";
 import fanwork048 from "@/assets/images/fanworks/sungjinwoo-shadow.webp";
 import fanwork017 from "@/assets/images/fanworks/tanjiro-sunrise.webp";
+import remLibrary from "@/assets/images/fanworks/rem-rain-library.png";
+import yorConservatory from "@/assets/images/fanworks/yor-botanical-conservatory.png";
+import saberArchive from "@/assets/images/fanworks/saber-moonlit-archive.png";
+import kaguyaLibrary from "@/assets/images/fanworks/kaguya-lacquer-library.png";
 
 export interface Fanwork {
 	title: string;
@@ -86,7 +89,7 @@ export interface Fanwork {
 	focus: string;
 }
 
-export const fanworks: Fanwork[] = [
+const allFanworks: Fanwork[] = [
 	{
 		title: "战时纪实肖像",
 		character: "弗拉蒂蕾娜·米丽洁",
@@ -696,16 +699,57 @@ export const fanworks: Fanwork[] = [
 		focus: "50% 42%",
 	},
 	{
-		title: "孟菲斯魔法工作室",
-		character: "若月妮可",
-		franchise: "WITCH WATCH",
-		image: fanwork077,
+		title: "雨窗蓝调图书馆",
+		character: "蕾姆",
+		franchise: "Re 从零开始的异世界生活",
+		image: remLibrary,
 		groups: ["current"],
-		focus: "50% 42%",
+		focus: "50% 48%",
+	},
+	{
+		title: "玻璃温室玫瑰",
+		character: "约尔 福杰",
+		franchise: "间谍过家家",
+		image: yorConservatory,
+		groups: ["current"],
+		focus: "50% 43%",
+	},
+	{
+		title: "月下档案骑士",
+		character: "Saber",
+		franchise: "Fate stay night",
+		image: saberArchive,
+		groups: ["classic"],
+		focus: "50% 43%",
+	},
+	{
+		title: "漆扇书库",
+		character: "四宫辉夜",
+		franchise: "辉夜大小姐想让我告白",
+		image: kaguyaLibrary,
+		groups: ["current"],
+		focus: "50% 44%",
 	},
 ];
 
-const featuredTitles = ["紫藤雨夜", "无下限夜景", "黎明列车站"];
+// Public gallery exclusions: keep the original files locally, but do not expose
+// entries whose hands/holding poses need a redraw or whose source has a
+// reputational/political risk for a public portfolio.
+const excludedTitles = new Set([
+	"彩色胶片乐社", "雾桥丝绸画", "朋克孔版", "雨后神社祭", "停时茶室",
+	"时装摄影", "焦虑拼贴", "晴日喫茶店", "烟火夜屋顶", "平安漆器屏风",
+	"构成主义轨道", "银尖笔冰场素描", "巴洛克赌桌", "自然学野外手册",
+	"复古丝网印刷", "佛兰德魔法厨房", "装饰艺术时钟", "都市电光蓝图",
+	"黑胶乐队摄影", "哥特银版摄影", "重建之晨", "流行艺术丝印",
+	"间谍惊悚电影", "浮世绘月夜", "蓝晒深海植物", "摩登时装摄影",
+	"大理石超现实", "复古未来车站", "博物药草谱", "太阳朋克温室",
+	"前拉斐尔派药草园", "无下限夜景", "新艺术彩窗", "粗野主义栖居地",
+	"彩饰手抄本", "至上主义棋盘", "全息彩窗舞台", "孟菲斯魔法工作室",
+]);
+
+export const fanworks = allFanworks.filter((artwork) => !excludedTitles.has(artwork.title));
+
+const featuredTitles = ["紫藤雨夜", "雨窗蓝调图书馆", "黎明列车站"];
 export const featuredFanworks = featuredTitles
 	.map((title) => fanworks.find((artwork) => artwork.title === title))
 	.filter((artwork): artwork is Fanwork => Boolean(artwork));

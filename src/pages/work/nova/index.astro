@@ -3,16 +3,19 @@ import { Image } from "astro:assets";
 import novaConceptDisplay from "@/assets/images/portfolio/nova-concept-display.png";
 import novaKeyVisual from "@/assets/images/portfolio/nova-key-visual.png";
 import novaMerchSystem from "@/assets/images/portfolio/nova-merch-system.png";
+import novaAcrylicStand from "@/assets/images/portfolio/products/nova-acrylic-stand.png";
+import novaBadgeSet from "@/assets/images/portfolio/products/nova-badge-set.png";
+import novaBlindBox from "@/assets/images/portfolio/products/nova-blind-box.png";
 import ProjectSwitcher from "@/components/ProjectSwitcher.astro";
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 ---
 
-<PortfolioLayout title="NOVA：从角色到商品系统" description="原创 IP NOVA 的角色主视觉、谷子周边、包装与陈列视觉系统。" ogImage={novaMerchSystem.src}>
+<PortfolioLayout title="NOVA：从角色到商品系统" description="原创 IP NOVA 的角色主视觉、商品系统、包装候选与陈列提案。" ogImage={novaMerchSystem.src}>
 	<ProjectSwitcher current="nova" />
 	<header class="project-hero site-shell">
-		<p class="project-kicker">Case 01 / Original IP System</p><h1 class="project-title">NOVA：从角色到商品系统</h1>
-		<p class="project-lead">不把角色停在一张主视觉里，而是建立能进入徽章、立牌、卡牌、包装与陈列的统一识别系统。</p>
-		<div class="project-meta"><div><span class="meta-label">Scope</span><strong>角色视觉 / 商品延展</strong></div><div><span class="meta-label">Role</span><strong>创意定向 / 筛选 / 视觉组织</strong></div><div><span class="meta-label">Output</span><strong>KV / 周边 / 包装 / 陈列</strong></div><div><span class="meta-label">Status</span><strong>原创公开案例</strong></div></div>
+		<p class="project-kicker">Case 02 / Original IP System</p><h1 class="project-title">NOVA：从角色到商品系统</h1>
+		<p class="project-lead">不把角色停在一张主视觉里，而是建立能延展到徽章、立牌、卡牌、包装候选与陈列提案的统一识别系统。</p>
+		<div class="project-meta"><div><span class="meta-label">Scope</span><strong>角色视觉 / 商品延展</strong></div><div><span class="meta-label">Role</span><strong>AI 辅助生成 / 筛选 / 视觉组织</strong></div><div><span class="meta-label">Output</span><strong>KV / 周边 / 包装候选 / 陈列提案</strong></div><div><span class="meta-label">Status</span><strong>原创概念案例 / 待签样</strong></div></div>
 	</header>
 	<div class="project-cover project-cover--portrait"><Image src={novaKeyVisual} alt="原创 IP NOVA 的完整角色主视觉" widths={[800, 1400, 2000]} sizes="100vw" loading="eager" /></div>
 
@@ -22,8 +25,15 @@ import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 
 	<figure class="case-full-visual"><Image src={novaMerchSystem} alt="NOVA 的徽章、立牌、卡牌与包装组合" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 66vw" loading="eager" /><figcaption>商品系统以完整陈列图展示，便于阅读角色锚点如何跨载体保持一致。</figcaption></figure>
 
+	<section class="site-shell case-section"><div><p class="eyebrow">03A / Individual Products</p><h2>把周边拆成可单独阅读的商品图。</h2></div><div class="case-body"><div class="detail-gallery"><figure><Image src={novaAcrylicStand} alt="NOVA 亚克力立牌商品图" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" loading="lazy" /><figcaption><b>ACRYLIC STAND</b><span>透明材质、底座与角色轮廓。</span></figcaption></figure><figure><Image src={novaBadgeSet} alt="NOVA 徽章套装商品图" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" loading="lazy" /><figcaption><b>BADGE SET</b><span>小尺寸识别与圆形构图。</span></figcaption></figure><figure><Image src={novaBlindBox} alt="NOVA 盲盒包装商品图" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" loading="lazy" /><figcaption><b>BLIND BOX</b><span>包装正面、侧面与角色锚点。</span></figcaption></figure></div></div></section>
+
 	<section class="site-shell case-section"><div><p class="eyebrow">03 / Display Proposal</p><h2>让同一套识别进入空间。</h2></div><div class="case-body"><p>陈列不额外发明一套语言，而是继续使用角色的深色轮廓、冷蓝光线和红色信号。它用于检验商品、角色和空间是否仍然指向同一个视觉中心。</p></div></section>
 	<figure class="case-full-visual case-full-visual--wide"><Image src={novaConceptDisplay} alt="NOVA 角色周边的概念陈列视觉提案" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 1240px" loading="lazy" /><figcaption>概念陈列视觉提案，用于检查商品组合与空间层级；不代表已实际落地、量产或销售。</figcaption></figure>
 
-	<section class="site-shell case-section"><div><p class="eyebrow">04 / Review</p><h2>公开边界与下一步。</h2></div><div class="case-body"><p>本页展示的是原创角色的稳定公开版本与已形成的商品视觉组合。后续可以继续补足生产规格、单品展开与更严格的跨图一致性记录；在这些内容实际完成前，不把它们写成既有成果。</p></div></section>
+	<section class="site-shell case-section"><div><p class="eyebrow">04 / Deliverables</p><h2>把角色系统翻译成岗位能接手的文件。</h2></div><div class="case-body"><div class="delivery-grid"><div class="delivery-card"><span>01 / KEY VISUAL</span><h3>角色锚点页</h3><p>轮廓、冷蓝材质、几何光环与红色标识作为跨图基准。</p></div><div class="delivery-card"><span>02 / MERCH</span><h3>SKU 延展页</h3><p>徽章、立牌、卡牌和包装候选按载体尺寸拆分视觉重点。</p></div><div class="delivery-card"><span>03 / DISPLAY</span><h3>陈列提案页</h3><p>用空间层级验证商品组合，不把概念陈列写成真实门店。</p></div></div></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">05 / Handoff Structure</p><h2>文件结构为后续制作留下接口。</h2></div><div class="case-body"><dl class="spec-table"><div><dt>核心资产</dt><dd>角色主视觉、透明背景素材、标识与配色锚点。</dd></div><div><dt>商品分支</dt><dd>按徽章、立牌、卡牌、包装候选分别建立版面与裁切。</dd></div><div><dt>检查项</dt><dd>小尺寸识别度、红色信号位置、透明材质边缘与文字后置。</dd></div></dl><p class="boundary-note">当前公开页展示的是视觉系统和生产准备方式；没有把未完成的刀模、专色、白样或签样记录写成既有交付。</p></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">06 / Production Boundary</p><h2>展示提案不等于生产完成。</h2></div><div class="case-body"><p>本页展示原创角色的稳定公开版本与已形成的商品视觉组合。盲盒和其他包装仍为生产候选：尚未取得供应商正式刀模、CMYK/专色输出、白样、彩样或签样记录。后续可以补足生产规格、单品展开与更严格的跨图一致性记录；在这些内容实际完成前，不把它们写成既有成果。</p></div></section>
+	<section class="site-shell case-section"><div><p class="eyebrow">07 / Source Pack</p><h2>角色、世界与四视图都有来源文件。</h2></div><div class="case-body"><p>林澈的角色设定、四视图提示词、栖光市世界规则和配件说明均可公开核对；商品视觉仍保持“生产候选”状态，不把源文件存在混同为已经量产。</p><a class="text-link" href="/downloads/source-files/nova-character-spec.md" download>下载角色设定 <span>↓</span></a> <a class="text-link" href="/downloads/source-files/nova-four-view-prompt.txt" download>下载四视图提示词 <span>↓</span></a> <a class="text-link" href="/downloads/source-files/nova-world-spec.md" download>下载世界设定 <span>↓</span></a> <a class="text-link" href="/work/source-file-index/">查看全部源文件 <span>↗</span></a></div></section>
 </PortfolioLayout>

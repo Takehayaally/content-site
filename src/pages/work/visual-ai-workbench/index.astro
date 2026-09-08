@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import workflow from "@/assets/images/portfolio/job-evidence-ai-workflow.png";
+import productLoop from "@/assets/images/portfolio/job-evidence-product-loop.png";
+import reusable from "@/assets/images/portfolio/job-evidence-reusable-assets.png";
+import productionSpec from "@/assets/images/portfolio/job-evidence-production-spec.png";
+import qa from "@/assets/images/portfolio/job-evidence-qa-boundaries.png";
+import promptFramework from "@/assets/images/portfolio/production-prompt-framework.png";
+import cropReuse from "@/assets/images/portfolio/production-crop-reuse.png";
+import aiHandoff from "@/assets/images/portfolio/production-ai-to-handoff.png";
+import trueyouDashboard from "@/assets/images/portfolio/trueyou-dashboard.png";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+---
+
+<PortfolioLayout title="AI 视觉生产工作台" description="视觉优先展示 AI 视觉生产、提示词框架、素材复用、商品循环和 QA 交接证据。" ogImage={workflow.src}>
+	<header class="project-hero site-shell"><p class="project-kicker">Visual-first / AI Production Wall</p><h1 class="project-title">让面试官先看到画面，再看到你如何控制画面。</h1><p class="project-lead">这是视觉证据墙：大图优先，文字只标记 AI 参与的位置、筛选动作和交付状态。适合面试时快速展示生成、人工统一、复用与 QA。</p><div class="project-meta"><div><span class="meta-label">Format</span><strong>视觉墙 / 过程板</strong></div><div><span class="meta-label">AI role</span><strong>生成 / 变体 / 候选</strong></div><div><span class="meta-label">Human role</span><strong>筛选 / PS/AI / QA</strong></div><div><span class="meta-label">Status</span><strong>公开方法案例</strong></div></div></header>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">01 / AI In</p><h2>AI 先进入哪里。</h2></div><div class="case-body"><div class="visual-wall"><figure><Image src={workflow} alt="AI 视觉生产工作流总览" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 66vw" loading="eager" /><figcaption><b>WORKFLOW</b><span>需求 → 生成 → 筛选 → 后期 → QA → 交付</span></figcaption></figure><figure><Image src={promptFramework} alt="AIGC 提示词框架与约束说明" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" loading="lazy" /><figcaption><b>PROMPT</b><span>角色、镜头、环境和禁用项拆成可检查条件。</span></figcaption></figure><figure><Image src={trueyouDashboard} alt="AIGC 图片生产台与候选管理界面" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" loading="lazy" /><figcaption><b>CANDIDATES</b><span>候选不是结果，先按任务筛选再进入后期。</span></figcaption></figure></div></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">02 / Human Control</p><h2>人负责哪些关键判断。</h2></div><div class="case-body"><div class="visual-wall visual-wall--two"><figure><Image src={productLoop} alt="AI 商品视觉生产循环" widths={[800, 1400]} sizes="(max-width: 900px) 100vw, 50vw" loading="lazy" /><figcaption><b>PRODUCT LOOP</b><span>产品锚点、变体、跨图检查与页面模块。</span></figcaption></figure><figure><Image src={reusable} alt="可复用 AIGC 素材与版本管理" widths={[800, 1400]} sizes="(max-width: 900px) 100vw, 50vw" loading="lazy" /><figcaption><b>REUSE</b><span>母图、裁切、透明素材与版本角色分开管理。</span></figcaption></figure><figure><Image src={cropReuse} alt="AIGC 裁切复用与素材整理" widths={[800, 1400]} sizes="(max-width: 900px) 100vw, 50vw" loading="lazy" /><figcaption><b>CROP / REUSE</b><span>同一通过稿进入不同尺寸，而不是反复生成不同产品。</span></figcaption></figure><figure><Image src={aiHandoff} alt="AI 结果到可交付文件的交接图" widths={[800, 1400]} sizes="(max-width: 900px) 100vw, 50vw" loading="lazy" /><figcaption><b>HANDOFF</b><span>从位图候选到 PSD/SVG、命名和状态。</span></figcaption></figure></div></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">03 / Reject &amp; Release</p><h2>不合格的图，不进入交付。</h2></div><div class="case-body"><div class="visual-wall visual-wall--two"><figure><Image src={qa} alt="AIGC 质量边界与不合格候选说明" widths={[800, 1400]} sizes="(max-width: 900px) 100vw, 50vw" loading="lazy" /><figcaption><b>QA BOUNDARIES</b><span>结构错误、事实越界和伪造文字直接退回。</span></figcaption></figure><figure><Image src={productionSpec} alt="生产规格与文件交接说明" widths={[800, 1400]} sizes="(max-width: 900px) 100vw, 50vw" loading="lazy" /><figcaption><b>PRODUCTION</b><span>图像通过后还要进入尺寸、结构与文件检查。</span></figcaption></figure></div><a class="text-link" href="/work/aigc-draft-library/">查看多项目初稿筛选 <span>↗</span></a> <a class="text-link" href="/work/source-file-index/">查看可下载源文件 <span>↗</span></a></div></section>
+</PortfolioLayout>

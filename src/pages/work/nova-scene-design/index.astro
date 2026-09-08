@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import novaFourViews from "@/assets/images/portfolio/nova-four-views.png";
+import novaReturnScene from "@/assets/images/portfolio/nova-return-scene.png";
+import novaSubwayScene from "@/assets/images/portfolio/nova-subway-scene.png";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+---
+
+<PortfolioLayout title="帧隙信使：角色进入场景" description="原创角色林澈的四视图、剧情关键帧与镜头任务设计研究。" ogImage={novaSubwayScene.src}>
+	<header class="project-hero site-shell">
+		<p class="project-kicker">Character Case / Scene Assignment</p><h1 class="project-title">帧隙信使：角色在场景中承担任务。</h1>
+		<p class="project-lead">从四视图出发，为角色写清“在什么地方、正在做什么、画面要让观众先看到什么”。这让 AIGC 画面不是泛用氛围图，而是可进入分镜的剧情候选。</p>
+		<div class="project-meta"><div><span class="meta-label">Scope</span><strong>角色设定 / 场景关键帧</strong></div><div><span class="meta-label">Focus</span><strong>镜头任务 / 角色一致性</strong></div><div><span class="meta-label">Output</span><strong>四视图 / 两组剧情画面</strong></div><div><span class="meta-label">Status</span><strong>原创概念案例</strong></div></div>
+	</header>
+	<div class="project-cover project-cover--portrait"><Image src={novaFourViews} alt="林澈的角色四视图、面部与配件设定板" widths={[800, 1400, 2000]} sizes="100vw" loading="eager" /></div>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">01 / Character Brief</p><h2>把角色写成一组稳定的视觉条件。</h2></div><div class="case-body"><p>林澈的黑发、黑色内层、半透明冷蓝外套、弧形装置与红色回执签构成固定识别。每一项都兼顾远景轮廓与近景细节：即使环境更暗、动作更大，观众也能先读到人物归属。</p><ul class="case-points"><li><span>01</span><div><strong>轮廓锚点</strong><br />弧形装置和透明外套把人物从深色背景中分离。</div></li><li><span>02</span><div><strong>颜色锚点</strong><br />冷蓝服务空间与科技感，红色回执签只承担局部叙事信号。</div></li><li><span>03</span><div><strong>道具锚点</strong><br />装置、签条和手部关系需要在不同镜头中保持可解释。</div></li></ul></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">02 / Scene A</p><h2>地铁站：先读任务，再读世界。</h2></div><div class="case-body"><p>这张画面的任务是“在拥挤的站台定位异常时间点”。构图把林澈放在右侧中近景，手部指向画面中心的发光信号；轨道、隔离带和人群只提供空间尺度，不能抢走任务焦点。</p><figure class="case-full-visual case-full-visual--wide"><Image src={novaSubwayScene} alt="林澈在地铁站台定位异常信号的原创剧情关键帧" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 1240px" loading="lazy" /><figcaption>场景 A：以人物、信号与站台空间建立任务阅读顺序；作为静态剧情关键帧研究，不是正式动画或上线素材。</figcaption></figure></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">03 / Scene B</p><h2>回执时刻：把动作收束成情绪。</h2></div><div class="case-body"><p>第二张把同一角色从公共空间切到更近的情绪节点：回执签、手部动作与光源成为叙事中心。它用来测试近景里人物面部、透明材质和红色信号能否仍保持与设定板一致，而不是把每张图都做成同一个姿势。</p><figure class="case-full-visual case-full-visual--wide"><Image src={novaReturnScene} alt="林澈处理回执签的原创近景剧情关键帧" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 1240px" loading="lazy" /><figcaption>场景 B：近景情绪节点，用于检查面部、手部、回执签与透明外套在不同景别下的连续性。</figcaption></figure></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">04 / Prompt-to-QA</p><h2>每一张候选都回到角色基线。</h2></div><div class="case-body"><div class="system-map"><div class="system-node system-node--acid"><span>01 / INPUT</span><strong>人物与任务</strong></div><div class="system-node"><span>02 / FRAME</span><strong>景别与视线</strong></div><div class="system-node system-node--ice"><span>03 / GENERATE</span><strong>多候选探索</strong></div><div class="system-node"><span>04 / QA</span><strong>锚点复核</strong></div></div><p style="margin-top:1.5rem">放行前至少核对发型、透明外套、弧形装置、红色签条、手部与道具关系，以及画面是否完成指定镜头任务。页面公开的是原创工作方法与结果，不等同于客户项目或正式成片。</p></div></section>
+</PortfolioLayout>

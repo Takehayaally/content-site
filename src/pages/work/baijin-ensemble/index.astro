@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import baijinEnsembleCharacters from "@/assets/images/portfolio/baijin-ensemble-characters.png";
+import baijinFourViews from "@/assets/images/portfolio/baijin-four-views.png";
+import baijinSnowChase from "@/assets/images/portfolio/baijin-snow-chase.png";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+---
+
+<PortfolioLayout title="白烬：多角色关系设定" description="原创科幻世界观中的三位角色设定、识别锚点与同场景叙事研究。" ogImage={baijinEnsembleCharacters.src}>
+	<header class="project-hero site-shell">
+		<p class="project-kicker">Character Case / Ensemble Design</p><h1 class="project-title">白烬：同一世界里的角色差异化。</h1>
+		<p class="project-lead">把主角之外的角色也做成可进镜头的设定：先共享世界观规则，再用轮廓、材质、道具和行动职责拉开距离，避免多人同时出现时失去辨识。</p>
+		<div class="project-meta"><div><span class="meta-label">Scope</span><strong>多角色设定 / 关系锚点</strong></div><div><span class="meta-label">Focus</span><strong>差异化 / 连续性 / 镜头可读性</strong></div><div><span class="meta-label">Output</span><strong>设定板 / 场景关键帧</strong></div><div><span class="meta-label">Status</span><strong>原创概念案例</strong></div></div>
+	</header>
+	<figure class="case-full-visual case-full-visual--wide"><Image src={baijinEnsembleCharacters} alt="沈砾与洛弥的角色设定板，包含正面、侧面、表情与签名配件" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 1240px" loading="eager" /><figcaption>扩展角色设定板：沈砾以黑色机能长外套、义肢与记忆检准镜形成“维护”识别；洛弥以白色外套、红棕发色和诊断器具形成“诊断”识别。</figcaption></figure>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">01 / Shared Rules</p><h2>先统一世界，再区分角色。</h2></div><div class="case-body"><p>三位角色共享冷灰基底、黄铜机械细节与“记忆维护”语境；这让他们同场时有共同的世界来源。差异不依赖随机换色，而来自服装明度、外轮廓、随身工具和角色面对镜头时的姿态。</p><div class="system-map"><div class="system-node system-node--ice"><span>01 / WORLD</span><strong>冷灰与黄铜</strong></div><div class="system-node"><span>02 / BAIJIN</span><strong>白发 / 雪地行动</strong></div><div class="system-node system-node--acid"><span>03 / SHEN LI</span><strong>深色 / 维护义肢</strong></div><div class="system-node"><span>04 / LUO MI</span><strong>白衣 / 红色信号</strong></div></div></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">02 / Anchor Sheet</p><h2>能复核的角色基线。</h2></div><div class="case-body"><p>多人剧情不能只靠一张氛围图记住角色。白烬的四视图把发色、轮廓、服装分区与装备位置固定为基线；后续不同景别或动作的候选图需要回到这些锚点检查。</p><figure class="case-full-visual case-full-visual--compact"><Image src={baijinFourViews} alt="白烬角色四视图、表情和配件的设定板" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 66vw" loading="lazy" /><figcaption>白烬角色基线：用于检查发色、轮廓、服装结构和配件位置；页面展示的是原创设定素材，不代表量产角色资产。</figcaption></figure></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">03 / Scene Task</p><h2>让设定在剧情任务中继续成立。</h2></div><div class="case-body"><p>进入场景时，角色不只是“站在背景前”。本张关键帧把白烬放进雪夜追踪的行动任务：前景障碍、行进方向和冷暖对比共同服务镜头阅读。生成候选会先检查脸部、发色、外套结构与装备位置，再判断动作和环境是否支持任务。</p><figure class="case-full-visual case-full-visual--wide"><Image src={baijinSnowChase} alt="白烬在雪夜环境中执行追踪任务的原创剧情关键帧" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 1240px" loading="lazy" /><figcaption>原创剧情关键帧，用于镜头与角色一致性研究；不是已上线漫画章节或正式动态成片。</figcaption></figure></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">04 / Handoff</p><h2>交给分镜与生成的最小信息集。</h2></div><div class="case-body"><dl class="spec-table"><div><dt>必须保留</dt><dd>角色轮廓、主色、专属道具、服装结构和身份功能。</dd></div><div><dt>可随镜头变化</dt><dd>景别、姿态、环境密度、光源方向与情绪强度。</dd></div><div><dt>生成后检查</dt><dd>人物数量、发色与服装漂移、手部/道具关系、行动方向和场景可读性。</dd></div></dl><p class="boundary-note">本页证明原创多角色设定与画面控制方法；未主张已有公开漫画连载、客户委托或真实团队协作记录。</p></div></section>
+</PortfolioLayout>

@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import overview from "@/assets/images/portfolio/week-eight-overview.jpg";
+import world from "@/assets/images/portfolio/week-eight-world.png";
+import character from "@/assets/images/portfolio/week-eight-character.png";
+import store from "@/assets/images/portfolio/week-eight-store.png";
+import production from "@/assets/images/portfolio/week-eight-production.png";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+---
+
+<PortfolioLayout title="星期八便利店：世界观进入包装" description="原创 IP 星期八便利店的角色、门店陈列、商品与盲盒包装生产候选案例。" ogImage={overview.src}>
+	<header class="project-hero site-shell"><p class="project-kicker">Case 11 / Brand &amp; Packaging System</p><h1 class="project-title">星期八便利店：世界观进入包装</h1><p class="project-lead">以唐小满、情绪色和便利店陈列建立一个可读、可拆分、可继续交付的原创商品系统。</p><div class="project-meta"><div><span class="meta-label">Scope</span><strong>角色 / 门店 / 包装</strong></div><div><span class="meta-label">Role</span><strong>品牌设定 / 商品编排</strong></div><div><span class="meta-label">Output</span><strong>KV / 陈列 / 盲盒候选</strong></div><div><span class="meta-label">Status</span><strong>原创概念案例</strong></div></div></header>
+	<figure class="case-full-visual case-full-visual--wide"><Image src={overview} alt="星期八便利店原创 IP 作品展示总览" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 1240px" loading="eager" /><figcaption>从角色与世界观到门店陈列、商品和包装候选的公开总览。</figcaption></figure>
+	<section class="site-shell case-section"><div><p class="eyebrow">01 / Character &amp; Retail</p><h2>让角色识别和门店阅读互相支持。</h2></div><div class="case-body"><p>唐小满角色卡先固定人物识别与情绪色，再将其放进门店货架和商品组合中；陈列图负责远距离识别，单品图负责近距离阅读。</p><div class="detail-gallery"><figure><Image src={character} alt="唐小满角色设定图" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" /><figcaption><b>CHARACTER ANCHOR</b><span>角色、配件与情绪色。</span></figcaption></figure><figure><Image src={store} alt="星期八便利店门店陈列图" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" /><figcaption><b>RETAIL READING</b><span>门店、货架与商品层级。</span></figcaption></figure></div></div></section>
+	<section class="site-shell case-section"><div><p class="eyebrow">02 / Packaging Handoff</p><h2>包装六面先说清楚各自负责什么。</h2></div><div class="case-body"><div class="detail-gallery"><figure><Image src={world} alt="星期八便利店世界设定图" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" /><figcaption><b>WORLD RULE</b><span>便利店世界观与信息规则。</span></figcaption></figure><figure><Image src={production} alt="便利店盲盒包装生产候选预览" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" /><figcaption><b>PACKAGING CANDIDATE</b><span>六面信息职责与结构沟通示例。</span></figcaption></figure></div><a class="text-link" href="/downloads/source-files/tangxiaoman-character-world-spec.md" download>下载角色与世界设定 <span>↓</span></a> <a class="text-link" href="/downloads/source-files/tangxiaoman-image-prompt.md" download>下载生图提示词 <span>↓</span></a><p class="boundary-note">本页是原创品牌与包装概念案例；刀模、材质、内装和实物样品仍需供应商确认，不代表真实量产或销售。</p></div></section>
+</PortfolioLayout>

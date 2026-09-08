@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import overview from "@/assets/images/portfolio/noon-pilgrimage-overview.jpg";
+import world from "@/assets/images/portfolio/noon-pilgrimage-world.png";
+import character from "@/assets/images/portfolio/noon-pilgrimage-character.png";
+import merch from "@/assets/images/portfolio/noon-pilgrimage-merch.png";
+import production from "@/assets/images/portfolio/noon-pilgrimage-production.png";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+---
+
+<PortfolioLayout title="无昼巡礼：把时间系统做成视觉" description="原创 IP 无昼巡礼的角色、世界观、周边与生产候选案例。" ogImage={overview.src}>
+	<header class="project-hero site-shell"><p class="project-kicker">Case 09 / Original IP System</p><h1 class="project-title">无昼巡礼：把时间系统做成视觉</h1><p class="project-lead">以“日标”、夜霜与归灯站建立一套有叙事、有角色、有商品延展的原创视觉系统。</p><div class="project-meta"><div><span class="meta-label">Scope</span><strong>角色 / 世界观 / 周边</strong></div><div><span class="meta-label">Role</span><strong>视觉设定 / 商品编排</strong></div><div><span class="meta-label">Output</span><strong>KV / 设定 / 生产候选</strong></div><div><span class="meta-label">Status</span><strong>原创概念案例</strong></div></div></header>
+	<figure class="case-full-visual case-full-visual--wide"><Image src={overview} alt="无昼巡礼原创 IP 作品展示总览" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 1240px" loading="eager" /><figcaption>从角色、世界设定到周边与生产候选的公开展示总览。</figcaption></figure>
+	<section class="site-shell case-section"><div><p class="eyebrow">01 / Character &amp; World</p><h2>先让角色拥有可以行动的世界。</h2></div><div class="case-body"><p>照霜的短披肩、伞形轮廓与日标编号承担远距离识别；世界观图解释时间失序、归灯站与街区关系，让角色不是脱离环境的单张立绘。</p><div class="detail-gallery"><figure><Image src={character} alt="照霜角色设定图" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" /><figcaption><b>CHARACTER ANCHOR</b><span>轮廓、配件与角色识别点。</span></figcaption></figure><figure><Image src={world} alt="无昼巡礼世界设定图" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" /><figcaption><b>WORLD RULE</b><span>日标、街区与归灯站的叙事关系。</span></figcaption></figure></div></div></section>
+	<section class="site-shell case-section"><div><p class="eyebrow">02 / Merch &amp; Handoff</p><h2>把叙事拆成可以继续生产的载体。</h2></div><div class="case-body"><div class="detail-gallery"><figure><Image src={merch} alt="无昼巡礼周边组合视觉" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" /><figcaption><b>MERCH SYSTEM</b><span>角色、符号与周边载体的组合关系。</span></figcaption></figure><figure><Image src={production} alt="无昼伞金属书签生产候选预览" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" /><figcaption><b>PRODUCTION CANDIDATE</b><span>结构、正背与工艺沟通示例。</span></figcaption></figure></div><a class="text-link" href="/downloads/source-files/zhaoshuang-character-spec.md" download>下载照霜角色设定 <span>↓</span></a> <a class="text-link" href="/downloads/source-files/zhaoshuang-image-prompt.md" download>下载生图提示词 <span>↓</span></a> <a class="text-link" href="/downloads/source-files/noon-world-spec.md" download>下载世界规则 <span>↓</span></a><p class="boundary-note">本页是原创 IP 概念案例；生产候选仍需供应商模板、打样与签样确认，不代表已量产或商业发售。</p></div></section>
+</PortfolioLayout>

@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+import moonlitTeaEditablePreview from "@/assets/images/portfolio/moonlit-tea-editable-preview.png";
+import repairAcrylicEdgeCheck from "@/assets/images/portfolio/repair-acrylic-edge-check.jpg";
+import repairAcrylicEditablePreview from "@/assets/images/portfolio/repair-acrylic-editable-preview.png";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+---
+
+<PortfolioLayout title="从概念图到可编辑交接" description="以原创茶包礼册与角色亚克力立牌为例，展示 Photoshop、Illustrator 与生产候选的可编辑文件交接方法。" ogImage={moonlitTeaEditablePreview.src}>
+	<header class="project-hero site-shell"><p class="project-kicker">P1 / P2 Production File Case</p><h1 class="project-title">从概念图，到可编辑交接。</h1><p class="project-lead">AIGC 图只解决画面候选，不能替代文件。这里用两组原创生产候选说明：如何把视觉方案拆成刀线、折线、安全线、透明边缘、分层源文件和可继续核对的交接说明。</p><div class="project-meta"><div><span class="meta-label">Tools</span><strong>Photoshop / Illustrator / GPT Image</strong></div><div><span class="meta-label">Scope</span><strong>包装 / 亚克力立牌候选</strong></div><div><span class="meta-label">Output</span><strong>SVG / PSD / 检查预览</strong></div><div><span class="meta-label">Status</span><strong>原创概念生产候选</strong></div></div></header>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">01 / Packaging File</p><h2>先把结构线和视觉层分开。</h2></div><div class="case-body"><p>月相茶包礼册的预览把成品画面、刀线、折线与安全线拆开显示。页面用于说明文件交接意识：印刷尺寸和折叠关系需要被看见，文字与图形必须避开裁切风险区；正式量产前仍需要供应商模板、色彩配置与打样确认。</p><figure class="case-full-visual case-full-visual--screen"><Image src={moonlitTeaEditablePreview} alt="月相茶包礼册的包装展开、刀线、折线与安全线生产文件预览" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 66vw" loading="eager" /><figcaption>原创概念生产文件预览：外壳展开尺寸为设计候选信息，刀模、材料、CMYK/专色与签样尚未由供应商确认。</figcaption></figure></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">02 / Acrylic File</p><h2>角色素材进入生产前，先检查边缘与裁切。</h2></div><div class="case-body"><p>柚铁立牌的背卡预览同时标注角色区域、标题信息、安全线和出血。它不把“透明 PNG”当作完成：边缘、透明通道、尺寸和背卡内容都需要被单独复核，才具备进入后续工艺沟通的条件。</p><div class="detail-gallery"><figure><Image src={repairAcrylicEditablePreview} alt="柚铁角色亚克力立牌背卡的可编辑生产文件预览" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" loading="lazy" /><figcaption><b>EDITABLE BACKING CARD</b><span>出血线、安全线和角色区分层展示；用于原创概念文件交接。</span></figcaption></figure><figure><Image src={repairAcrylicEdgeCheck} alt="柚铁角色立绘透明边缘检查预览" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" loading="lazy" /><figcaption><b>ALPHA EDGE CHECK</b><span>在不同底色下检查半透明边缘和残留色边，避免透明素材进入生产后才暴露问题。</span></figcaption></figure></div></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">03 / File Roles</p><h2>让每种文件只负责它该负责的事。</h2></div><div class="case-body"><div class="delivery-grid"><div class="delivery-card"><span>SVG / AI</span><h3>结构与图形</h3><p>刀线、折线、安全线、图形资产和可缩放标识分层保存，便于继续编辑与核对。</p></div><div class="delivery-card"><span>PSD</span><h3>版面与像素素材</h3><p>人物、背景、文字、效果和检查层分开；重开时核对像素、单位和导出状态。</p></div><div class="delivery-card"><span>PNG / JPG</span><h3>预览与验收</h3><p>用于跨软件查看、白底/深底边缘检查和沟通，不用预览图冒充源文件。</p></div></div></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">04 / Release Gate</p><h2>可编辑，不等于可以直接量产。</h2></div><div class="case-body"><div class="decision-table"><div class="decision-table__head"><span>检查门</span><span>当前可公开证据</span><span>仍需真实确认</span></div><div><b>版面与结构</b><span>展开/背卡预览，刀线、折线、出血与安全线的职责分层。</span><span>供应商正式模板、工艺限制和尺寸公差。</span></div><div><b>可编辑性</b><span>原创项目保留 SVG、PSD 与透明素材的文件角色及重开检查记录。</span><span>最终印刷配置、转曲策略和交付版本签核。</span></div><div><b>生产放行</b><span>可作为沟通候选，具备文件与预览检查口径。</span><span>白样、彩样、签样与量产记录；当前均不宣称已有。</span></div></div><p class="boundary-note">页面只公开原创项目的生产准备与文件方法，不把候选结构、概念尺寸或预览图写成实际投产、供应商确认或商业销售成果。</p></div></section>
+</PortfolioLayout>

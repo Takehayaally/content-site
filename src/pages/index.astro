@@ -1,21 +1,24 @@
 ---
 import { Image } from "astro:assets";
-import baijinKeyVisual from "@/assets/images/portfolio/baijin-key-visual.png";
+import cosplayComparison from "@/assets/images/portfolio/cosplay-retouch-direction-comparison.png";
 import novaMerchSystem from "@/assets/images/portfolio/nova-merch-system.png";
+import shortVideoCard from "@/assets/images/portfolio/short-video-storyboard-cover.png";
+import trueyouCard from "@/assets/images/portfolio/trueyou-dashboard.png";
 import zhaoshuangSystem from "@/assets/images/portfolio/zhaoshuang-character-system.png";
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 ---
 
-<PortfolioLayout title="NOVA" description="NOVA 的原创 IP、角色视觉、主视觉与商品化表达案例。" ogImage={novaMerchSystem.src}>
+<PortfolioLayout title="NOVA" description="二次元角色设计、AIGC 图片与短视频视觉生产、PS/AI 后期和质量控制案例。" ogImage={trueyouCard.src}>
 	<header class="page-hero page-hero--directory site-shell"><div class="page-hero__grid">
-		<div><p class="eyebrow">NOVA / Selected Work</p><h1 class="page-title">从角色识别，<br />到完整视觉系统。</h1></div>
-		<p class="page-summary">围绕原创 IP、角色视觉与商品化表达组织公开作品。进入案例可查看设计目标、关键判断、系统结构与公开边界。</p>
-	</div><nav class="work-directory" aria-label="作品目录"><a href="#original-ip"><span>01</span><strong>原创 IP</strong><small>3 个公开案例 + 1 个预留位</small></a><a href="/fanworks/"><span>02</span><strong>同人创作</strong><small>非商业视觉研究</small></a><a href="/systems/"><span>03</span><strong>系统与工具</strong><small>5 个公开工作流</small></a><a href="/journal/"><span>04</span><strong>创作笔记</strong><small>过程与判断</small></a><a href="/about/#contact"><span>05</span><strong>联系与合作</strong><small>邮箱 / 微信</small></a></nav></header>
+		<div><p class="eyebrow">NOVA / AIGC CHARACTER &amp; VISUAL PRODUCTION</p><h1 class="page-title">角色设定、<br />AIGC 图片到镜头。</h1></div>
+		<p class="page-summary">面向二次元角色与 AIGC 视觉岗位，优先展示角色锚点、分镜预演、系列图片生产、PS/AI 后期和质量检查；概念案例与真实项目材料均明确边界。</p>
+	</div><nav class="work-directory" aria-label="作品目录"><a href="#selected-work"><span>01</span><strong>岗位精选</strong><small>6 个角色与 AIGC 案例</small></a><a href="/resume/"><span>02</span><strong>经历与能力</strong><small>11 年设计与物料经验</small></a><a href="/fanworks/"><span>03</span><strong>同人创作</strong><small>非商业视觉研究</small></a><a href="/systems/"><span>04</span><strong>系统与工具</strong><small>公开工作流</small></a><a href="/about/#contact"><span>05</span><strong>联系与合作</strong><small>邮箱 / 微信</small></a></nav></header>
 
-	<section class="section" id="original-ip"><div class="site-shell work-list">
-		<a class="work-card" href="/work/nova/"><div class="work-card__visual"><Image src={novaMerchSystem} alt="NOVA 原创 IP 与谷子商品系统" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="eager" /></div><div class="work-card__copy"><span class="work-number">01 / Original IP System</span><h3>NOVA：从角色到商品系统</h3><p>角色锚点、主视觉、周边载体、包装和陈列形成统一系列。</p><span class="work-arrow">OPEN CASE ↗</span></div></a>
-		<a class="work-card work-card--portrait" href="/work/baijin/"><div class="work-card__visual"><Image src={baijinKeyVisual} alt="白烬原创角色主视觉" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="eager" /></div><div class="work-card__copy"><span class="work-number">02 / Character Key Visual</span><h3>白烬：用环境完成角色叙事</h3><p>服装、机械结构、环境与光线共同强化角色的冷感和行动张力。</p><span class="work-arrow">OPEN CASE ↗</span></div></a>
-		<a class="work-card" href="/work/zhaoshuang/"><div class="work-card__visual"><Image src={zhaoshuangSystem} alt="赵霜原创角色设定系统" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="eager" /></div><div class="work-card__copy"><span class="work-number">03 / Character Bible</span><h3>赵霜：把识别度写进设定</h3><p>从四视图到表情、道具和视觉锚点，建立可复用的角色说明书。</p><span class="work-arrow">OPEN CASE ↗</span></div></a>
-		<div class="reserved-card" aria-label="下一套作品案例预留位置"><div><p class="eyebrow">Next / Reserved</p><h3>下一套完整案例</h3></div><div class="reserved-card__mark">CASE 04<br />RESERVED</div></div>
+	<section class="section" id="selected-work"><div class="site-shell work-list">
+		<a class="work-card work-card--screen" href="/work/trueyou-studio/"><div class="work-card__visual"><Image src={trueyouCard} alt="AIGC 图片生产与二次元系列视觉案例" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="eager" /></div><div class="work-card__copy"><span class="work-number">01 / AIGC Image Production</span><h3>TrueYou Studio：图片生产与质检</h3><p>从人物与场景约束、候选筛选到整组一致性复核，管理 AIGC 图片生产过程。</p><span class="work-arrow">OPEN CASE ↗</span></div></a>
+		<a class="work-card" href="/work/video-workflow/"><div class="work-card__visual"><Image src={shortVideoCard} alt="AIGC 短视频镜头预演与连续性检查案例" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="eager" /></div><div class="work-card__copy"><span class="work-number">02 / AIGC Video Previsualization</span><h3>AI 短视频制作流程</h3><p>将剧本需求拆成故事卡、逐镜预演和连续性检查，在正式制作前统一角色与镜头。</p><span class="work-arrow">OPEN CASE ↗</span></div></a>
+		<a class="work-card work-card--wide" href="/work/zhaoshuang/"><div class="work-card__visual"><Image src={zhaoshuangSystem} alt="赵霜原创角色的四视图、表情与道具设定系统" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="lazy" /></div><div class="work-card__copy"><span class="work-number">03 / Character Design System</span><h3>赵霜：把识别度写进设定</h3><p>用四视图、表情与道具建立角色锚点，为分镜、动作和系列画面提供一致性基线。</p><span class="work-arrow">OPEN CASE ↗</span></div></a>
+		<a class="work-card" href="/work/nova/"><div class="work-card__visual"><Image src={novaMerchSystem} alt="NOVA 原创角色与谷子商品系统" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="lazy" /></div><div class="work-card__copy"><span class="work-number">04 / Original IP Extension</span><h3>NOVA：从角色到商品系统</h3><p>将角色锚点延展为主视觉、周边载体、包装候选与陈列提案，保持系列识别。</p><span class="work-arrow">OPEN CASE ↗</span></div></a>
+		<a class="work-card work-card--ultrawide" href="/work/cosplay-retouch/"><div class="work-card__visual"><Image src={cosplayComparison} alt="人像修图的通过、拒绝与修正版对比" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="lazy" /></div><div class="work-card__copy"><span class="work-number">05 / Retouch &amp; Visual QA</span><h3>精修与画面质量控制</h3><p>保留问题判断、修正方向与验收结果，说明 AIGC 候选如何进入可交付的最终画面。</p><span class="work-arrow">OPEN CASE ↗</span></div></a>
 	</div></section>
 </PortfolioLayout>

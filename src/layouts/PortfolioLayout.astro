@@ -65,18 +65,41 @@ const navItems = [
 			<div class="site-shell site-footer__inner">
 				<div>
 					<strong>NOVA</strong>
-					<p>二次元视觉设计 · 原创 IP · 创意生产系统</p>
+					<p>二次元角色设计 · AIGC 图片与视频 · PS/AI 后期</p>
 				</div>
 				<div class="site-footer__links">
 					<a href="/">全部作品</a>
 					<a href="/fanworks/">同人创作</a>
 					<a href="/systems/">系统与工具</a>
-					<a href="/work/nova/">原创 IP</a>
+					<a href="/work/ajgc-designer/">岗位定向总览</a>
+					<a href="/interview/">作品查看路径</a>
 					<a href="/about/">关于与方法</a>
 					<a href="/resume/">经历与能力</a>
 					<a href="#main-content">返回顶部 ↑</a>
 				</div>
 			</div>
 		</footer>
+		<script>
+			// Make standalone portfolio visuals inspectable at full resolution. Existing
+			// links are left untouched to avoid nesting. Prefer the largest srcset
+			// candidate so a click does not open the small responsive thumbnail.
+			document.querySelectorAll<HTMLImageElement>("main img").forEach((image) => {
+				if (image.closest("a") || image.dataset.lightboxReady === "true") return;
+				const srcset = image.getAttribute("srcset");
+				const srcsetCandidates = srcset?.split(",");
+				const largestSrc = srcsetCandidates?.[srcsetCandidates.length - 1]?.trim().split(" ")[0];
+				const link = document.createElement("a");
+				link.className = "image-lightbox-link";
+				link.href = largestSrc || image.currentSrc || image.src;
+				link.target = "_blank";
+				link.rel = "noreferrer noopener";
+				link.setAttribute("aria-label", image.alt ? `打开大图：${image.alt}` : "打开大图");
+				const picture = image.closest("picture");
+				const wrapper = picture || image;
+				wrapper.parentNode?.insertBefore(link, wrapper);
+				link.appendChild(wrapper);
+				image.dataset.lightboxReady = "true";
+			});
+		</script>
 	</body>
 </html>

@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import jobEvidenceAiWorkflow from "@/assets/images/portfolio/job-evidence-ai-workflow.png";
+import jobEvidenceCover from "@/assets/images/portfolio/job-evidence-cover.png";
+import jobEvidenceProductLoop from "@/assets/images/portfolio/job-evidence-product-loop.png";
+import jobEvidenceProductionSpec from "@/assets/images/portfolio/job-evidence-production-spec.png";
+import jobEvidenceQaBoundaries from "@/assets/images/portfolio/job-evidence-qa-boundaries.png";
+import jobEvidenceReusableAssets from "@/assets/images/portfolio/job-evidence-reusable-assets.png";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+---
+
+<PortfolioLayout title="岗位能力与生产交付" description="AI 视觉生产、电商商品视觉、素材复用、质量检查与生产沟通的公开能力证据。" ogImage={jobEvidenceCover.src}>
+	<header class="project-hero site-shell">
+		<p class="project-kicker">Case 03 / AI Production & Delivery</p><h1 class="project-title">岗位能力与生产交付</h1>
+		<p class="project-lead">把 AI 视觉生产拆为需求、生成、筛选、精修、资产复用、质量检查和交付沟通，让“会用 AI”能落到可说明的工作步骤。</p>
+		<div class="project-meta"><div><span class="meta-label">Scope</span><strong>AI 视觉生产 / 电商视觉</strong></div><div><span class="meta-label">Role</span><strong>视觉定向 / 精修 / QA / 文件组织</strong></div><div><span class="meta-label">Output</span><strong>素材候选 / 规范示例 / 过程证据</strong></div><div><span class="meta-label">Status</span><strong>公开能力案例 / 非工厂签样</strong></div></div>
+	</header>
+
+	<figure class="case-full-visual case-full-visual--compact"><Image src={jobEvidenceCover} alt="AI 视觉生产、电商商品视觉和质量控制的岗位能力对照" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 66vw" loading="eager" /><figcaption>能力对照页将实际产物对应到岗位能力，不以工具名称代替可验证的工作结果。</figcaption></figure>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">01 / Workflow</p><h2>AI 是生产环节，不是交付结论。</h2></div><div class="case-body"><p>工作流从需求与视觉锚点开始，经过生成、筛选和必要的精修排版，最后进入尺寸、文字、边缘、材质和版本检查。每一步都服务于可用的视觉资产，而非展示一段无法复现的长提示词。</p><div class="detail-gallery"><figure><Image src={jobEvidenceAiWorkflow} alt="从 AI 图像生成到交付的工作流程" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 33vw" /><figcaption><b>AI WORKFLOW</b><span>将视觉要求拆成可检查的主体、镜头、材质、构图和验收约束。</span></figcaption></figure><figure><Image src={jobEvidenceReusableAssets} alt="透明抠图与可复用素材的工作证据" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 33vw" /><figcaption><b>REUSABLE ASSETS</b><span>透明素材、裁剪版本和不同背景检查，让后续排版与复用有据可查。</span></figcaption></figure><figure><Image src={jobEvidenceQaBoundaries} alt="质量控制和能力边界说明" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 33vw" /><figcaption><b>QUALITY GATE</b><span>在发布或交接前检查文字、边缘、结构与状态，不把候选图直接当成最终成品。</span></figcaption></figure></div></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">02 / Product & Production</p><h2>商品视觉与生产沟通分开验证。</h2></div><div class="case-body"><p>商品效果图用来校对视觉层级、使用场景和载体关系；可编辑 SVG、白墨参考、刀线和尺寸说明用来讨论文件结构。两者不应混写成“已经量产”，也不能用生成图中的文字、条码或尺寸替代正式人工排版。</p><div class="detail-gallery"><figure><Image src={jobEvidenceProductLoop} alt="商业陈列与单品视觉闭环" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 33vw" /><figcaption><b>PRODUCT LOOP</b><span>用商品、包装和陈列关系检查视觉能否跨载体延展。</span></figcaption></figure><figure><Image src={jobEvidenceProductionSpec} alt="亚克力立牌的白墨、刀线和生产规范示例" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 33vw" /><figcaption><b>PRODUCTION EXAMPLE</b><span>白墨、透明边、刀线和底座是生产沟通示例，仍需供应商模板与校样确认。</span></figcaption></figure><figure><Image src={jobEvidenceCover} alt="岗位能力证据总览" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 33vw" /><figcaption><b>ROLE FIT</b><span>为跨境电商美工、AI 美工和电商平面设计准备的公开能力阅读入口。</span></figcaption></figure></div></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">03 / Handoff</p><h2>把岗位要求拆成可交付物。</h2></div><div class="case-body"><div class="delivery-grid"><div class="delivery-card"><span>01 / VISUAL</span><h3>商品图组</h3><p>主图、细节、场景与裁切版本，服务详情页和活动位。</p></div><div class="delivery-card"><span>02 / EDITABLE</span><h3>可编辑文件</h3><p>PSD/SVG 分层、白墨、刀线和版本命名示例，便于继续修改。</p></div><div class="delivery-card"><span>03 / QA</span><h3>验收记录</h3><p>文字、边缘、结构、尺寸、背景与事实边界逐项检查。</p></div></div><div class="file-tree" style="margin-top:1.5rem"><strong>delivery-pack/</strong><br />├─ 01_visual-assets/ <span>主图、细节、场景</span><br />├─ 02_editable/ <span>PSD / SVG / 白墨 / 刀线</span><br />└─ 03_qa/ <span>检查表、版本与待确认项</span></div></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">04 / Boundary</p><h2>把能证明的说清楚。</h2></div><div class="case-body"><p>本页可以证明 AI 辅助视觉生产、素材整理、精修排版、质量检查和生产沟通意识；不能证明真实工厂签样、量产、客户销售或平台转化。涉及供应商的文件均为作品集级候选，正式生产应以供应商模板、色彩规范、白样和签样为准。</p></div></section>
+</PortfolioLayout>

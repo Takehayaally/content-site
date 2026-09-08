@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import trueyouMagic01 from "@/assets/images/portfolio/trueyou-magic-01.jpg";
+import trueyouMagic04 from "@/assets/images/portfolio/trueyou-magic-04.jpg";
+import trueyouMagic06 from "@/assets/images/portfolio/trueyou-magic-06.jpg";
+import trueyouMagic09 from "@/assets/images/portfolio/trueyou-magic-09.jpg";
+import zhaoshuangSystem from "@/assets/images/portfolio/zhaoshuang-character-system.png";
+import baijinEnsemble from "@/assets/images/portfolio/baijin-ensemble-characters.png";
+import novaFourViews from "@/assets/images/portfolio/nova-four-views.png";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+---
+
+<PortfolioLayout title="AIGC 初稿与候选筛选库" description="汇总原创角色、人物关系、场景与商品方向的 AIGC 初稿、筛选逻辑和可交付结果。" ogImage={trueyouMagic01.src}>
+	<header class="project-hero site-shell"><p class="project-kicker">P0 / P1 AIGC Draft Library</p><h1 class="project-title">不是只展示“最好的一张”，而是展示怎么选。</h1><p class="project-lead">把多个原创项目中的 AIGC 初稿、候选筛选和人工统一集中在一页：先看需求，再看候选，最后看为什么这张能进入角色设定、场景或商品页面。</p><div class="project-meta"><div><span class="meta-label">Scope</span><strong>角色 / 场景 / 商品初稿</strong></div><div><span class="meta-label">Role</span><strong>GPT Image / 筛选 / 后期</strong></div><div><span class="meta-label">Output</span><strong>候选板 / 通过稿 / QA</strong></div><div><span class="meta-label">Status</span><strong>原创公开案例</strong></div></div></header>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">01 / Draft Types</p><h2>四种初稿，四种判断任务。</h2></div><div class="case-body"><p>初稿不是一个单一风格标签。角色设定看稳定性，剧情画面看任务，商品图看结构，氛围图看世界观。将它们放在同一个筛选框架下，才能体现“会用 AI 做设计”而不是只会生成图片。</p><div class="detail-gallery"><figure><Image src={zhaoshuangSystem} alt="赵霜角色四视图、表情与道具的 AIGC 设定结果" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" loading="eager" /><figcaption><b>CHARACTER DRAFT</b><span>优先检查轮廓、发型、服装分区、表情范围和道具位置。</span></figcaption></figure><figure><Image src={baijinEnsemble} alt="白烬世界扩展角色沈砾与洛弥的 AIGC 设定结果" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" loading="lazy" /><figcaption><b>ENSEMBLE DRAFT</b><span>优先检查多人差异、共享世界规则和身份功能。</span></figcaption></figure><figure><Image src={novaFourViews} alt="林澈四视图的 AIGC 设定结果" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" loading="lazy" /><figcaption><b>REFERENCE DRAFT</b><span>优先检查透明材质、弧形装置和红色信号等跨图锚点。</span></figcaption></figure></div></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">02 / Candidate Review</p><h2>先淘汰错误，再谈美感。</h2></div><div class="case-body"><div class="decision-table"><div class="decision-table__head"><span>阶段</span><span>通过条件</span><span>退回原因</span></div><div><b>结构初筛</b><span>人物数、品类、轮廓和构图任务正确。</span><span>多余人物、错误品类、主体被裁切或画面任务不成立。</span></div><div><b>角色复核</b><span>发色、服装、道具和身份锚点保持稳定。</span><span>脸部漂移、服装结构变化、手部/道具关系错误。</span></div><div><b>人工统一</b><span>PS/AI 修正边缘、比例、文字与局部材质。</span><span>需要用文案掩盖的结构错误，直接回到生成或重选。</span></div><div><b>交付放行</b><span>有编号、状态、用途和下一步文件位置。</span><span>没有来源说明、事实边界或无法被下一位复核。</span></div></div></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">03 / Applied Examples</p><h2>同一套筛选逻辑，覆盖不同项目。</h2></div><div class="case-body"><div class="detail-gallery"><figure><Image src={trueyouMagic01} alt="AIGC 二次元角色候选图一" widths={[640, 960]} sizes="(max-width: 620px) 100vw, 25vw" loading="lazy" /><figcaption><b>01 / FACE &amp; EXPRESSION</b><span>面部识别、表情可用性和细节干净度。</span></figcaption></figure><figure><Image src={trueyouMagic04} alt="AIGC 二次元角色候选图二" widths={[640, 960]} sizes="(max-width: 620px) 100vw, 25vw" loading="lazy" /><figcaption><b>02 / SILHOUETTE</b><span>轮廓、姿态和服装大关系能否进入系列图。</span></figcaption></figure><figure><Image src={trueyouMagic06} alt="AIGC 二次元场景候选图三" widths={[640, 960]} sizes="(max-width: 620px) 100vw, 25vw" loading="lazy" /><figcaption><b>03 / SCENE TASK</b><span>环境是否支持角色行动，而不是只提供氛围。</span></figcaption></figure><figure><Image src={trueyouMagic09} alt="AIGC 二次元画面候选图四" widths={[640, 960]} sizes="(max-width: 620px) 100vw, 25vw" loading="lazy" /><figcaption><b>04 / DELIVERY CROP</b><span>裁切安全区、主体比例和后置文字空间。</span></figcaption></figure></div><p class="boundary-note">候选图用于说明筛选与统一方法；页面不公开未采用的私人素材、内部缓存或任何未确认授权的真实客户内容。</p></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">04 / Source Trail</p><h2>从初稿回到源文件和说明。</h2></div><div class="case-body"><p>每个通过候选都应能回到角色设定、提示词、透明素材、PSD/SVG 或生产说明。P0 角色源文件已在独立索引页公开；P1/P2 的包装和立牌候选也提供可编辑文件与边界说明。</p><a class="text-link" href="/work/source-file-index/">查看并下载源文件索引 <span>↗</span></a> <a class="text-link" href="/work/production-evidence/">查看制作证据与 QA <span>↗</span></a></div></section>
+</PortfolioLayout>
