@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import repairGoggles from "@/assets/images/portfolio/products/repair-goggles.webp";
+import repairHammerKit from "@/assets/images/portfolio/products/repair-hammer-kit.webp";
+import repairProductSystem from "@/assets/images/portfolio/products/repair-product-system.webp";
+import repairSlingBag from "@/assets/images/portfolio/products/repair-sling-bag.webp";
+import repairWorkJacket from "@/assets/images/portfolio/products/repair-work-jacket.webp";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+---
+
+<PortfolioLayout title="家居与五金电商：上新视觉组" description="以原创机能产品为例，展示电商主图、详情页、活动氛围与系列商品视觉的完整组织方式。" ogImage={repairProductSystem.src}>
+	<header class="project-hero site-shell"><p class="project-kicker">P2 / E-commerce Home &amp; Hardware</p><h1 class="project-title">家居与五金电商：一组商品，四种页面职责。</h1><p class="project-lead">围绕工具、护目镜、机能包与工作夹克，按电商美工岗位常见的上新节奏组织主图、详情页、场景氛围和活动入口，让产品卖点先被看见，再进入版式与文案。</p><div class="project-meta"><div><span class="meta-label">Scope</span><strong>主图 / 详情 / 活动氛围</strong></div><div><span class="meta-label">Role</span><strong>PS / AI 合成与精修</strong></div><div><span class="meta-label">Output</span><strong>系列上新视觉组</strong></div><div><span class="meta-label">Status</span><strong>原创电商概念案例</strong></div></div></header>
+
+	<figure class="case-full-visual case-full-visual--wide"><Image src={repairProductSystem} alt="工具、护目镜、斜挎包与工作夹克组成的机能产品电商系列主视觉" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 66vw" loading="eager" /><figcaption>系列主视觉：先建立产品层级、材质和颜色关系，再拆分为单品页与活动位。</figcaption></figure>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">01 / E-commerce Map</p><h2>主图负责识别，详情负责解释，活动图负责聚焦。</h2></div><div class="case-body"><div class="decision-table"><div class="decision-table__head"><span>页面模块</span><span>视觉任务</span><span>检查重点</span></div><div><b>商品主图</b><span>完整呈现本体、配件和核心轮廓，保证缩略图仍能认出品类。</span><span>主体完整、背景干净、无伪造参数与品牌标识。</span></div><div><b>详情页首屏</b><span>用近景和结构分区说明材质、收纳、替换和使用方式。</span><span>结构前后一致，卖点位置给文案和图标留出安全区。</span></div><div><b>活动氛围图</b><span>把系列放入维修台、工作室或城市生活场景，强化使用语境。</span><span>产品仍是焦点，场景不喧宾夺主，裁切适配活动入口。</span></div><div><b>系列陈列</b><span>让多 SKU 在同一画面形成组合购买与层级阅读。</span><span>颜色、比例和单品命名保持一致，避免拼贴感。</span></div></div></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">02 / Product Set</p><h2>同一套产品语言，拆成可独立上新的单品。</h2></div><div class="case-body"><div class="detail-gallery"><figure><Image src={repairHammerKit} alt="工具套件电商单品视觉" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" loading="lazy" /><figcaption><b>01 / TOOL KIT</b><span>工具本体、替换件与包装关系。</span></figcaption></figure><figure><Image src={repairGoggles} alt="护目镜电商单品视觉" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" loading="lazy" /><figcaption><b>02 / GOGGLES</b><span>镜框、护片与材质细节。</span></figcaption></figure><figure><Image src={repairSlingBag} alt="模块斜挎包电商单品视觉" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" loading="lazy" /><figcaption><b>03 / SLING BAG</b><span>口袋、挂载与收纳结构。</span></figcaption></figure><figure><Image src={repairWorkJacket} alt="机能工作夹克电商单品视觉" widths={[640, 960, 1400]} sizes="(max-width: 620px) 100vw, 50vw" loading="lazy" /><figcaption><b>04 / WORK JACKET</b><span>正反面、穿着和功能分区。</span></figcaption></figure></div></div></section>
+
+	<section class="site-shell case-section"><div><p class="eyebrow">03 / Role Match</p><h2>把招聘要求转成可核对的画面能力。</h2></div><div class="case-body"><div class="delivery-grid"><div class="delivery-card"><span>PS / AI</span><h3>合成与精修</h3><p>主体抠图、材质边缘、反射控制、透视贴合和统一色调。</p></div><div class="delivery-card"><span>COMMERCE</span><h3>页面编排</h3><p>主图、详情首屏、活动氛围和系列陈列各自承担明确任务。</p></div><div class="delivery-card"><span>OPS</span><h3>迭代接口</h3><p>保留卖点留白、裁切安全区和可替换模块，便于运营更新。</p></div></div><p class="boundary-note" style="margin-top:1.5rem">本页是原创电商视觉练习，用于展示家居/五金类商品的图像组织、合成精修和页面职责意识，不宣称真实店铺、投放数据或成交结果。</p></div></section>
+</PortfolioLayout>
