@@ -75,14 +75,14 @@ import fanwork022 from "@/assets/images/fanworks/rengoku-dawn.webp";
 import fanwork025 from "@/assets/images/fanworks/sasuke-rain-shrine.webp";
 import fanwork048 from "@/assets/images/fanworks/sungjinwoo-shadow.webp";
 import fanwork017 from "@/assets/images/fanworks/tanjiro-sunrise.webp";
-import remLibrary from "@/assets/images/fanworks/rem-rain-library.png";
-import yorConservatory from "@/assets/images/fanworks/yor-botanical-conservatory.png";
-import saberArchive from "@/assets/images/fanworks/saber-moonlit-archive.png";
-import kaguyaLibrary from "@/assets/images/fanworks/kaguya-lacquer-library.png";
-import taigaRisograph from "@/assets/images/fanworks/taiga-winter-risograph.png";
-import shinobuVaporwave from "@/assets/images/fanworks/shinobu-vaporwave-donut.png";
-import mikasaCyanotype from "@/assets/images/fanworks/mikasa-cyanotype-rooftop.png";
-import chisatoMemphis from "@/assets/images/fanworks/chisato-memphis-cafe.png";
+import remLibrary from "@/assets/images/fanworks/rem-rain-library.webp";
+import yorConservatory from "@/assets/images/fanworks/yor-botanical-conservatory.webp";
+import saberArchive from "@/assets/images/fanworks/saber-moonlit-archive.webp";
+import kaguyaLibrary from "@/assets/images/fanworks/kaguya-lacquer-library.webp";
+import taigaRisograph from "@/assets/images/fanworks/taiga-winter-risograph.webp";
+import shinobuVaporwave from "@/assets/images/fanworks/shinobu-vaporwave-donut.webp";
+import mikasaCyanotype from "@/assets/images/fanworks/mikasa-cyanotype-rooftop.webp";
+import chisatoMemphis from "@/assets/images/fanworks/chisato-memphis-cafe.webp";
 
 export interface Fanwork {
 	title: string;
