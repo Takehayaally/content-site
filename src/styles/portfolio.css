@@ -448,17 +448,19 @@ body.portfolio-body img { display: block; max-width: 100%; }
 	.site-header__inner { align-items: stretch; display: grid; grid-template-columns: 1fr; min-height: 0; padding-top: .9rem; }
 	.site-brand { align-items: center; min-height: 2rem; }
 	.site-brand__descriptor { display: none; }
-	.site-nav { border-top: 1px solid var(--line); display: grid; font-size: .72rem; gap: 0; grid-template-columns: repeat(6, minmax(0, 1fr)); margin-top: .65rem; width: 100%; }
+	.site-nav { border-top: 1px solid var(--line); display: grid; font-size: .72rem; gap: 0; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: .65rem; width: 100%; }
 	.site-nav a { align-items: center; border-bottom: 0; display: flex; justify-content: center; min-height: 2.8rem; min-width: 0; white-space: nowrap; }
 	.site-nav a + a { border-left: 1px solid var(--line); }
+	.site-nav a:nth-child(3n + 1) { border-left: 0; }
+	.site-nav a:nth-child(n + 4) { border-top: 1px solid var(--line); }
 	.site-nav a[aria-current="page"], .site-nav a:hover { box-shadow: inset 0 -2px var(--ink); }
 	.project-switcher { gap: .75rem; padding-block: .8rem; }
 	.project-switcher__items { grid-template-columns: 1fr; }
 	.project-switcher__items a, .project-switcher__items a:last-child { border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); padding: .65rem .8rem; }
 	.project-switcher__items a:last-child { border-bottom: 0; }
 	.display-title { font-size: clamp(2.7rem, 14vw, 4.2rem); }
-	.page-title { font-size: clamp(2.5rem, 13vw, 4rem); max-width: 100%; overflow-wrap: anywhere; word-break: break-all; }
-	.project-title { font-size: clamp(2.4rem, 12vw, 3.4rem); max-width: 100%; overflow-wrap: anywhere; word-break: break-all; }
+	.page-title { font-size: clamp(2.35rem, 11vw, 3.5rem); max-width: calc(100vw - 2rem); overflow-wrap: anywhere; word-break: break-all; }
+	.project-title { font-size: clamp(2.25rem, 10.5vw, 3.2rem); max-width: calc(100vw - 2rem); overflow-wrap: anywhere; word-break: break-all; }
 	.page-summary, .project-lead { overflow-wrap: anywhere; word-break: break-all; }
 	.site-nav { overflow: hidden; }
 	.site-nav a { font-size: clamp(.56rem, 2.2vw, .72rem); letter-spacing: -.03em; overflow: hidden; }
