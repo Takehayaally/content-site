@@ -66,23 +66,23 @@ import fanwork073 from "@/assets/images/fanworks/archive-073.webp";
 import fanwork074 from "@/assets/images/fanworks/archive-074.webp";
 import fanwork075 from "@/assets/images/fanworks/archive-075.webp";
 import fanwork076 from "@/assets/images/fanworks/archive-076.webp";
+import chisatoMemphis from "@/assets/images/fanworks/chisato-memphis-cafe.webp";
 import fanwork062 from "@/assets/images/fanworks/frieren-meteor.webp";
 import fanwork065 from "@/assets/images/fanworks/gojo-limitless.webp";
+import kaguyaLibrary from "@/assets/images/fanworks/kaguya-lacquer-library.webp";
 import fanwork069 from "@/assets/images/fanworks/lelouch-chess.webp";
+import mikasaCyanotype from "@/assets/images/fanworks/mikasa-cyanotype-rooftop.webp";
 import fanwork016 from "@/assets/images/fanworks/nezuko-wisteria.webp";
 import fanwork008 from "@/assets/images/fanworks/reimu-shrine.webp";
-import fanwork022 from "@/assets/images/fanworks/rengoku-dawn.webp";
-import fanwork025 from "@/assets/images/fanworks/sasuke-rain-shrine.webp";
-import fanwork048 from "@/assets/images/fanworks/sungjinwoo-shadow.webp";
-import fanwork017 from "@/assets/images/fanworks/tanjiro-sunrise.webp";
 import remLibrary from "@/assets/images/fanworks/rem-rain-library.webp";
-import yorConservatory from "@/assets/images/fanworks/yor-botanical-conservatory.webp";
+import fanwork022 from "@/assets/images/fanworks/rengoku-dawn.webp";
 import saberArchive from "@/assets/images/fanworks/saber-moonlit-archive.webp";
-import kaguyaLibrary from "@/assets/images/fanworks/kaguya-lacquer-library.webp";
-import taigaRisograph from "@/assets/images/fanworks/taiga-winter-risograph.webp";
+import fanwork025 from "@/assets/images/fanworks/sasuke-rain-shrine.webp";
 import shinobuVaporwave from "@/assets/images/fanworks/shinobu-vaporwave-donut.webp";
-import mikasaCyanotype from "@/assets/images/fanworks/mikasa-cyanotype-rooftop.webp";
-import chisatoMemphis from "@/assets/images/fanworks/chisato-memphis-cafe.webp";
+import fanwork048 from "@/assets/images/fanworks/sungjinwoo-shadow.webp";
+import taigaRisograph from "@/assets/images/fanworks/taiga-winter-risograph.webp";
+import fanwork017 from "@/assets/images/fanworks/tanjiro-sunrise.webp";
+import yorConservatory from "@/assets/images/fanworks/yor-botanical-conservatory.webp";
 
 export interface Fanwork {
 	title: string;
@@ -772,18 +772,49 @@ const allFanworks: Fanwork[] = [
 // entries whose hands/holding poses need a redraw or whose source has a
 // reputational/political risk for a public portfolio.
 const excludedTitles = new Set([
-	"彩色胶片乐社", "雾桥丝绸画", "朋克孔版", "雨后神社祭", "停时茶室",
-	"时装摄影", "焦虑拼贴", "晴日喫茶店", "烟火夜屋顶", "平安漆器屏风",
-	"构成主义轨道", "银尖笔冰场素描", "巴洛克赌桌", "自然学野外手册",
-	"复古丝网印刷", "佛兰德魔法厨房", "装饰艺术时钟", "都市电光蓝图",
-	"黑胶乐队摄影", "哥特银版摄影", "重建之晨", "流行艺术丝印",
-	"间谍惊悚电影", "浮世绘月夜", "蓝晒深海植物", "摩登时装摄影",
-	"大理石超现实", "复古未来车站", "博物药草谱", "太阳朋克温室",
-	"前拉斐尔派药草园", "无下限夜景", "新艺术彩窗", "粗野主义栖居地",
-	"彩饰手抄本", "至上主义棋盘", "全息彩窗舞台", "孟菲斯魔法工作室",
+	"彩色胶片乐社",
+	"雾桥丝绸画",
+	"朋克孔版",
+	"雨后神社祭",
+	"停时茶室",
+	"时装摄影",
+	"焦虑拼贴",
+	"晴日喫茶店",
+	"烟火夜屋顶",
+	"平安漆器屏风",
+	"构成主义轨道",
+	"银尖笔冰场素描",
+	"巴洛克赌桌",
+	"自然学野外手册",
+	"复古丝网印刷",
+	"佛兰德魔法厨房",
+	"装饰艺术时钟",
+	"都市电光蓝图",
+	"黑胶乐队摄影",
+	"哥特银版摄影",
+	"重建之晨",
+	"流行艺术丝印",
+	"间谍惊悚电影",
+	"浮世绘月夜",
+	"蓝晒深海植物",
+	"摩登时装摄影",
+	"大理石超现实",
+	"复古未来车站",
+	"博物药草谱",
+	"太阳朋克温室",
+	"前拉斐尔派药草园",
+	"无下限夜景",
+	"新艺术彩窗",
+	"粗野主义栖居地",
+	"彩饰手抄本",
+	"至上主义棋盘",
+	"全息彩窗舞台",
+	"孟菲斯魔法工作室",
 ]);
 
-export const fanworks = allFanworks.filter((artwork) => !excludedTitles.has(artwork.title));
+export const fanworks = allFanworks.filter(
+	(artwork) => !excludedTitles.has(artwork.title),
+);
 
 const featuredTitles = ["紫藤雨夜", "雨窗蓝调图书馆", "黎明列车站"];
 export const featuredFanworks = featuredTitles
