@@ -108,6 +108,7 @@ body.portfolio-body img { display: block; max-width: 100%; }
 .system-project-card__phases .is-done { border-color: var(--ink); color: var(--ink); }
 .system-project-card__phases .is-current { border-color: var(--coral); color: var(--ink); }
 .system-project-card__link { margin-top: 1.5rem; }
+.railway-directory-card { background: var(--dark); color: var(--paper); }.railway-directory-card .system-project-card__head { border-bottom: 1px solid #3b3e45; padding-bottom: 1rem; }.railway-directory-card .project-kicker { color: #b7bbc2; }.railway-directory-card .system-project-card__status { background: var(--acid); color: var(--ink); }.railway-directory-card__body { display: grid; gap: 3rem; grid-template-columns: minmax(0, 1.2fr) minmax(15rem, .8fr); margin-top: 2rem; }.railway-directory-card h3 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.05; margin: .65rem 0 1rem; }.railway-directory-card p { color: #c4c7ca; margin: 0; max-width: 40rem; }.railway-directory-card .text-link { color: var(--acid); margin-top: 1.4rem; }.railway-directory-card ol { border-block: 1px solid #4a4d54; list-style: none; margin: 0; padding: 0; }.railway-directory-card li { border-bottom: 1px solid #3b3e45; color: #c4c7ca; display: flex; font-size: .82rem; gap: .9rem; padding: .8rem 0; }.railway-directory-card li:last-child { border-bottom: 0; }.railway-directory-card li b { color: var(--acid); font-family: var(--mono); font-size: .68rem; }
 
 .reserved-card { background: var(--dark); color: var(--paper); display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; min-height: 24rem; padding: clamp(2rem, 5vw, 4.5rem); }
 .reserved-card__mark { align-items: center; border: 1px solid #44474f; display: flex; font-family: var(--mono); font-size: clamp(1rem, 2vw, 1.5rem); justify-content: center; letter-spacing: .12em; min-height: 14rem; text-align: center; }
@@ -427,6 +428,7 @@ body.portfolio-body img { display: block; max-width: 100%; }
 	.system-node:nth-child(2)::after { display: none; }
 	.system-project-grid { grid-template-columns: 1fr; }
 	.system-project-card__body { grid-template-columns: 1fr; }
+	.railway-directory-card__body { grid-template-columns: 1fr; }
 	.resume-capabilities { grid-template-columns: 1fr 1fr; }
 	.resume-evidence-feature { grid-template-columns: 1fr; }
 	.resume-capabilities > div:nth-child(2) { border-right: 1px solid var(--line); }
