@@ -2,21 +2,21 @@
 import { Image } from "astro:assets";
 import cosplayComparison from "@/assets/images/portfolio/cosplay-retouch-direction-comparison.png";
 import novaMerchSystem from "@/assets/images/portfolio/nova-merch-system.png";
-import shortVideoCard from "@/assets/images/portfolio/short-video-storyboard-cover.png";
-import trueyouCard from "@/assets/images/portfolio/trueyou-dashboard.png";
+import automotiveCard from "@/assets/images/portfolio/auto-wrap-su7-firefly.png";
+import skincareCard from "@/assets/images/portfolio/aster-dew-hero.png";
 import zhaoshuangSystem from "@/assets/images/portfolio/zhaoshuang-character-system.png";
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 ---
 
-<PortfolioLayout title="NOVA" description="二次元角色设计、AIGC 图片与短视频视觉生产、PS/AI 后期和质量控制案例。" ogImage={trueyouCard.src}>
+<PortfolioLayout title="NOVA" description="汽车车衣、商品视觉、二次元角色设计、AIGC 图片生产、PS/AI 后期和质量控制案例。" ogImage={automotiveCard.src}>
 	<header class="page-hero page-hero--directory site-shell"><div class="page-hero__grid">
 		<div><p class="eyebrow">NOVA / AIGC CHARACTER &amp; VISUAL PRODUCTION</p><h1 class="page-title">角色设定、<br />AIGC 图片到镜头。</h1></div>
 		<p class="page-summary">面向二次元角色与 AIGC 视觉岗位，优先展示角色锚点、分镜预演、系列图片生产、PS/AI 后期和质量检查；概念案例与真实项目材料均明确边界。</p>
 	</div><nav class="work-directory" aria-label="作品目录"><a href="#selected-work"><span>01</span><strong>岗位精选</strong><small>6 个角色与 AIGC 案例</small></a><a href="/resume/"><span>02</span><strong>经历与能力</strong><small>11 年设计与物料经验</small></a><a href="/fanworks/"><span>03</span><strong>同人创作</strong><small>非商业视觉研究</small></a><a href="/systems/"><span>04</span><strong>系统与工具</strong><small>公开工作流</small></a><a href="/about/#contact"><span>05</span><strong>联系与合作</strong><small>邮箱 / 微信</small></a></nav></header>
 
 	<section class="section" id="selected-work"><div class="site-shell work-list">
-		<a class="work-card work-card--screen" href="/work/trueyou-studio/"><div class="work-card__visual"><Image src={trueyouCard} alt="AIGC 图片生产与二次元系列视觉案例" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="eager" /></div><div class="work-card__copy"><span class="work-number">01 / AIGC Image Production</span><h3>TrueYou Studio：图片生产与质检</h3><p>从人物与场景约束、候选筛选到整组一致性复核，管理 AIGC 图片生产过程。</p><span class="work-arrow">OPEN CASE ↗</span></div></a>
-		<a class="work-card" href="/work/video-workflow/"><div class="work-card__visual"><Image src={shortVideoCard} alt="AIGC 短视频镜头预演与连续性检查案例" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="eager" /></div><div class="work-card__copy"><span class="work-number">02 / AIGC Video Previsualization</span><h3>AI 短视频制作流程</h3><p>将剧本需求拆成故事卡、逐镜预演和连续性检查，在正式制作前统一角色与镜头。</p><span class="work-arrow">OPEN CASE ↗</span></div></a>
+		<a class="work-card" href="/work/ai-automotive-visual/"><div class="work-card__visual"><Image src={automotiveCard} alt="小米 SU7 二次元主题车衣城市道路广告视觉" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="eager" /></div><div class="work-card__copy"><span class="work-number">01 / Automotive Wrap Visual</span><h3>热门车型车衣视觉提案</h3><p>围绕 SU7、海豹、Taycan 等车型，展示二次元、国潮、赛博和运动方向的车衣广告视觉。</p><span class="work-arrow">OPEN CASE ↗</span></div></a>
+		<a class="work-card" href="/work/aster-dew-skincare/"><div class="work-card__visual"><Image src={skincareCard} alt="Aster Dew 护肤精华商品主视觉" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="lazy" /></div><div class="work-card__copy"><span class="work-number">02 / Beauty Commerce Visual</span><h3>Aster Dew：护肤商品视觉</h3><p>同一产品从主图、材质细节到生活方式与详情页模块的完整视觉组。</p><span class="work-arrow">OPEN CASE ↗</span></div></a>
 		<a class="work-card work-card--wide" href="/work/zhaoshuang/"><div class="work-card__visual"><Image src={zhaoshuangSystem} alt="赵霜原创角色的四视图、表情与道具设定系统" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="lazy" /></div><div class="work-card__copy"><span class="work-number">03 / Character Design System</span><h3>赵霜：把识别度写进设定</h3><p>用四视图、表情与道具建立角色锚点，为分镜、动作和系列画面提供一致性基线。</p><span class="work-arrow">OPEN CASE ↗</span></div></a>
 		<a class="work-card" href="/work/nova/"><div class="work-card__visual"><Image src={novaMerchSystem} alt="NOVA 原创角色与谷子商品系统" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="lazy" /></div><div class="work-card__copy"><span class="work-number">04 / Original IP Extension</span><h3>NOVA：从角色到商品系统</h3><p>将角色锚点延展为主视觉、周边载体、包装候选与陈列提案，保持系列识别。</p><span class="work-arrow">OPEN CASE ↗</span></div></a>
 		<a class="work-card work-card--ultrawide" href="/work/cosplay-retouch/"><div class="work-card__visual"><Image src={cosplayComparison} alt="人像修图的通过、拒绝与修正版对比" widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 75vw" loading="lazy" /></div><div class="work-card__copy"><span class="work-number">05 / Retouch &amp; Visual QA</span><h3>精修与画面质量控制</h3><p>保留问题判断、修正方向与验收结果，说明 AIGC 候选如何进入可交付的最终画面。</p><span class="work-arrow">OPEN CASE ↗</span></div></a>
