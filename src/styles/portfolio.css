@@ -457,9 +457,11 @@ body.portfolio-body img { display: block; max-width: 100%; }
 	.project-switcher__items a, .project-switcher__items a:last-child { border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); padding: .65rem .8rem; }
 	.project-switcher__items a:last-child { border-bottom: 0; }
 	.display-title { font-size: clamp(2.7rem, 14vw, 4.2rem); }
-	.page-title { font-size: clamp(2.5rem, 13vw, 4rem); }
-	.project-title { font-size: clamp(2.4rem, 12vw, 3.4rem); max-width: 100%; overflow-wrap: anywhere; word-break: break-word; }
-	.page-summary { overflow-wrap: anywhere; }
+	.page-title { font-size: clamp(2.5rem, 13vw, 4rem); max-width: 100%; overflow-wrap: anywhere; word-break: break-all; }
+	.project-title { font-size: clamp(2.4rem, 12vw, 3.4rem); max-width: 100%; overflow-wrap: anywhere; word-break: break-all; }
+	.page-summary, .project-lead { overflow-wrap: anywhere; word-break: break-all; }
+	.site-nav { overflow: hidden; }
+	.site-nav a { font-size: clamp(.56rem, 2.2vw, .72rem); letter-spacing: -.03em; overflow: hidden; }
 	.hero__visual { min-height: 32rem; }
 	.capability-grid, .process-grid, .project-meta, .case-gallery, .system-map { grid-template-columns: 1fr; }
 	.prompt-recipe { grid-template-columns: 1fr; }
