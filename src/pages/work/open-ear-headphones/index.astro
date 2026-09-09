@@ -5,6 +5,10 @@ import openEarHeadphonesDetail from "@/assets/images/portfolio/open-ear-headphon
 import openEarHeadphonesHero from "@/assets/images/portfolio/open-ear-headphones-hero.png";
 import openEarHeadphonesWorn from "@/assets/images/portfolio/open-ear-headphones-worn.png";
 import openEarHeadphonesCommute from "@/assets/images/portfolio/open-ear-headphones-commute.png";
+import openEarCampaignKv from "@/assets/images/portfolio/open-ear-campaign-kv.png";
+import openEarCampaignProduct from "@/assets/images/portfolio/open-ear-campaign-product.png";
+import openEarCampaignLifestyle from "@/assets/images/portfolio/open-ear-campaign-lifestyle.png";
+import openEarCampaignDetail from "@/assets/images/portfolio/open-ear-campaign-detail.png";
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 ---
 
@@ -27,9 +31,12 @@ import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 
 	<section class="site-shell case-section"><div><p class="eyebrow">04 / E-commerce Modules</p><h2>把图组直接翻译成详情页模块。</h2></div><div class="case-body"><p>这组模块是面向跨境商品页的排版规划，先明确每张图承担的任务，再由人工补充正式参数与合规文案。</p><div class="delivery-grid"><div class="delivery-card"><span>MODULE 01</span><h3>Hero / 主图</h3><p>套装完整、轮廓清楚、背景干净，负责第一屏商品识别。</p></div><div class="delivery-card"><span>MODULE 02</span><h3>Material / 结构</h3><p>放大触控区、耳挂与材质转折，支撑局部卖点说明。</p></div><div class="delivery-card"><span>MODULE 03</span><h3>Context / 场景</h3><p>用佩戴和通勤场景补充使用语境，不替代性能证明。</p></div></div></div></section>
 
+	<section class="site-shell case-section"><div><p class="eyebrow">04A / Campaign Extension</p><h2>同一产品，再延展一组广告与电商视觉。</h2></div><div class="case-body"><p>在商品基础图组之外，新增广告 KV、产品棚拍、运动生活方式和结构细节四类画面，补足 AI 美工与商品视觉岗位常见的整组交付能力。</p><div class="visual-wall"><figure><a class="image-lightbox-link" href={openEarCampaignKv.src} target="_blank" rel="noreferrer"><Image src={openEarCampaignKv} alt="开放式耳机运动广告 KV" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 66vw" loading="lazy" /></a><figcaption>CAMPAIGN KV / 广告主视觉</figcaption></figure><figure><a class="image-lightbox-link" href={openEarCampaignProduct.src} target="_blank" rel="noreferrer"><Image src={openEarCampaignProduct} alt="开放式耳机产品棚拍图" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 66vw" loading="lazy" /></a><figcaption>PRODUCT HERO / 产品主图</figcaption></figure><figure><a class="image-lightbox-link" href={openEarCampaignLifestyle.src} target="_blank" rel="noreferrer"><Image src={openEarCampaignLifestyle} alt="开放式耳机运动生活方式场景" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 66vw" loading="lazy" /></a><figcaption>LIFESTYLE / 运动场景</figcaption></figure><figure><a class="image-lightbox-link" href={openEarCampaignDetail.src} target="_blank" rel="noreferrer"><Image src={openEarCampaignDetail} alt="开放式耳机结构细节展示图" widths={[800, 1400, 2000]} sizes="(max-width: 900px) 100vw, 66vw" loading="lazy" /></a><figcaption>DETAIL BOARD / 结构细节板</figcaption></figure></div></div></section>
+
 	<section class="site-shell case-section"><div><p class="eyebrow">05 / SKU &amp; English Framework</p><h2>把跨境商品页需要的 SKU 与英文信息先搭好。</h2></div><div class="case-body"><p>颜色变体先以规格方向公开，不把尚未生成的独立渲染图伪装成成品；英文信息区只提供版式与卖点层级，不写未经产品资料确认的性能承诺。</p><div class="sku-board"><div><div class="sku-board__swatch"><i aria-hidden="true"></i><b>GRAPHITE / 主 SKU</b></div><p>深石墨色；当前已完成主图、结构、收纳与场景图组。</p></div><div><div class="sku-board__swatch sku-board__swatch--mist"><i aria-hidden="true"></i><b>MIST WHITE / 变体方向</b></div><p>雾白色；已定义配色方向，独立渲染图待生成与一致性验收。</p></div></div><div class="english-copy" style="margin-top:1.25rem"><div><b>OPEN-EAR FORM</b><span>Visual descriptor only</span></div><div><b>TOUCH SURFACE</b><span>Feature label placeholder</span></div><div><b>DAILY CONTEXT</b><span>Scene module heading</span></div></div></div></section>
 
 	<section class="site-shell case-section"><div><p class="eyebrow">06 / Handoff</p><h2>交付时先交结构，再交画面。</h2></div><div class="case-body"><dl class="spec-table"><div><dt>主图组</dt><dd>01_hero / 02_detail / 03_charge，统一产品锚点与裁切安全区。</dd></div><div><dt>页面模块</dt><dd>模块标题、图片职责、留白位置和待补参数字段分开管理。</dd></div><div><dt>QA 门槛</dt><dd>左右耳配对、耳挂结构、材质边界、文字后置与事实边界逐项检查。</dd></div></dl><p class="boundary-note">当前公开的是网页展示型概念交付；没有把未生成的雾白 SKU、未确认参数或供应商文件伪装成成品。</p></div></section>
+	<p class="site-shell" style="margin-top:-2rem"><a class="text-link" href="/downloads/source-files/open-ear-campaign-notes.md" download>查看广告与电商延展说明 <span>↓</span></a></p>
 
 	<section class="site-shell case-section"><div><p class="eyebrow">07 / Production Method</p><h2>AI 负责候选，人负责统一与边界。</h2></div><div class="case-body"><p>本案例的工作顺序是：定义产品结构与禁用项，生成白底候选，选择可用的产品锚点，再生成参考图并对比结构。公开页面只展示通过审核的精选图，并明确它们是个人概念练习。SKU 色彩变体尚未生成，不以虚构图或文字替代。后续若继续制作变体，仍需围绕同一锚点审核，不将概念图表述为真实客户项目、真实上架商品或已验证的生产文件。</p></div></section>
 </PortfolioLayout>

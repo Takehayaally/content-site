@@ -79,6 +79,10 @@ import remLibrary from "@/assets/images/fanworks/rem-rain-library.png";
 import yorConservatory from "@/assets/images/fanworks/yor-botanical-conservatory.png";
 import saberArchive from "@/assets/images/fanworks/saber-moonlit-archive.png";
 import kaguyaLibrary from "@/assets/images/fanworks/kaguya-lacquer-library.png";
+import taigaRisograph from "@/assets/images/fanworks/taiga-winter-risograph.png";
+import shinobuVaporwave from "@/assets/images/fanworks/shinobu-vaporwave-donut.png";
+import mikasaCyanotype from "@/assets/images/fanworks/mikasa-cyanotype-rooftop.png";
+import chisatoMemphis from "@/assets/images/fanworks/chisato-memphis-cafe.png";
 
 export interface Fanwork {
 	title: string;
@@ -729,6 +733,38 @@ const allFanworks: Fanwork[] = [
 		image: kaguyaLibrary,
 		groups: ["current"],
 		focus: "50% 44%",
+	},
+	{
+		title: "冬站孔版",
+		character: "逢坂大河",
+		franchise: "龙与虎",
+		image: taigaRisograph,
+		groups: ["classic"],
+		focus: "50% 44%",
+	},
+	{
+		title: "午夜甜甜圈气刷",
+		character: "忍野忍",
+		franchise: "物语系列",
+		image: shinobuVaporwave,
+		groups: ["classic"],
+		focus: "50% 45%",
+	},
+	{
+		title: "城墙蓝晒档案",
+		character: "三笠·阿克曼",
+		franchise: "进击的巨人",
+		image: mikasaCyanotype,
+		groups: ["classic"],
+		focus: "50% 45%",
+	},
+	{
+		title: "孟菲斯相机日",
+		character: "锦木千束",
+		franchise: "莉可丽丝",
+		image: chisatoMemphis,
+		groups: ["current"],
+		focus: "50% 43%",
 	},
 ];
 
