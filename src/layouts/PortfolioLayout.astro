@@ -80,6 +80,10 @@ const navItems = [
 			</div>
 		</footer>
 		<script>
+			// Source files remain in the repository for private review; the public site
+			// is image-led and must not expose download controls.
+			document.querySelectorAll<HTMLAnchorElement>('a[download], a[href*="/downloads/source-files/"]').forEach((link) => link.remove());
+
 			// Make standalone portfolio visuals inspectable at full resolution. Existing
 			// links are left untouched to avoid nesting. Prefer the largest srcset
 			// candidate so a click does not open the small responsive thumbnail.

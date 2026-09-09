@@ -9,5 +9,5 @@ const works = [{ image: taiga, title: "冬站孔版", tag: "逢坂大河 / 冬�
 <PortfolioLayout title="同人视觉风格实验" description="以热门角色探索孔版、气刷、蓝晒拼贴与孟菲斯商业插画等不同视觉语言。">
 	<header class="project-hero site-shell"><p class="project-kicker">FANWORK STYLE LAB / 2026</p><h1 class="project-title">同一套审美判断，<br />换四种视觉语言。</h1><p class="project-lead">从角色选择、场景构图到手部与道具关系，测试不同风格在同人海报中的适配度。</p></header>
 	<section class="site-shell case-section"><div><p class="eyebrow">01 / Style Tests</p><h2>四组风格实验。</h2></div><div class="case-body"><div class="visual-wall">{works.map((work) => <figure><a class="image-lightbox-link" href={work.image.src} target="_blank" rel="noreferrer"><img src={work.image.src} alt={work.tag} loading="lazy" /></a><figcaption><strong>{work.title}</strong><span>{work.tag}</span></figcaption></figure>)}</div></div></section>
-	<section class="site-shell case-section"><div><p class="eyebrow">02 / Editable Notes</p><h2>保留可复用的判断。</h2></div><div class="case-body"><p>每组作品都记录风格关键词、手部约束和后期边界，便于继续扩展同人角色或转为海报、车衣和社媒视觉。</p><a class="text-link" href="/downloads/source-files/fanworks/style-lab-prompts.md" download>查看风格实验说明 <span>↓</span></a></div></section>
+	<section class="site-shell case-section"><div><p class="eyebrow">02 / Editable Notes</p><h2>保留可复用的判断。</h2></div><div class="case-body"><p>每组作品都记录风格关键词、手部约束和后期边界，便于继续扩展同人角色或转为海报、车衣和社媒视觉。</p></div></section>
 </PortfolioLayout>
