@@ -1,0 +1,330 @@
+---
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+import "@/styles/railway.css";
+---
+
+<PortfolioLayout title="铁路大亨站点推演" description="《诡秘之主》铁路大亨挑战路线的本站提示与三站约束推演工具。">
+	<main class="railway-tool" data-railway-tool>
+		<section class="railway-hero site-shell">
+			<div class="railway-hero__copy">
+				<p class="eyebrow">Lord of Mysteries / Route Solver</p>
+				<h1><span>铁路大亨</span>站点推演</h1>
+				<p class="railway-hero__lead">把每站给出的“未来 3 站”提示当成连续约束，而不是简单的数量除法。选择提示后，系统只保留仍然可行的到站类型。</p>
+				<div class="railway-hero__legend" aria-label="路线类型说明">
+					<span class="is-wine"><i>酒</i>酒庄</span>
+					<span class="is-food"><i>食</i>食铺</span>
+					<span class="is-trade"><i>商</i>商行</span>
+				</div>
+			</div>
+			<aside class="railway-guide">
+				<p class="railway-guide__label">Three-step Use</p>
+				<ol>
+					<li><b>01</b><span><strong>核对剩余数量</strong><small>按游戏右上角修正酒庄 / 食铺 / 商行。</small></span></li>
+					<li><b>02</b><span><strong>填本站提示</strong><small>不可行的提示会直接禁用，不需要试错。</small></span></li>
+					<li><b>03</b><span><strong>确认实际到站</strong><small>只保留当前仍然可行的站型。</small></span></li>
+				</ol>
+				<p class="railway-guide__privacy">进度保存在本机；不读取游戏账号。</p>
+			</aside>
+		</section>
+
+		<section class="railway-workspace site-shell">
+			<header class="workspace-header">
+				<div class="station-readout"><span>Current Station</span><strong>第 <b data-station>1</b> / 16 站</strong></div>
+				<div class="workspace-actions"><button type="button" data-undo>撤回上一站</button><button type="button" data-reset>重新开始</button></div>
+			</header>
+
+			<section class="route-card">
+				<div class="section-label"><span>Route Timeline</span><span>每 4 站一段 · 结算点 5 / 9 / 13</span></div>
+				<div class="route-track" data-track aria-label="路线进度"></div>
+				<div class="forecast" data-forecast>
+					<div class="forecast__lead">
+						<span class="forecast__label">Next Station</span>
+						<strong data-forecast-main>先选择本站提示</strong>
+						<p data-forecast-note>选择后会自动过滤不可行到站。</p>
+					</div>
+					<div class="forecast__probabilities" data-probabilities></div>
+				</div>
+			</section>
+
+			<div class="steps" aria-label="操作顺序">
+				<span class="is-complete"><b>01</b>核对剩余数量</span>
+				<span data-step-clue><b>02</b>填写本站提示</span>
+				<span data-step-arrival><b>03</b>确认实际到站</span>
+			</div>
+
+			<div class="tool-grid">
+				<section class="control-card">
+					<header class="card-heading">
+						<div><span class="card-index">01 / Count</span><h2>剩余站点</h2></div>
+						<p data-total>余 15 站 · 到站自动 -1</p>
+					</header>
+					<div class="counters" data-counters></div>
+					<footer class="card-footnote">开局默认每种 5 个；已有实际到站后再按游戏右上角校正。单项数量限制为 0–5。</footer>
+				</section>
+
+				<section class="control-card clue-card">
+					<header class="card-heading">
+						<div><span class="card-index">02 / Hint</span><h2>本站提示 · 未来 3 站</h2></div>
+						<p><span data-clue-caption>必选后出发</span><em data-clue-status>未选</em></p>
+					</header>
+					<div class="clue-grid" data-clues></div>
+					<p class="constraint-note" data-constraint-note hidden></p>
+					<footer class="card-footnote">“出现概率大”指 3 站中该站型次数严格最多；“各站相同”指 3 站同一站型。</footer>
+				</section>
+			</div>
+
+			<section class="arrival-card">
+				<header class="arrival-heading">
+					<div><span class="card-index">03 / Arrival</span><h2 data-arrival-title>先选择本站提示</h2></div>
+					<p data-arrival-copy>必须先选择游戏给出的“未来 3 站”提示，才能记录本次到站。</p>
+				</header>
+				<div class="arrival-actions" data-arrivals></div>
+			</section>
+
+			<section class="history-card">
+				<header class="card-heading">
+					<div><span class="card-index">Route Log</span><h2>已记录站点</h2></div>
+					<p data-history-count>0 / 15</p>
+				</header>
+				<ol data-history></ol>
+			</section>
+			<p class="board-message" data-message aria-live="polite" hidden></p>
+		</section>
+	</main>
+
+	<script>
+		// @ts-nocheck -- browser-only state and exhaustive, bounded route inference.
+		const root = document.querySelector('[data-railway-tool]');
+		const MAX_STOPS = 15;
+		const TRACK_STOPS = 16;
+		const MAX_PER_TYPE = 5;
+		const TYPE = {
+			wine: { name: '酒庄', mark: '酒', tint: 'wine' },
+			food: { name: '食铺', mark: '食', tint: 'food' },
+			trade: { name: '商行', mark: '商', tint: 'trade' },
+		};
+		const CLUES = {
+			wine: { label: '酒庄出现概率大', mark: '酒' },
+			food: { label: '食铺出现概率大', mark: '食' },
+			trade: { label: '商行出现概率大', mark: '商' },
+			same: { label: '各站相同', mark: '同' },
+		};
+		const STORAGE_KEY = 'nova-railway-route-v2';
+		const fresh = () => ({ station: 1, remaining: { wine: 5, food: 5, trade: 5 }, history: [], clue: '' });
+		let state = fresh();
+
+		const $ = (selector) => root.querySelector(selector);
+		const total = () => Object.values(state.remaining).reduce((sum, count) => sum + count, 0);
+		const sizeFor = (station) => Math.min(3, MAX_STOPS - station + 1);
+		const activeClues = (clue = state.clue) => {
+			const clues = state.history
+				.filter((entry) => entry.clue && entry.station >= state.station - 2)
+				.map((entry) => ({ station: entry.station, clue: entry.clue }));
+			if (clue) clues.push({ station: state.station, clue });
+			return clues;
+		};
+
+		function restoreState() {
+			try {
+				const restored = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+				if (!restored?.remaining || !Array.isArray(restored.history)) return;
+				const remaining = Object.fromEntries(Object.keys(TYPE).map((type) => {
+					const value = Number(restored.remaining[type]);
+					return [type, Number.isFinite(value) ? Math.min(MAX_PER_TYPE, Math.max(0, Math.floor(value))) : 5];
+				}));
+				const history = restored.history
+					.filter((entry) => entry && TYPE[entry.type] && CLUES[entry.clue])
+					.slice(0, MAX_STOPS)
+					.map((entry, index) => ({ station: index + 1, type: entry.type, clue: entry.clue }));
+				const station = Math.min(MAX_STOPS + 1, Math.max(1, Number(restored.station) || history.length + 1));
+				state = { station, remaining, history, clue: CLUES[restored.clue] ? restored.clue : '' };
+			} catch {}
+		}
+
+		function matchesClue(route, start, clue) {
+			const window = route.slice(start, start + sizeFor(start));
+			if (window.length !== sizeFor(start)) return true;
+			if (clue === 'same') return new Set(window).size === 1;
+			const counts = Object.fromEntries(Object.keys(TYPE).map((type) => [type, window.filter((value) => value === type).length]));
+			return counts[clue] > Math.max(...Object.entries(counts).filter(([type]) => type !== clue).map(([, count]) => count));
+		}
+
+		function infer(clue = state.clue) {
+			if (state.station > MAX_STOPS) return { status: 'complete', probabilities: {}, candidates: [], reason: '路线完成' };
+			const clues = activeClues(clue);
+			if (!clues.length) return { status: 'waiting', probabilities: {}, candidates: [], reason: '请选择下方【本站提示】' };
+			const horizon = Math.min(MAX_STOPS, state.station + 2);
+			const route = state.history.map((entry) => entry.type);
+			const candidates = Object.keys(TYPE).filter((type) => state.remaining[type] > 0);
+			const weights = Object.fromEntries(Object.keys(TYPE).map((type) => [type, 0]));
+			function visit(position, pool) {
+				if (position > horizon) {
+					if (!clues.every(({ station, clue: activeClue }) => matchesClue(route, station - 1, activeClue))) return;
+					weights[route[state.station - 1]] += 1;
+					return;
+				}
+				for (const type of candidates) {
+					if (!pool[type]) continue;
+					route[position - 1] = type;
+					pool[type] -= 1;
+					visit(position + 1, pool);
+					pool[type] += 1;
+				}
+			}
+			visit(state.station, { ...state.remaining });
+			const sum = Object.values(weights).reduce((value, weight) => value + weight, 0);
+			if (!sum) return { status: 'conflict', probabilities: {}, candidates: [], reason: '提示组合无可行路线' };
+			return {
+				status: 'ready',
+				probabilities: Object.fromEntries(Object.entries(weights).map(([type, weight]) => [type, weight / sum * 100])),
+				candidates: Object.keys(weights).filter((type) => weights[type]),
+				reason: '',
+			};
+		}
+
+		function clueChecks() {
+			return Object.fromEntries(Object.keys(CLUES).map((clue) => [clue, infer(clue)]));
+		}
+
+		function notify(text) {
+			const node = $('[data-message]');
+			node.hidden = false;
+			node.textContent = text;
+			clearTimeout(notify.timer);
+			notify.timer = setTimeout(() => { node.hidden = true; }, 3200);
+		}
+
+		function render() {
+			const checks = clueChecks();
+			if (state.clue && checks[state.clue]?.status !== 'ready') state.clue = '';
+			const result = infer();
+			const allCluesBlocked = state.station <= MAX_STOPS && Object.values(checks).every((check) => check.status !== 'ready');
+			const ready = state.station <= MAX_STOPS && Boolean(state.clue) && result.status === 'ready';
+			const left = total();
+			const winning = Object.entries(result.probabilities).sort((a, b) => b[1] - a[1])[0];
+
+			$('[data-station]').textContent = Math.min(state.station, TRACK_STOPS);
+			$('[data-total]').textContent = `余 ${left} 站 · 到站自动 -1`;
+			$('[data-history-count]').textContent = `${state.history.length} / ${MAX_STOPS}`;
+			$('[data-track]').innerHTML = Array.from({ length: TRACK_STOPS }, (_, index) => {
+				const entry = state.history[index];
+				const classes = [entry ? `is-done ${TYPE[entry.type].tint}` : '', index + 1 === state.station ? 'is-current' : ''].filter(Boolean).join(' ');
+				return `<span class="${classes}"><b>${index + 1}</b></span>`;
+			}).join('');
+
+			const forecast = $('[data-forecast]');
+			forecast.dataset.status = result.status;
+			$('[data-forecast-main]').innerHTML = result.status === 'ready'
+				? `<i>${TYPE[winning[0]].mark}</i>${TYPE[winning[0]].name}<small>${winning[1].toFixed(1)}%</small>`
+				: result.status === 'conflict' || allCluesBlocked
+					? '当前组合没有可行路线'
+					: result.status === 'complete'
+						? '本局路线已完成'
+						: '先选择本站提示';
+			$('[data-forecast-note]').textContent = result.status === 'ready'
+				? `当前只有 ${result.candidates.length} 种站型仍可行；概率按全部有效三站组合计算。`
+				: result.status === 'conflict' || allCluesBlocked
+					? '先按游戏右上角修正剩余站点；不可行的提示与到站按钮不会响应点击。'
+					: result.status === 'complete'
+						? '共 15 个路线点已记录。'
+						: '选择后会自动过滤不可行到站。';
+
+			$('[data-probabilities]').innerHTML = result.status === 'ready'
+				? Object.entries(TYPE).map(([type, info]) => {
+					const probability = result.probabilities[type] || 0;
+					return `<div class="probability ${info.tint}"><span><i>${info.mark}</i>${info.name}</span><div><b style="width:${probability.toFixed(1)}%"></b></div><strong>${probability.toFixed(1)}%</strong></div>`;
+				}).join('')
+				: `<p class="probability-empty">${result.status === 'conflict' || allCluesBlocked ? '等待修正冲突后重新计算' : '等待本站提示'}</p>`;
+
+			$('[data-step-clue]').classList.toggle('is-complete', Boolean(state.clue));
+			$('[data-step-arrival]').classList.toggle('is-ready', ready);
+			$('[data-clue-caption]').textContent = state.clue ? '已选，等待到站确认' : '必选后出发';
+			$('[data-clue-status]').textContent = state.clue ? '已选 ✓' : '未选';
+			$('[data-clue-status]').classList.toggle('is-selected', Boolean(state.clue));
+
+			$('[data-counters]').innerHTML = Object.entries(TYPE).map(([type, info]) => {
+				const count = state.remaining[type];
+				return `<article class="counter ${info.tint}"><header><i>${info.mark}</i><div><b>${info.name}</b><small>剩余</small></div></header><div><button type="button" data-count="${type}" data-change="-1" aria-label="减少${info.name}" ${count <= 0 ? 'disabled' : ''}>−</button><strong>${count}</strong><button type="button" data-count="${type}" data-change="1" aria-label="增加${info.name}" ${count >= MAX_PER_TYPE ? 'disabled' : ''}>＋</button></div></article>`;
+			}).join('');
+
+			$('[data-clues]').innerHTML = Object.entries(CLUES).map(([clue, info]) => {
+				const check = checks[clue];
+				const available = check.status === 'ready';
+				const selected = state.clue === clue;
+				return `<button type="button" class="clue-option ${TYPE[clue]?.tint || 'same'} ${selected ? 'is-selected' : ''}" data-clue="${clue}" ${available ? '' : 'disabled'}><i>${info.mark}</i><span><b>${info.label}</b><small>${available ? `${check.candidates.length} 种站型可行` : '与当前约束冲突'}</small></span><em>${selected ? '已选' : available ? '选择' : '不可选'}</em></button>`;
+			}).join('');
+
+			const note = $('[data-constraint-note]');
+			note.hidden = !allCluesBlocked;
+			note.textContent = allCluesBlocked ? '当前剩余数量无法满足任何“未来 3 站”提示。请先按游戏右上角修正数量，再选择提示。' : '';
+
+			$('[data-arrival-title]').textContent = state.station > MAX_STOPS ? '本局 15 个路线点已记录' : ready ? '该站到站后，确认实际类型' : '先选择本站提示';
+			$('[data-arrival-copy]').textContent = ready
+				? '只有仍然可行的站型可以点击。扣减后，未结束的三站提示会继续约束后续站点。'
+				: allCluesBlocked
+					? '当前没有可确认的站型；先修正剩余数量，按钮会自动开放。'
+					: '必须先选择游戏给出的“未来 3 站”提示，才能记录本次到站。';
+			$('[data-arrivals]').innerHTML = Object.entries(TYPE).map(([type, info]) => {
+				const available = ready && result.candidates.includes(type);
+				const probability = result.probabilities[type];
+				return `<button type="button" class="arrival-option ${info.tint}" data-arrive="${type}" ${available ? '' : 'disabled'} aria-disabled="${available ? 'false' : 'true'}"><i>${info.mark}</i><span><b>${info.name}</b><small>${available ? `推演 ${probability.toFixed(1)}%` : '当前不可选'}</small></span></button>`;
+			}).join('');
+
+			$('[data-history]').innerHTML = state.history.length
+				? state.history.map((entry) => `<li class="${TYPE[entry.type].tint}"><b>第 ${entry.station} 站</b><span><i>${TYPE[entry.type].mark}</i>${TYPE[entry.type].name}</span><small>${CLUES[entry.clue]?.label || '已记录'}</small></li>`).join('')
+				: '<li class="empty">尚未记录。本站提示与实际到站类型会一起保存在这里。</li>';
+			$('[data-undo]').disabled = !state.history.length;
+			localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+		}
+
+		root.addEventListener('click', (event) => {
+			const target = event.target.closest('button');
+			if (!target || target.disabled) return;
+			if (target.dataset.clue) {
+				state.clue = target.dataset.clue;
+				render();
+				return;
+			}
+			if (target.dataset.count) {
+				const type = target.dataset.count;
+				const next = Math.min(MAX_PER_TYPE, Math.max(0, state.remaining[type] + Number(target.dataset.change)));
+				if (next === state.remaining[type]) return;
+				state.remaining[type] = next;
+				const clearedClue = state.clue && infer(state.clue).status !== 'ready';
+				if (clearedClue) state.clue = '';
+				render();
+				if (clearedClue) notify('数量变化后原提示已不可行，已自动清除；请重新选择可行提示。');
+				return;
+			}
+			if (target.dataset.arrive) {
+				const type = target.dataset.arrive;
+				state.history.push({ station: state.station, type, clue: state.clue });
+				state.remaining[type] -= 1;
+				state.station += 1;
+				state.clue = '';
+				render();
+				notify(`第 ${state.station - 1} 站已确认：${TYPE[type].name}。`);
+				return;
+			}
+			if (target.matches('[data-undo]')) {
+				const previous = state.history.pop();
+				if (!previous) return;
+				state.station = previous.station;
+				state.remaining[previous.type] += 1;
+				state.clue = previous.clue;
+				render();
+				notify('已撤回上一站，提示与数量均已恢复。');
+				return;
+			}
+			if (target.matches('[data-reset]')) {
+				state = fresh();
+				render();
+				notify('已恢复为新一局的初始站点。');
+			}
+		});
+
+		restoreState();
+		if (state.clue && infer(state.clue).status !== 'ready') state.clue = '';
+		render();
+	</script>
+</PortfolioLayout>
